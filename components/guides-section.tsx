@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Clock, Calendar } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -59,17 +60,26 @@ export async function GuidesSection() {
                 </div>
                   )}
                 <CardHeader className="pb-1 pt-3 px-4">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-                    <Clock className="h-3 w-3" />
-                      <span>{blog.readingTime}</span>
-                      {blog.published_at && (
-                        <>
-                          <span>•</span>
-                          <Calendar className="h-3 w-3" />
-                          <time dateTime={blog.published_at}>
-                            {format(new Date(blog.published_at), 'MMM d')}
-                          </time>
-                        </>
+                    <div className="flex items-center justify-between gap-2 mb-1">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <Clock className="h-3 w-3" />
+                        <span>{blog.readingTime}</span>
+                        {blog.published_at && (
+                          <>
+                            <span>•</span>
+                            <Calendar className="h-3 w-3" />
+                            <time dateTime={blog.published_at}>
+                              {format(new Date(blog.published_at), 'MMM d')}
+                            </time>
+                          </>
+                        )}
+                      </div>
+                      {blog.category && (
+                        <Link href={`/blog?category=${encodeURIComponent(blog.category)}`} onClick={(e) => e.stopPropagation()}>
+                          <Badge variant="secondary" className="text-xs">
+                            {blog.category}
+                          </Badge>
+                        </Link>
                       )}
                   </div>
                   <CardTitle className="text-sm font-bold text-card-foreground line-clamp-2 group-hover:text-primary transition-colors leading-snug">
@@ -80,6 +90,21 @@ export async function GuidesSection() {
                   <CardDescription className="text-xs text-muted-foreground line-clamp-2 mb-2">
                       {blog.excerpt || blog.title}
                   </CardDescription>
+                  {blog.tags && blog.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {blog.tags.slice(0, 2).map((tag) => (
+                        <Link 
+                          key={tag} 
+                          href={`/blog?tag=${encodeURIComponent(tag)}`} 
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Badge variant="outline" className="text-xs">
+                            {tag}
+                          </Badge>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                   <div className="flex items-center text-xs font-semibold text-primary">
                     Read
                     <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />

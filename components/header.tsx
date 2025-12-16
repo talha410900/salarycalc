@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useMemo, useRef } from "react"
+import { useState, useMemo, useRef, useEffect } from "react"
 import {
   Menu,
   X,
@@ -60,6 +60,9 @@ export function Header() {
   const [stateMenuOpen, setStateMenuOpen] = useState(false)
   const [stateSearch, setStateSearch] = useState("")
   const stateMenuRef = useRef<HTMLDivElement>(null)
+  const salaryMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const popularMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const stateMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Filter states based on search
   const filteredStates = useMemo(() => {
@@ -71,6 +74,15 @@ export function Header() {
       (state) => state.name.toLowerCase().includes(query) || state.code.toLowerCase().includes(query),
     ).slice(0, 8)
   }, [stateSearch])
+
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (salaryMenuTimeoutRef.current) clearTimeout(salaryMenuTimeoutRef.current)
+      if (popularMenuTimeoutRef.current) clearTimeout(popularMenuTimeoutRef.current)
+      if (stateMenuTimeoutRef.current) clearTimeout(stateMenuTimeoutRef.current)
+    }
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full bg-card/95 backdrop-blur-xl border-b border-border/50">
@@ -89,8 +101,18 @@ export function Header() {
             {/* Salary Calculators Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setSalaryMenuOpen(true)}
-              onMouseLeave={() => setSalaryMenuOpen(false)}
+              onMouseEnter={() => {
+                if (salaryMenuTimeoutRef.current) {
+                  clearTimeout(salaryMenuTimeoutRef.current)
+                  salaryMenuTimeoutRef.current = null
+                }
+                setSalaryMenuOpen(true)
+              }}
+              onMouseLeave={() => {
+                salaryMenuTimeoutRef.current = setTimeout(() => {
+                  setSalaryMenuOpen(false)
+                }, 150)
+              }}
             >
               <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors">
                 Calculators
@@ -98,7 +120,21 @@ export function Header() {
               </button>
 
               {salaryMenuOpen && (
-                <div className="absolute top-full left-0 mt-1 w-[400px] p-4 bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+                <div 
+                  className="absolute top-full left-0 pt-1 w-[400px]"
+                  onMouseEnter={() => {
+                    if (salaryMenuTimeoutRef.current) {
+                      clearTimeout(salaryMenuTimeoutRef.current)
+                      salaryMenuTimeoutRef.current = null
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    salaryMenuTimeoutRef.current = setTimeout(() => {
+                      setSalaryMenuOpen(false)
+                    }, 150)
+                  }}
+                >
+                  <div className="p-4 bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="mb-3">
                     <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                       Salary Converters
@@ -133,6 +169,7 @@ export function Header() {
                       ))}
                     </div>
                   </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -140,8 +177,18 @@ export function Header() {
             {/* Popular Calculators Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setPopularMenuOpen(true)}
-              onMouseLeave={() => setPopularMenuOpen(false)}
+              onMouseEnter={() => {
+                if (popularMenuTimeoutRef.current) {
+                  clearTimeout(popularMenuTimeoutRef.current)
+                  popularMenuTimeoutRef.current = null
+                }
+                setPopularMenuOpen(true)
+              }}
+              onMouseLeave={() => {
+                popularMenuTimeoutRef.current = setTimeout(() => {
+                  setPopularMenuOpen(false)
+                }, 150)
+              }}
             >
               <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors">
                 <Star className="h-4 w-4" />
@@ -150,7 +197,21 @@ export function Header() {
               </button>
 
               {popularMenuOpen && (
-                <div className="absolute top-full left-0 mt-1 w-[400px] p-4 bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+                <div 
+                  className="absolute top-full left-0 pt-1 w-[400px]"
+                  onMouseEnter={() => {
+                    if (popularMenuTimeoutRef.current) {
+                      clearTimeout(popularMenuTimeoutRef.current)
+                      popularMenuTimeoutRef.current = null
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    popularMenuTimeoutRef.current = setTimeout(() => {
+                      setPopularMenuOpen(false)
+                    }, 150)
+                  }}
+                >
+                  <div className="p-4 bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
                     Most Searched Calculators
                   </div>
@@ -166,6 +227,7 @@ export function Header() {
                       </Link>
                     ))}
                   </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -174,10 +236,18 @@ export function Header() {
             <div
               ref={stateMenuRef}
               className="relative"
-              onMouseEnter={() => setStateMenuOpen(true)}
+              onMouseEnter={() => {
+                if (stateMenuTimeoutRef.current) {
+                  clearTimeout(stateMenuTimeoutRef.current)
+                  stateMenuTimeoutRef.current = null
+                }
+                setStateMenuOpen(true)
+              }}
               onMouseLeave={() => {
-                setStateMenuOpen(false)
-                setStateSearch("")
+                stateMenuTimeoutRef.current = setTimeout(() => {
+                  setStateMenuOpen(false)
+                  setStateSearch("")
+                }, 150)
               }}
             >
               <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors">
@@ -187,7 +257,22 @@ export function Header() {
               </button>
 
               {stateMenuOpen && (
-                <div className="absolute top-full left-0 mt-1 w-[350px] bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+                <div 
+                  className="absolute top-full left-0 pt-1 w-[350px]"
+                  onMouseEnter={() => {
+                    if (stateMenuTimeoutRef.current) {
+                      clearTimeout(stateMenuTimeoutRef.current)
+                      stateMenuTimeoutRef.current = null
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    stateMenuTimeoutRef.current = setTimeout(() => {
+                      setStateMenuOpen(false)
+                      setStateSearch("")
+                    }, 150)
+                  }}
+                >
+                  <div className="bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
                   {/* Search Input */}
                   <div className="p-3 border-b border-border">
                     <div className="relative">
@@ -238,6 +323,7 @@ export function Header() {
                     >
                       View All 50 States + D.C.
                     </Link>
+                  </div>
                   </div>
                 </div>
               )}

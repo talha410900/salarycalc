@@ -7,6 +7,10 @@ export interface Blog {
   featured_image: string | null
   status: 'draft' | 'published' | 'archived'
   
+  // Tags and Categories (stored as arrays/strings in blogs table)
+  tags: string[]
+  category: string | null
+  
   // SEO Fields
   meta_title: string | null
   meta_description: string | null
@@ -38,3 +42,27 @@ export interface Blog {
 export type BlogInsert = Omit<Blog, 'id' | 'created_at' | 'updated_at'>
 export type BlogUpdate = Partial<BlogInsert>
 
+// Category management type
+export interface Category {
+  id: string
+  name: string
+  slug: string
+  description: string | null
+  created_at: string
+  updated_at: string
+}
+
+export type CategoryInsert = Omit<Category, 'id' | 'created_at' | 'updated_at'>
+export type CategoryUpdate = Partial<CategoryInsert>
+
+// Tag management type
+export interface Tag {
+  id: string
+  name: string
+  slug: string
+  created_at: string
+  updated_at: string
+}
+
+export type TagInsert = Omit<Tag, 'id' | 'created_at' | 'updated_at'>
+export type TagUpdate = Partial<TagInsert>

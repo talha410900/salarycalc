@@ -95,6 +95,8 @@ const blogPosts = [
     }),
     author_id: null,
     published_at: new Date().toISOString(),
+    tags: ['take-home-pay', 'paycheck', 'tax-deductions', 'salary', 'net-pay'],
+    category: 'Salary Guide',
   },
   {
     title: '2025 Federal Tax Brackets: What You Need to Know',
@@ -198,6 +200,8 @@ const blogPosts = [
     }),
     author_id: null,
     published_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
+    tags: ['tax-brackets', 'federal-tax', '2025-taxes', 'tax-rates', 'income-tax'],
+    category: 'Tax Planning',
   },
   {
     title: 'How to Convert Hourly Wage to Annual Salary',
@@ -333,6 +337,8 @@ const blogPosts = [
     }),
     author_id: null,
     published_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
+    tags: ['hourly-wage', 'salary-conversion', 'hourly-to-salary', 'wage-calculator', 'salary'],
+    category: 'Salary Guide',
   },
   {
     title: 'State Income Tax: Which States Have No Income Tax?',
@@ -466,6 +472,8 @@ const blogPosts = [
     }),
     author_id: null,
     published_at: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days ago
+    tags: ['state-tax', 'no-income-tax', 'state-taxes', 'tax-free-states', 'relocation'],
+    category: 'State Taxes',
   },
   {
     title: 'Maximizing Your Salary: Negotiation Tips and Strategies',
@@ -623,6 +631,8 @@ const blogPosts = [
     }),
     author_id: null,
     published_at: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(), // 10 days ago
+    tags: ['salary-negotiation', 'career', 'compensation', 'job-offer', 'raise'],
+    category: 'Career Advice',
   },
 ]
 
@@ -632,36 +642,72 @@ async function seedBlogs() {
   // Check if blogs already exist
   const { data: existingBlogs } = await supabase
     .from('blogs')
-    .select('slug')
-    .limit(1)
+    .select('slug, id')
+    .limit(100)
 
-  if (existingBlogs && existingBlogs.length > 0) {
-    console.log('⚠️  Blogs already exist in the database.')
-    console.log('To re-seed, please delete existing blogs first or modify this script.\n')
-    return
+  const existingSlugs = new Set(existingBlogs?.map(b => b.slug) || [])
+  const existingBlogsMap = new Map(existingBlogs?.map(b => [b.slug, b.id]) || [])
+
+  if (existingSlugs.size > 0) {
+    console.log(`📝 Found ${existingSlugs.size} existing blog(s). Will update with tags and categories.\n`)
   }
 
-  console.log(`Inserting ${blogPosts.length} blog posts...\n`)
+  console.log(`Processing ${blogPosts.length} blog posts...\n`)
+
+  let inserted = 0
+  let updated = 0
 
   for (let i = 0; i < blogPosts.length; i++) {
     const blog = blogPosts[i]
-    console.log(`[${i + 1}/${blogPosts.length}] Inserting: ${blog.title}`)
+    const exists = existingSlugs.has(blog.slug)
 
-    const { data, error } = await supabase
-      .from('blogs')
-      .insert([blog])
-      .select()
+    if (exists) {
+      console.log(`[${i + 1}/${blogPosts.length}] Updating: ${blog.title}`)
+      
+      // Update existing blog with tags and category
+      const { data, error } = await supabase
+        .from('blogs')
+        .update({
+          tags: blog.tags || [],
+          category: blog.category || null,
+          // Optionally update other fields if needed
+          title: blog.title,
+          content: blog.content,
+          excerpt: blog.excerpt,
+          featured_image: blog.featured_image,
+          meta_title: blog.meta_title,
+          meta_description: blog.meta_description,
+          meta_keywords: blog.meta_keywords,
+        })
+        .eq('slug', blog.slug)
+        .select()
 
-    if (error) {
-      console.error(`❌ Error inserting "${blog.title}":`, error.message)
+      if (error) {
+        console.error(`❌ Error updating "${blog.title}":`, error.message)
+      } else {
+        console.log(`✅ Successfully updated: ${blog.title}\n`)
+        updated++
+      }
     } else {
-      console.log(`✅ Successfully inserted: ${blog.title}\n`)
+      console.log(`[${i + 1}/${blogPosts.length}] Inserting: ${blog.title}`)
+
+      const { data, error } = await supabase
+        .from('blogs')
+        .insert([blog])
+        .select()
+
+      if (error) {
+        console.error(`❌ Error inserting "${blog.title}":`, error.message)
+      } else {
+        console.log(`✅ Successfully inserted: ${blog.title}\n`)
+        inserted++
+      }
     }
   }
 
   console.log('\n✨ Blog seeding completed!')
+  console.log(`📊 Summary: ${inserted} inserted, ${updated} updated`)
   console.log(`\nYou can view your blogs at:`)
-  console.log(`- Admin Panel: http://localhost:3000/admin`)
   console.log(`- Blog List: http://localhost:3000/blog`)
 }
 

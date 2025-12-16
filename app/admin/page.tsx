@@ -118,11 +118,39 @@ export default function AdminBlogsPage() {
 
   return (
     <>
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
+        <p className="text-muted-foreground">
+          Manage your blog posts, categories, and tags
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <Link href="/admin">
+          <div className="p-6 border rounded-lg hover:bg-accent transition-colors cursor-pointer">
+            <h2 className="text-xl font-semibold mb-2">Blog Posts</h2>
+            <p className="text-sm text-muted-foreground">Manage blog posts and content</p>
+          </div>
+        </Link>
+        <Link href="/admin/categories">
+          <div className="p-6 border rounded-lg hover:bg-accent transition-colors cursor-pointer">
+            <h2 className="text-xl font-semibold mb-2">Categories</h2>
+            <p className="text-sm text-muted-foreground">Manage blog categories</p>
+          </div>
+        </Link>
+        <Link href="/admin/tags">
+          <div className="p-6 border rounded-lg hover:bg-accent transition-colors cursor-pointer">
+            <h2 className="text-xl font-semibold mb-2">Tags</h2>
+            <p className="text-sm text-muted-foreground">Manage blog tags</p>
+          </div>
+        </Link>
+      </div>
+
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-3xl font-bold">Blog Management</h1>
+          <h2 className="text-2xl font-bold">Blog Posts</h2>
           <p className="text-muted-foreground mt-1">
-            Manage your blog posts and SEO settings
+            Recent blog posts
           </p>
         </div>
         <Link href="/admin/blogs/new">
@@ -138,7 +166,8 @@ export default function AdminBlogsPage() {
           <TableHeader>
             <TableRow>
               <TableHead>Title</TableHead>
-              <TableHead>Slug</TableHead>
+              <TableHead>Category</TableHead>
+              <TableHead>Tags</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Published</TableHead>
               <TableHead>Created</TableHead>
@@ -148,7 +177,7 @@ export default function AdminBlogsPage() {
           <TableBody>
             {blogs.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
+                <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
                   No blogs found. Create your first blog post!
                 </TableCell>
               </TableRow>
@@ -156,8 +185,30 @@ export default function AdminBlogsPage() {
               blogs.map((blog) => (
                 <TableRow key={blog.id}>
                   <TableCell className="font-medium">{blog.title}</TableCell>
-                  <TableCell className="text-muted-foreground font-mono text-sm">
-                    {blog.slug}
+                  <TableCell>
+                    {blog.category ? (
+                      <Badge variant="secondary">{blog.category}</Badge>
+                    ) : (
+                      <span className="text-muted-foreground text-sm">-</span>
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    {blog.tags && blog.tags.length > 0 ? (
+                      <div className="flex flex-wrap gap-1">
+                        {blog.tags.slice(0, 2).map((tag) => (
+                          <Badge key={tag} variant="outline" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
+                        {blog.tags.length > 2 && (
+                          <Badge variant="outline" className="text-xs">
+                            +{blog.tags.length - 2}
+                          </Badge>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-muted-foreground text-sm">-</span>
+                    )}
                   </TableCell>
                   <TableCell>
                     <Badge variant={getStatusBadgeVariant(blog.status)}>

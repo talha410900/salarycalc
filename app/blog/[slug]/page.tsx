@@ -1,12 +1,14 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
+import Link from 'next/link'
 import { format } from 'date-fns'
-import { Calendar, Clock } from 'lucide-react'
+import { Calendar, Clock, Tag } from 'lucide-react'
 import { getBlogBySlug, getPublishedBlogs } from '@/lib/supabase/server'
 import { Blog } from '@/lib/supabase/types'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { Badge } from '@/components/ui/badge'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -107,7 +109,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <Clock className="h-4 w-4" />
                 <span>{readingTime} min read</span>
               </div>
+              {blog.category && (
+                <Link href={`/blog?category=${encodeURIComponent(blog.category)}`}>
+                  <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
+                    {blog.category}
+                  </Badge>
+                </Link>
+              )}
             </div>
+
+            {/* Tags */}
+            {blog.tags && blog.tags.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                <Tag className="h-4 w-4 text-muted-foreground" />
+                {blog.tags.map((tag) => (
+                  <Link key={tag} href={`/blog?tag=${encodeURIComponent(tag)}`}>
+                    <Badge variant="outline" className="cursor-pointer hover:bg-accent">
+                      {tag}
+                    </Badge>
+                  </Link>
+                ))}
+              </div>
+            )}
 
             {blog.featured_image && (
               <div className="relative w-full h-96 overflow-hidden rounded-lg bg-muted mb-8">
