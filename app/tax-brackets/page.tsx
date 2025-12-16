@@ -241,7 +241,7 @@ export default function TaxBracketsPage() {
                     <CardHeader>
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-lg">{state.name}</CardTitle>
-                        <Badge variant="outline" className="border-emerald-500/50 text-emerald-700">
+                        <Badge variant="outline" className="border-emerald-600/50 text-emerald-800 dark:text-emerald-700 bg-emerald-50 dark:bg-emerald-950/30">
                           No Tax
                         </Badge>
                       </div>

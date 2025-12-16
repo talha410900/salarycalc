@@ -222,7 +222,7 @@ export function StateCalculator({ stateSlug, stateData }: StateCalculatorProps) 
 
                   <div className="flex justify-between items-center py-2">
                     <span className="text-sm text-muted-foreground">{stateData.name} State Tax</span>
-                    <span className={isNoTaxState ? "text-emerald-600" : "text-destructive"}>
+                    <span className={isNoTaxState ? "text-emerald-700 dark:text-emerald-600" : "text-destructive"}>
                       {isNoTaxState ? "$0 (No Tax)" : `-${formatCurrency(results.stateTax)}`}
                     </span>
                   </div>

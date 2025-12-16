@@ -151,7 +151,7 @@ export function StateTaxSection() {
                             </p>
                           )}
                           {isNoTax && (
-                            <p className="text-xs text-emerald-600 font-medium mt-0.5 leading-tight">
+                            <p className="text-xs text-emerald-700 dark:text-emerald-600 font-medium mt-0.5 leading-tight">
                               No tax
                             </p>
                           )}

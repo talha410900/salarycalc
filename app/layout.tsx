@@ -6,8 +6,18 @@ import { CookieConsent } from "@/components/cookie-consent"
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 
-const _inter = Inter({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+})
+const geistMono = Geist_Mono({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: false,
+  variable: '--font-geist-mono',
+})
 
 export const metadata: Metadata = {
   title: "SalaryCalc - Salary & Tax Calculator",
@@ -27,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
         <CookieConsent />

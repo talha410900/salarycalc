@@ -1,0 +1,17 @@
+# Target modern browsers to reduce transpilation
+# This helps reduce legacy JavaScript polyfills
+
+# Modern browsers (last 2 versions)
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+
+# Modern mobile browsers
+iOS >= 14
+Android >= 8
+
+# Exclude very old browsers
+not dead
+not IE 11
+
