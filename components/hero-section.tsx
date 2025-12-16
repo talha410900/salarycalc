@@ -1,36 +1,11 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import {
-  DollarSign,
-  PieChart,
-  TrendingUp,
-  CheckCircle2,
-  Calculator,
-  Search,
-  ChevronRight,
-  Package,
-  MapPin,
-  Home,
-  Briefcase,
-  ShoppingCart,
-} from "lucide-react"
+import { DollarSign, PieChart, TrendingUp, CheckCircle2, Search, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
-
-const quickCalculators = [
-  { icon: Calculator, name: "Payroll Tax", href: "/calculators/payroll-tax" },
-  { icon: Package, name: "Customs & Import", href: "/calculators/customs-import-duty" },
-  { icon: MapPin, name: "Texas Paycheck", href: "/calculators/texas-paycheck" },
-  { icon: Calculator, name: "AMT Calculator", href: "/calculators/amt" },
-  { icon: TrendingUp, name: "CA Capital Gains", href: "/calculators/ca-capital-gains" },
-  { icon: Home, name: "Real Estate Gains", href: "/calculators/real-estate-capital-gains" },
-  { icon: Briefcase, name: "Self-Employed Tax", href: "/calculators/self-employed-tax" },
-  { icon: ShoppingCart, name: "MN Sales Tax", href: "/calculators/mn-sales-tax" },
-  { icon: ShoppingCart, name: "LA Sales Tax", href: "/calculators/la-sales-tax" },
-  { icon: Package, name: "US Import Tax", href: "/calculators/us-import-tax" },
-]
+import { heroCalculators } from "@/lib/calculators"
 
 export function HeroSection() {
   const [stateSearch, setStateSearch] = useState("")
@@ -115,7 +90,7 @@ export function HeroSection() {
 
           {/* Quick Calculator Links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 max-w-4xl mx-auto mb-8">
-            {quickCalculators.map((calc) => (
+            {heroCalculators.map((calc) => (
               <Link
                 key={calc.name}
                 href={calc.href}

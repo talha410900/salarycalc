@@ -15,15 +15,11 @@ import {
   Wallet,
   Search,
   MapPin,
-  Package,
-  TrendingUp,
-  Home,
-  Briefcase,
-  ShoppingCart,
   Star,
 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
+import { heroCalculators } from "@/lib/calculators"
 
 const salaryCalculators = [
   { icon: Clock, name: "Hourly to Salary", href: "/calculators/hourly-to-salary" },
@@ -36,19 +32,6 @@ const salaryCalculators = [
 const taxCalculators = [
   { icon: Landmark, name: "Federal Tax", href: "/calculators/federal-tax" },
   { icon: Wallet, name: "Take-Home Pay", href: "/calculators/take-home-pay" },
-]
-
-const popularCalculators = [
-  { icon: Calculator, name: "Payroll Tax Calculator", href: "/calculators/payroll-tax" },
-  { icon: Package, name: "Customs & Import Duty", href: "/calculators/customs-import-duty" },
-  { icon: MapPin, name: "Texas Paycheck", href: "/calculators/texas-paycheck" },
-  { icon: Calculator, name: "AMT Calculator", href: "/calculators/amt" },
-  { icon: TrendingUp, name: "CA Capital Gains", href: "/calculators/ca-capital-gains" },
-  { icon: Home, name: "Real Estate Gains", href: "/calculators/real-estate-capital-gains" },
-  { icon: Briefcase, name: "Self-Employed Tax", href: "/calculators/self-employed-tax" },
-  { icon: ShoppingCart, name: "MN Sales Tax", href: "/calculators/mn-sales-tax" },
-  { icon: ShoppingCart, name: "LA Sales Tax", href: "/calculators/la-sales-tax" },
-  { icon: Package, name: "US Import Tax", href: "/calculators/us-import-tax" },
 ]
 
 const popularStates = ["california", "texas", "florida", "new-york", "illinois", "pennsylvania"]
@@ -216,7 +199,7 @@ export function Header() {
                     Most Searched Calculators
                   </div>
                   <div className="grid grid-cols-2 gap-1">
-                    {popularCalculators.map((calc) => (
+                    {heroCalculators.map((calc) => (
                       <Link
                         key={calc.name}
                         href={calc.href}
@@ -367,7 +350,7 @@ export function Header() {
                 <Star className="h-3 w-3" />
                 Popular Calculators
               </div>
-              {popularCalculators.map((calc) => (
+              {heroCalculators.map((calc) => (
                 <Link
                   key={calc.name}
                   href={calc.href}
