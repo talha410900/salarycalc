@@ -112,7 +112,14 @@ export function StateTaxSection() {
   return (
     <section id="states" className="py-12 bg-secondary/30">
       <div className="container mx-auto px-4">
-    
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">
+            State Tax Calculators
+          </h2>
+          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+            Calculate your state income tax for all 50 US states with 2025 tax brackets
+          </p>
+        </div>
 
         {/* Popular States */}
         <div className="mb-8">
@@ -183,8 +190,8 @@ export function StateTaxSection() {
         {/* No Income Tax States Highlight */}
         <div className="mt-8 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-3">
-            <MapPin className="h-4 w-4 text-emerald-600" />
-            <h3 className="font-semibold text-sm text-emerald-700">States with No Income Tax</h3>
+            <MapPin className="h-4 w-4 text-emerald-700" />
+            <h3 className="font-semibold text-sm text-emerald-800 dark:text-emerald-600">States with No Income Tax</h3>
           </div>
           <div className="flex flex-wrap gap-2">
             {REGIONS["No Income Tax"].map((slug) => {
@@ -194,7 +201,7 @@ export function StateTaxSection() {
                 <Link
                   key={slug}
                   href={`/calculators/state/${slug}`}
-                  className="px-3 py-1 bg-emerald-500/20 text-emerald-700 rounded-full text-xs font-medium hover:bg-emerald-500/30 transition-colors"
+                  className="px-3 py-1 bg-emerald-600 text-white rounded-full text-xs font-medium hover:bg-emerald-700 transition-colors"
                 >
                   {state.name}
                 </Link>

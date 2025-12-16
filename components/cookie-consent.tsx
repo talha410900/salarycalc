@@ -120,18 +120,19 @@ export function CookieConsent() {
                 
                 {/* Content Section */}
                 <div className="flex-1 space-y-2 min-w-0">
-                  <h3 className="text-base font-semibold text-foreground">
+                  <div className="text-base font-semibold text-foreground">
                     We Value Your Privacy
-                  </h3>
+                  </div>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                     We use cookies to enhance your experience. By clicking "Accept All", you consent to our use of cookies.{" "}
                     <Link 
                       href="/privacy" 
                       className="text-primary hover:underline font-medium"
+                      aria-label="Read our Privacy Policy to learn more about cookie usage"
                     >
-                      Learn more
+                      Read our Privacy Policy
                     </Link>
-                    .
+                    {" "}to learn more.
                   </p>
 
                   {/* Action Buttons */}

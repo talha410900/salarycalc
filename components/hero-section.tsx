@@ -136,7 +136,7 @@ export function HeroSection() {
                 <DollarSign className="h-4 w-4 text-primary" />
               </div>
               <div className="text-left">
-                <h3 className="font-semibold text-sm text-foreground">Salary Conversion</h3>
+                <div className="font-semibold text-sm text-foreground">Salary Conversion</div>
                 <p className="text-xs text-muted-foreground">Hourly, monthly, yearly</p>
               </div>
             </div>
@@ -145,7 +145,7 @@ export function HeroSection() {
                 <PieChart className="h-4 w-4 text-primary" />
               </div>
               <div className="text-left">
-                <h3 className="font-semibold text-sm text-foreground">Tax Breakdown</h3>
+                <div className="font-semibold text-sm text-foreground">Tax Breakdown</div>
                 <p className="text-xs text-muted-foreground">Federal & state taxes</p>
               </div>
             </div>
@@ -154,7 +154,7 @@ export function HeroSection() {
                 <TrendingUp className="h-4 w-4 text-primary" />
               </div>
               <div className="text-left">
-                <h3 className="font-semibold text-sm text-foreground">Take-Home Pay</h3>
+                <div className="font-semibold text-sm text-foreground">Take-Home Pay</div>
                 <p className="text-xs text-muted-foreground">Your actual paycheck</p>
               </div>
             </div>

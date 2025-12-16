@@ -173,7 +173,7 @@ export function CalculatorGrid() {
 
                 <CardContent className="p-4 relative z-10">
                   {calc.featured && (
-                    <span className="inline-block text-xs font-semibold text-primary mb-1.5 px-2 py-0.5 bg-primary/10 rounded">
+                    <span className="inline-block text-xs font-semibold text-primary-foreground mb-1.5 px-2 py-0.5 bg-primary rounded">
                       Popular
                     </span>
                   )}
