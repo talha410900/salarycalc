@@ -1,15 +1,18 @@
+'use client'
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Clock, Calendar } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { format } from "date-fns"
-import { getPublishedBlogs } from "@/lib/supabase/server"
 import { Blog } from "@/lib/supabase/types"
 
-export async function GuidesSection() {
-  const blogs = await getPublishedBlogs(3)
+interface GuidesSectionProps {
+  blogs: Blog[]
+}
 
+export function GuidesSection({ blogs }: GuidesSectionProps) {
   // Calculate reading time for blogs
   const blogsWithReadingTime = blogs.map((blog) => {
     const wordCount = blog.content.split(/\s+/).length

@@ -117,7 +117,7 @@ export function BlogFilters({ blogs }: BlogFiltersProps) {
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
 
