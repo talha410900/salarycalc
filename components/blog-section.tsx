@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Calendar } from 'lucide-react'
@@ -13,6 +14,8 @@ interface BlogSectionProps {
 }
 
 export function BlogSection({ blogs }: BlogSectionProps) {
+  const router = useRouter()
+
   if (blogs.length === 0) {
     return null
   }
@@ -63,11 +66,19 @@ export function BlogSection({ blogs }: BlogSectionProps) {
                       )}
                     </div>
                     {blog.category && (
-                      <Link href={`/blog?category=${encodeURIComponent(blog.category)}`} onClick={(e) => e.stopPropagation()}>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          router.push(`/blog?category=${encodeURIComponent(blog.category!)}`)
+                        }}
+                        className="inline-flex"
+                        aria-label={`View category ${blog.category!}`}
+                      >
                         <Badge variant="secondary" className="text-xs">
                           {blog.category}
                         </Badge>
-                      </Link>
+                      </button>
                     )}
                   </div>
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300 mb-2 line-clamp-2">
@@ -81,15 +92,20 @@ export function BlogSection({ blogs }: BlogSectionProps) {
                   {blog.tags && blog.tags.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mb-3">
                       {blog.tags.slice(0, 2).map((tag) => (
-                        <Link 
-                          key={tag} 
-                          href={`/blog?tag=${encodeURIComponent(tag)}`} 
-                          onClick={(e) => e.stopPropagation()}
+                        <button
+                          key={tag}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            router.push(`/blog?tag=${encodeURIComponent(tag)}`)
+                          }}
+                          className="inline-flex"
+                          aria-label={`View tag ${tag}`}
                         >
                           <Badge variant="outline" className="text-xs">
                             {tag}
                           </Badge>
-                        </Link>
+                        </button>
                       ))}
                       {blog.tags.length > 2 && (
                         <Badge variant="outline" className="text-xs">
