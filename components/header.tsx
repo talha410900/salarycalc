@@ -15,6 +15,12 @@ import {
   Wallet,
   Search,
   MapPin,
+  Package,
+  TrendingUp,
+  Home,
+  Briefcase,
+  ShoppingCart,
+  Star,
 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
@@ -32,11 +38,25 @@ const taxCalculators = [
   { icon: Wallet, name: "Take-Home Pay", href: "/calculators/take-home-pay" },
 ]
 
+const popularCalculators = [
+  { icon: Calculator, name: "Payroll Tax Calculator", href: "/calculators/payroll-tax" },
+  { icon: Package, name: "Customs & Import Duty", href: "/calculators/customs-import-duty" },
+  { icon: MapPin, name: "Texas Paycheck", href: "/calculators/texas-paycheck" },
+  { icon: Calculator, name: "AMT Calculator", href: "/calculators/amt" },
+  { icon: TrendingUp, name: "CA Capital Gains", href: "/calculators/ca-capital-gains" },
+  { icon: Home, name: "Real Estate Gains", href: "/calculators/real-estate-capital-gains" },
+  { icon: Briefcase, name: "Self-Employed Tax", href: "/calculators/self-employed-tax" },
+  { icon: ShoppingCart, name: "MN Sales Tax", href: "/calculators/mn-sales-tax" },
+  { icon: ShoppingCart, name: "LA Sales Tax", href: "/calculators/la-sales-tax" },
+  { icon: Package, name: "US Import Tax", href: "/calculators/us-import-tax" },
+]
+
 const popularStates = ["california", "texas", "florida", "new-york", "illinois", "pennsylvania"]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [salaryMenuOpen, setSalaryMenuOpen] = useState(false)
+  const [popularMenuOpen, setPopularMenuOpen] = useState(false)
   const [stateMenuOpen, setStateMenuOpen] = useState(false)
   const [stateSearch, setStateSearch] = useState("")
   const stateMenuRef = useRef<HTMLDivElement>(null)
@@ -112,6 +132,39 @@ export function Header() {
                         </Link>
                       ))}
                     </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Popular Calculators Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setPopularMenuOpen(true)}
+              onMouseLeave={() => setPopularMenuOpen(false)}
+            >
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors">
+                <Star className="h-4 w-4" />
+                Popular
+                <ChevronDown className={`h-4 w-4 transition-transform ${popularMenuOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {popularMenuOpen && (
+                <div className="absolute top-full left-0 mt-1 w-[400px] p-4 bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                    Most Searched Calculators
+                  </div>
+                  <div className="grid grid-cols-2 gap-1">
+                    {popularCalculators.map((calc) => (
+                      <Link
+                        key={calc.name}
+                        href={calc.href}
+                        className="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/50 transition-colors group"
+                      >
+                        <calc.icon className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium text-foreground">{calc.name}</span>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}
@@ -224,6 +277,24 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border/50 animate-in slide-in-from-top-2 duration-200">
             <nav className="flex flex-col gap-1">
+              <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider flex items-center gap-2">
+                <Star className="h-3 w-3" />
+                Popular Calculators
+              </div>
+              {popularCalculators.map((calc) => (
+                <Link
+                  key={calc.name}
+                  href={calc.href}
+                  className="flex items-center gap-3 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <calc.icon className="h-4 w-4 text-primary" />
+                  {calc.name}
+                </Link>
+              ))}
+
+              <div className="h-px bg-border my-2" />
+
               <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Salary Calculators
               </div>

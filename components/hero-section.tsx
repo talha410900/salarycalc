@@ -6,23 +6,30 @@ import {
   PieChart,
   TrendingUp,
   CheckCircle2,
-  Clock,
-  Landmark,
-  Wallet,
   Calculator,
   Search,
   ChevronRight,
+  Package,
+  MapPin,
+  Home,
+  Briefcase,
+  ShoppingCart,
 } from "lucide-react"
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
 
 const quickCalculators = [
-  { icon: Clock, name: "Hourly to Salary", href: "/calculators/hourly-to-salary" },
-  { icon: DollarSign, name: "Salary to Hourly", href: "/calculators/salary-to-hourly" },
-  { icon: Landmark, name: "Federal Tax", href: "/calculators/federal-tax" },
-  { icon: Wallet, name: "Take-Home Pay", href: "/calculators/take-home-pay" },
-  { icon: Calculator, name: "Overtime Pay", href: "/calculators/overtime-pay" },
+  { icon: Calculator, name: "Payroll Tax", href: "/calculators/payroll-tax" },
+  { icon: Package, name: "Customs & Import", href: "/calculators/customs-import-duty" },
+  { icon: MapPin, name: "Texas Paycheck", href: "/calculators/texas-paycheck" },
+  { icon: Calculator, name: "AMT Calculator", href: "/calculators/amt" },
+  { icon: TrendingUp, name: "CA Capital Gains", href: "/calculators/ca-capital-gains" },
+  { icon: Home, name: "Real Estate Gains", href: "/calculators/real-estate-capital-gains" },
+  { icon: Briefcase, name: "Self-Employed Tax", href: "/calculators/self-employed-tax" },
+  { icon: ShoppingCart, name: "MN Sales Tax", href: "/calculators/mn-sales-tax" },
+  { icon: ShoppingCart, name: "LA Sales Tax", href: "/calculators/la-sales-tax" },
+  { icon: Package, name: "US Import Tax", href: "/calculators/us-import-tax" },
 ]
 
 export function HeroSection() {
@@ -107,7 +114,7 @@ export function HeroSection() {
           </div>
 
           {/* Quick Calculator Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 max-w-3xl mx-auto mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 max-w-4xl mx-auto mb-8">
             {quickCalculators.map((calc) => (
               <Link
                 key={calc.name}

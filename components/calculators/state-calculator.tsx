@@ -254,6 +254,66 @@ export function StateCalculator({ stateSlug, stateData }: StateCalculatorProps) 
               </CardContent>
             </Card>
 
+            {/* How It Works Section */}
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">How It Works</CardTitle>
+              </CardHeader>
+              <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+                <p className="text-sm leading-relaxed">
+                  {stateData.type === "None" ? (
+                    <>
+                      Since {stateData.name} has no state income tax, the calculator only deducts federal taxes (federal income tax, Social Security, and Medicare) from your gross income. Federal income tax is calculated using 2025 tax brackets and standard deductions. Social Security tax is 6.2% on wages up to $176,100, and Medicare tax is 1.45% on all wages (plus 0.9% additional Medicare for high earners). Your net take-home pay is your gross income minus these federal taxes only.
+                    </>
+                  ) : stateData.type === "Flat" ? (
+                    <>
+                      The calculator first calculates your federal taxes using 2025 tax brackets and standard deductions. It then calculates {stateData.name} state tax by applying the flat rate of {((stateData.rate || 0) * 100).toFixed(2)}% to your taxable income. Social Security tax (6.2% on first $176,100) and Medicare tax (1.45% on all wages) are also calculated. Your net take-home pay is your gross income minus federal tax, state tax, Social Security, and Medicare.
+                    </>
+                  ) : (
+                    <>
+                      The calculator uses {stateData.name}'s progressive tax brackets to calculate state income tax. Your income is taxed at increasing rates as it passes through each bracket - only the income within each bracket is taxed at that bracket's rate. Federal income tax is calculated separately using 2025 federal brackets and standard deductions. Social Security (6.2% on first $176,100) and Medicare (1.45% on all wages) are also deducted. Your net take-home pay is your gross income minus all these taxes combined.
+                    </>
+                  )}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Formulas Used Section */}
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">Formulas Used</CardTitle>
+              </CardHeader>
+              <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+                <div className="space-y-3 text-sm">
+                  {stateData.type === "None" ? (
+                    <>
+                      <p><strong>Federal Tax:</strong> Taxable Income = Gross Income - Standard Deduction ($15,750 single, $31,500 married). Tax calculated using progressive brackets (10%, 12%, 22%, 24%, 32%, 35%, 37%).</p>
+                      <p><strong>Social Security:</strong> Tax = min(Annual Income, $176,100) × 6.2%</p>
+                      <p><strong>Medicare:</strong> Base = Annual Income × 1.45%. Additional = max(0, Annual Income - $200,000 single or $250,000 married) × 0.9%</p>
+                      <p><strong>State Tax:</strong> $0.00 ({stateData.name} has no state income tax)</p>
+                      <p><strong>Net Pay:</strong> Net Pay = Gross Income - Federal Tax - Social Security - Medicare</p>
+                    </>
+                  ) : stateData.type === "Flat" ? (
+                    <>
+                      <p><strong>Federal Tax:</strong> Taxable Income = Gross Income - Standard Deduction ($15,750 single, $31,500 married). Tax calculated using progressive brackets (10%, 12%, 22%, 24%, 32%, 35%, 37%).</p>
+                      <p><strong>{stateData.name} State Tax:</strong> State Tax = Taxable Income × {((stateData.rate || 0) * 100).toFixed(2)}%</p>
+                      <p><strong>Social Security:</strong> Tax = min(Annual Income, $176,100) × 6.2%</p>
+                      <p><strong>Medicare:</strong> Base = Annual Income × 1.45%. Additional = max(0, Annual Income - $200,000 single or $250,000 married) × 0.9%</p>
+                      <p><strong>Net Pay:</strong> Net Pay = Gross Income - Federal Tax - State Tax - Social Security - Medicare</p>
+                    </>
+                  ) : (
+                    <>
+                      <p><strong>Federal Tax:</strong> Taxable Income = Gross Income - Standard Deduction ($15,750 single, $31,500 married). Tax calculated using progressive brackets (10%, 12%, 22%, 24%, 32%, 35%, 37%).</p>
+                      <p><strong>{stateData.name} State Tax:</strong> Calculated using progressive brackets. For each bracket: Tax = (Income in Bracket) × Bracket Rate. Total State Tax = Sum of all bracket taxes.</p>
+                      <p><strong>Social Security:</strong> Tax = min(Annual Income, $176,100) × 6.2%</p>
+                      <p><strong>Medicare:</strong> Base = Annual Income × 1.45%. Additional = max(0, Annual Income - $200,000 single or $250,000 married) × 0.9%</p>
+                      <p><strong>Net Pay:</strong> Net Pay = Gross Income - Federal Tax - State Tax - Social Security - Medicare</p>
+                    </>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* FAQ Section */}
             <Card>
               <CardHeader className="pb-3">
