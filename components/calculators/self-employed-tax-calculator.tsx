@@ -66,7 +66,7 @@ export function SelfEmployedTaxCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Briefcase className="h-5 w-5" />
-            Self-Employed Tax Calculator 2025
+            Self-Employed Tax Calculator 2025-2026
           </CardTitle>
           <CardDescription>
             Calculates the 15.3% SE tax (Social Security + Medicare) for freelancers and self-employed individuals.
@@ -128,8 +128,8 @@ export function SelfEmployedTaxCalculator() {
         <Info className="h-4 w-4" />
         <AlertDescription>
           Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net profit.
-          Social Security tax applies only to the first $176,100 of taxable earnings in 2025.
-          You can deduct 50% of your SE tax from your federal AGI. This calculator uses 2025 rates.
+          Social Security tax applies only to the first $176,100 of taxable earnings in 2025-2026.
+          You can deduct 50% of your SE tax from your federal AGI. This calculator uses 2025-2026 rates.
         </AlertDescription>
       </Alert>
     </div>

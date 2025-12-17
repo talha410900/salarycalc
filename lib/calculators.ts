@@ -6,6 +6,7 @@ import {
   Home,
   Briefcase,
   ShoppingCart,
+  Receipt,
 } from "lucide-react"
 
 export const heroCalculators = [
@@ -19,5 +20,6 @@ export const heroCalculators = [
   { icon: ShoppingCart, name: "MN Sales Tax", href: "/calculators/mn-sales-tax" },
   { icon: ShoppingCart, name: "LA Sales Tax", href: "/calculators/la-sales-tax" },
   { icon: Package, name: "US Import Tax", href: "/calculators/us-import-tax" },
+  { icon: Receipt, name: "Tax Return & Refund", href: "/calculators/tax-return" },
 ]
 

@@ -117,7 +117,7 @@ export function StateTaxSection() {
             State Tax Calculators
           </h2>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-            Calculate your state income tax for all 50 US states with 2025 tax brackets
+            Calculate your state income tax for all 50 US states with 2025-2026 tax brackets
           </p>
         </div>
 

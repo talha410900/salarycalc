@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
 import { StateCalculator } from "@/components/calculators/state-calculator"
+import { StateCalculatorNav } from "@/components/state-calculator-nav"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${stateData.name} State Tax Calculator 2025 | SalaryCalc`,
-    description: `Calculate your ${stateData.name} state income tax for 2025. ${stateData.notes}`,
+    title: `${stateData.name} State Tax Calculator 2025-2026 | SalaryCalc`,
+    description: `Calculate your ${stateData.name} state income tax for 2025-2026. ${stateData.notes}`,
   }
 }
 
@@ -40,6 +41,9 @@ export default async function StateTaxPage({ params }: PageProps) {
   return (
     <>
       <Header />
+      <div className="container mx-auto px-4 py-8">
+        <StateCalculatorNav stateSlug={stateSlug} stateName={stateData.name} currentType="income-tax" />
+      </div>
       <StateCalculator stateSlug={stateSlug} stateData={stateData} />
       <Footer />
     </>

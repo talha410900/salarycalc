@@ -71,7 +71,7 @@ export function CustomsImportDutyCalculator() {
             Customs & Import Duty Calculator
           </CardTitle>
           <CardDescription>
-            Estimates US import duties based on product value and duty rate. Note: 2025 tariffs may apply.
+            Estimates US import duties based on product value and duty rate. Note: 2025-2026 tariffs may apply.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">

@@ -82,80 +82,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {/* Salary Calculators Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => {
-                if (salaryMenuTimeoutRef.current) {
-                  clearTimeout(salaryMenuTimeoutRef.current)
-                  salaryMenuTimeoutRef.current = null
-                }
-                setSalaryMenuOpen(true)
-              }}
-              onMouseLeave={() => {
-                salaryMenuTimeoutRef.current = setTimeout(() => {
-                  setSalaryMenuOpen(false)
-                }, 150)
-              }}
-            >
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors">
-                Calculators
-                <ChevronDown className={`h-4 w-4 transition-transform ${salaryMenuOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {salaryMenuOpen && (
-                <div 
-                  className="absolute top-full left-0 pt-1 w-[400px]"
-                  onMouseEnter={() => {
-                    if (salaryMenuTimeoutRef.current) {
-                      clearTimeout(salaryMenuTimeoutRef.current)
-                      salaryMenuTimeoutRef.current = null
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    salaryMenuTimeoutRef.current = setTimeout(() => {
-                      setSalaryMenuOpen(false)
-                    }, 150)
-                  }}
-                >
-                  <div className="p-4 bg-card rounded-xl border border-border shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="mb-3">
-                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                      Salary Converters
-                    </div>
-                    <div className="grid grid-cols-2 gap-1">
-                      {salaryCalculators.map((calc) => (
-                        <Link
-                          key={calc.name}
-                          href={calc.href}
-                          className="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/50 transition-colors group"
-                        >
-                          <calc.icon className="h-4 w-4 text-primary" />
-                          <span className="text-sm font-medium text-foreground">{calc.name}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="border-t border-border pt-3">
-                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                      Tax Calculators
-                    </div>
-                    <div className="grid grid-cols-2 gap-1">
-                      {taxCalculators.map((calc) => (
-                        <Link
-                          key={calc.name}
-                          href={calc.href}
-                          className="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary/50 transition-colors group"
-                        >
-                          <calc.icon className="h-4 w-4 text-primary" />
-                          <span className="text-sm font-medium text-foreground">{calc.name}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              )}
-            </div>
+     
 
             {/* Popular Calculators Dropdown */}
             <div
@@ -175,7 +102,7 @@ export function Header() {
             >
               <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors">
                 <Star className="h-4 w-4" />
-                Popular
+                Popular Calculators
                 <ChevronDown className={`h-4 w-4 transition-transform ${popularMenuOpen ? "rotate-180" : ""}`} />
               </button>
 

@@ -58,7 +58,7 @@ export function MNSalesTaxCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <ShoppingCart className="h-5 w-5" />
-            Minnesota Sales Tax Calculator 2025
+            Minnesota Sales Tax Calculator 2025-2026
           </CardTitle>
           <CardDescription>
             Calculates total sales tax for Minnesota (State + Local).
@@ -126,7 +126,7 @@ export function MNSalesTaxCalculator() {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription>
-          Minnesota state sales tax rate is 6.875% for 2025. Local rates vary by city.
+          Minnesota state sales tax rate is 6.875% for 2025-2026. Local rates vary by city.
           Minneapolis has an additional 2.155% local tax, and St. Paul has 2.0%.
           Actual rates may vary by specific location within these cities.
         </AlertDescription>

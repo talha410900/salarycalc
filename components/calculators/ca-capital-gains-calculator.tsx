@@ -9,7 +9,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Info, TrendingUp } from "lucide-react"
 import { formatCurrency } from "@/lib/format"
 
-const CA_BRACKETS_2025_SINGLE = [
+const CA_BRACKETS_2025-2026_SINGLE = [
   { rate: 0.01, up_to: 10756 },
   { rate: 0.02, up_to: 25499 },
   { rate: 0.04, up_to: 40245 },
@@ -21,7 +21,7 @@ const CA_BRACKETS_2025_SINGLE = [
   { rate: 0.123, up_to: Infinity },
 ]
 
-const CA_BRACKETS_2025_MARRIED = [
+const CA_BRACKETS_2025-2026_MARRIED = [
   { rate: 0.01, up_to: 21512 },
   { rate: 0.02, up_to: 50998 },
   { rate: 0.04, up_to: 80490 },
@@ -37,7 +37,7 @@ const MENTAL_HEALTH_SURCHARGE_THRESHOLD = 1000000
 const MENTAL_HEALTH_SURCHARGE_RATE = 0.01
 
 function calculateCATax(taxableIncome: number, filingStatus: string): number {
-  const brackets = filingStatus === "Married Filing Jointly" ? CA_BRACKETS_2025_MARRIED : CA_BRACKETS_2025_SINGLE
+  const brackets = filingStatus === "Married Filing Jointly" ? CA_BRACKETS_2025-2026_MARRIED : CA_BRACKETS_2025-2026_SINGLE
 
   let tax = 0
   let remainingIncome = taxableIncome
@@ -104,7 +104,7 @@ export function CACapitalGainsCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5" />
-            California Capital Gains Tax Calculator 2025
+            California Capital Gains Tax Calculator 2025-2026
           </CardTitle>
           <CardDescription>
             Calculates CA state tax on capital gains (taxed as ordinary income).
@@ -180,7 +180,7 @@ export function CACapitalGainsCalculator() {
         <Info className="h-4 w-4" />
         <AlertDescription>
           California taxes capital gains as ordinary income. There is no special lower rate for long-term capital gains in CA.
-          This calculator uses 2025 California tax brackets. Consult a tax professional for specific advice.
+          This calculator uses 2025-2026 California tax brackets. Consult a tax professional for specific advice.
         </AlertDescription>
       </Alert>
     </div>

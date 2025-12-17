@@ -13,7 +13,7 @@ import {
   calculateSocialSecurity,
   calculateMedicare,
   convertToPayPeriod,
-  STANDARD_DEDUCTIONS_2025,
+  STANDARD_DEDUCTIONS_2025-2026,
 } from "@/lib/tax"
 
 interface Results {
@@ -212,7 +212,7 @@ export function FederalTaxCalculator() {
           <div className="p-4 rounded-xl bg-secondary/50 font-mono text-sm text-foreground space-y-2">
             <p>1. Annualize your gross pay based on pay period</p>
             <p>2. Apply standard deduction to get taxable income</p>
-            <p>3. Calculate federal tax using 2025 progressive brackets</p>
+            <p>3. Calculate federal tax using 2025-2026 progressive brackets</p>
             <p>4. Social Security = Gross × 6.2% (up to wage base)</p>
             <p>5. Medicare = Gross × 1.45%</p>
             <p>6. Convert annual taxes back to your pay period</p>
@@ -248,7 +248,7 @@ export function FederalTaxCalculator() {
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-foreground">Is this exact or an estimate?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                This is a simplified estimate using 2025 tax brackets and standard deductions. Your actual withholding
+                This is a simplified estimate using 2025-2026 tax brackets and standard deductions. Your actual withholding
                 may vary based on W-4 elections, additional deductions, and state/local taxes.
               </AccordionContent>
             </AccordionItem>

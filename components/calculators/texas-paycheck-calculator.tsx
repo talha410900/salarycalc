@@ -31,7 +31,7 @@ export function TexasPaycheckCalculator() {
     // Use annual for calculations
     const annualGross = gross
 
-    // Federal tax brackets 2025
+    // Federal tax brackets 2025-2026
     const STANDARD_DEDUCTIONS = {
       Single: 15750,
       "Married Filing Jointly": 31500,
@@ -190,7 +190,7 @@ export function TexasPaycheckCalculator() {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription>
-          Texas has no state income tax. This calculator shows federal taxes only. Results are estimates for 2025 tax year.
+          Texas has no state income tax. This calculator shows federal taxes only. Results are estimates for 2025-2026 tax year.
         </AlertDescription>
       </Alert>
     </div>

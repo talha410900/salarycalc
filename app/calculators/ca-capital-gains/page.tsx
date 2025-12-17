@@ -6,11 +6,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "California Capital Gains Tax Calculator 2025 | CA Capital Gains Tax",
+  title: "California Capital Gains Tax Calculator 2025-2026 | CA Capital Gains Tax",
   description: "Calculate California state tax on capital gains. CA taxes capital gains as ordinary income with no special lower rate. Free calculator.",
-  keywords: "california capital gains tax, CA capital gains calculator, california tax on gains, capital gains tax california 2025",
+  keywords: "california capital gains tax calculator, CA capital gains calculator, california tax on gains, capital gains tax california 2025-2026",
   openGraph: {
-    title: "California Capital Gains Tax Calculator 2025 | CA Capital Gains Tax",
+    title: "California Capital Gains Tax Calculator 2025-2026 | CA Capital Gains Tax",
     description: "Calculate California state tax on capital gains. CA taxes capital gains as ordinary income.",
   },
 }
@@ -22,7 +22,7 @@ export default function CACapitalGainsPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">California Capital Gains Tax Calculator 2025</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">California Capital Gains Tax Calculator 2025-2026</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Calculates CA state tax on capital gains (taxed as ordinary income).
             </p>
@@ -30,7 +30,7 @@ export default function CACapitalGainsPage() {
 
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
-              Our <strong>California capital gains tax calculator</strong> calculates CA state tax on capital gains for 2025. 
+              Our free <strong>california capital gains tax calculator</strong> calculates CA state tax on capital gains for 2025-2026. 
               California taxes all capital gains as ordinary income (1% to 12.3% brackets). Enter total taxable income, capital gain amount, and filing status for instant CA tax calculations.
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function CACapitalGainsPage() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
-                Unlike the federal government, California taxes all capital gains as ordinary income using the state's progressive tax brackets. The calculator takes your total taxable income (including capital gains), applies California's 2025 tax brackets (ranging from 1% to 12.3%), and calculates your total California tax. If your taxable income exceeds $1,000,000, it also adds the 1% Mental Health Services Tax surcharge. The effective rate shows what percentage of your total income goes to California taxes.
+                Unlike the federal government, California taxes all capital gains as ordinary income using the state's progressive tax brackets. The calculator takes your total taxable income (including capital gains), applies California's 2025-2026 tax brackets (ranging from 1% to 12.3%), and calculates your total California tax. If your taxable income exceeds $1,000,000, it also adds the 1% Mental Health Services Tax surcharge. The effective rate shows what percentage of your total income goes to California taxes.
               </p>
             </CardContent>
           </Card>

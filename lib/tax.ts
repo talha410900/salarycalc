@@ -1,4 +1,4 @@
-// 2025 Federal Tax Brackets (Simplified)
+// 2025-2026 Federal Tax Brackets (Simplified)
 export const FEDERAL_TAX_BRACKETS_2025 = {
   single: [
     { min: 0, max: 11925, rate: 0.1 },
@@ -20,7 +20,7 @@ export const FEDERAL_TAX_BRACKETS_2025 = {
   ],
 }
 
-// Standard deductions 2025
+// Standard deductions 2025-2026
 export const STANDARD_DEDUCTIONS_2025 = {
   single: 15000,
   married: 30000,
@@ -52,7 +52,7 @@ export function calculateFederalTax(annualIncome: number, filingStatus: "single"
 
 // Calculate Social Security tax
 export function calculateSocialSecurity(annualIncome: number): number {
-  const taxableIncome = Math.min(annualIncome, SOCIAL_SECURITY_WAGE_BASE_2025)
+  const taxableIncome = Math.min(annualIncome, SOCIAL_SECURITY_WAGE_BASE_2025-2026)
   return taxableIncome * SOCIAL_SECURITY_RATE
 }
 
@@ -82,7 +82,7 @@ export function calculateArizonaTax(grossPay: number, selectedRate: number): num
   return grossPay * (selectedRate / 100)
 }
 
-// New York state tax brackets (simplified 2025)
+// New York state tax brackets (simplified 2025-2026)
 export const NY_TAX_BRACKETS = {
   single: [
     { min: 0, max: 8500, rate: 0.04 },
@@ -127,7 +127,7 @@ export function calculateNewYorkTax(grossIncome: number, filingStatus: "single" 
   return tax
 }
 
-// North Carolina flat tax rate (2025)
+// North Carolina flat tax rate (2025-2026)
 export const NC_TAX_RATE = 0.045
 
 export function calculateNorthCarolinaTax(grossIncome: number, standardDeduction = 14500): number {

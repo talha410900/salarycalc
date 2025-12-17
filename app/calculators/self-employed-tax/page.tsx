@@ -6,11 +6,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Self-Employed Tax Calculator 2025 | Calculate SE Tax for Freelancers",
+  title: "Self-Employed Tax Calculator 2025-2026 | Calculate SE Tax for Freelancers",
   description: "Calculate the 15.3% self-employment tax (Social Security + Medicare) for freelancers and self-employed individuals. Free SE tax calculator.",
-  keywords: "self employed tax calculator, SE tax calculator, freelancer tax, self employment tax 2025, 1099 tax calculator",
+  keywords: "self employed tax calculator, SE tax calculator, freelancer tax, self employment tax 2025-2026, 1099 tax calculator",
   openGraph: {
-    title: "Self-Employed Tax Calculator 2025 | Calculate SE Tax for Freelancers",
+    title: "Self-Employed Tax Calculator 2025-2026 | Calculate SE Tax for Freelancers",
     description: "Calculate the 15.3% self-employment tax (Social Security + Medicare) for freelancers and self-employed individuals.",
   },
 }
@@ -22,7 +22,7 @@ export default function SelfEmployedTaxPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Self-Employed Tax Calculator 2025</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Self-Employed Tax Calculator 2025-2026</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Calculates the 15.3% SE tax (Social Security + Medicare) for freelancers and self-employed individuals.
             </p>
@@ -30,7 +30,7 @@ export default function SelfEmployedTaxPage() {
 
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
-              Our free <strong>tax calculator self employed</strong> helps freelancers and self-employed individuals calculate SE tax for 2025. 
+              Our free <strong>tax calculator self employed</strong> helps freelancers and self-employed individuals calculate SE tax for 2025-2026. 
               This <strong>self employed tax calculator</strong> calculates 15.3% SE tax (12.4% Social Security, 2.9% Medicare) on 92.35% of net profit. Enter net business profit for instant SE tax calculations.
             </p>
           </div>

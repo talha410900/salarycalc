@@ -1,4 +1,4 @@
-// 2025 State Tax Data for all US States
+// 2025-2026 State Tax Data for all US States
 export type TaxType = "None" | "Flat" | "Graduated"
 
 export interface TaxBracket {
@@ -55,7 +55,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     name: "Arkansas",
     code: "AR",
     type: "Graduated",
-    notes: "Rates reduced for 2025.",
+    notes: "Rates reduced for 2025-2026.",
     brackets: {
       single: [
         { rate: 0.0, threshold: 0 },
@@ -202,7 +202,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     code: "GA",
     type: "Flat",
     rate: 0.0519,
-    notes: "Reduced from 5.39% effective Jan 1, 2025.",
+    notes: "Reduced from 5.39% effective Jan 1, 2025-2026.",
   },
   hawaii: {
     name: "Hawaii",
@@ -245,7 +245,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     code: "ID",
     type: "Flat",
     rate: 0.053,
-    notes: "Retroactively reduced to 5.3% for 2025.",
+    notes: "Retroactively reduced to 5.3% for 2025-2026.",
   },
   illinois: {
     name: "Illinois",
@@ -259,14 +259,14 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     code: "IN",
     type: "Flat",
     rate: 0.03,
-    notes: "Reduced to 3.0% effective Jan 1, 2025.",
+    notes: "Reduced to 3.0% effective Jan 1, 2025-2026.",
   },
   iowa: {
     name: "Iowa",
     code: "IA",
     type: "Flat",
     rate: 0.038,
-    notes: "Transitioned to a flat tax of 3.8% effective Jan 1, 2025.",
+    notes: "Transitioned to a flat tax of 3.8% effective Jan 1, 2025-2026.",
   },
   kansas: {
     name: "Kansas",
@@ -296,13 +296,13 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     code: "LA",
     type: "Flat",
     rate: 0.03,
-    notes: "New flat tax structure effective 2025.",
+    notes: "New flat tax structure effective 2025-2026.",
   },
   maine: {
     name: "Maine",
     code: "ME",
     type: "Graduated",
-    notes: "Inflation-adjusted for 2025.",
+    notes: "Inflation-adjusted for 2025-2026.",
     brackets: {
       single: [
         { rate: 0.058, threshold: 0 },
@@ -371,7 +371,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     name: "Minnesota",
     code: "MN",
     type: "Graduated",
-    notes: "2025 inflation-adjusted brackets.",
+    notes: "2025-2026 inflation-adjusted brackets.",
     brackets: {
       single: [
         { rate: 0.0535, threshold: 0 },
@@ -392,7 +392,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     code: "MS",
     type: "Flat",
     rate: 0.044,
-    notes: "Scheduled reduction to 4.4% for 2025.",
+    notes: "Scheduled reduction to 4.4% for 2025-2026.",
   },
   missouri: {
     name: "Missouri",
@@ -426,7 +426,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     name: "Montana",
     code: "MT",
     type: "Graduated",
-    notes: "Two brackets for 2025.",
+    notes: "Two brackets for 2025-2026.",
     brackets: {
       single: [
         { rate: 0.047, threshold: 0 },
@@ -556,7 +556,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     code: "NC",
     type: "Flat",
     rate: 0.0425,
-    notes: "Decreased to 4.25% for 2025.",
+    notes: "Decreased to 4.25% for 2025-2026.",
   },
   "north-dakota": {
     name: "North Dakota",
@@ -713,7 +713,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     name: "Vermont",
     code: "VT",
     type: "Graduated",
-    notes: "2025 inflation-adjusted brackets.",
+    notes: "2025-2026 inflation-adjusted brackets.",
     brackets: {
       single: [
         { rate: 0.0335, threshold: 0 },
@@ -782,7 +782,7 @@ export const STATE_TAX_DATA: Record<string, StateTaxData> = {
     name: "Wisconsin",
     code: "WI",
     type: "Graduated",
-    notes: "Second bracket expanded for 2025.",
+    notes: "Second bracket expanded for 2025-2026.",
     brackets: {
       single: [
         { rate: 0.035, threshold: 0 },

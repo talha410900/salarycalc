@@ -72,7 +72,7 @@ export function StateCalculator({ stateSlug, stateData }: StateCalculatorProps) 
             </div>
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-foreground">{stateData.name} Tax Calculator</h1>
-              <p className="text-muted-foreground text-sm">2025 Tax Year</p>
+              <p className="text-muted-foreground text-sm">2025-2026 Tax Year</p>
             </div>
           </div>
 
@@ -139,7 +139,7 @@ export function StateCalculator({ stateSlug, stateData }: StateCalculatorProps) 
                 <CardHeader className="pb-3">
                   <CardTitle className="text-sm flex items-center gap-2">
                     <Info className="h-4 w-4 text-primary" />
-                    2025 Tax Brackets ({filingStatus === "single" ? "Single" : "Married"})
+                    2025-2026 Tax Brackets ({filingStatus === "single" ? "Single" : "Married"})
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -263,15 +263,15 @@ export function StateCalculator({ stateSlug, stateData }: StateCalculatorProps) 
                 <p className="text-sm leading-relaxed">
                   {stateData.type === "None" ? (
                     <>
-                      Since {stateData.name} has no state income tax, the calculator only deducts federal taxes (federal income tax, Social Security, and Medicare) from your gross income. Federal income tax is calculated using 2025 tax brackets and standard deductions. Social Security tax is 6.2% on wages up to $176,100, and Medicare tax is 1.45% on all wages (plus 0.9% additional Medicare for high earners). Your net take-home pay is your gross income minus these federal taxes only.
+                      Since {stateData.name} has no state income tax, the calculator only deducts federal taxes (federal income tax, Social Security, and Medicare) from your gross income. Federal income tax is calculated using 2025-2026 tax brackets and standard deductions. Social Security tax is 6.2% on wages up to $176,100, and Medicare tax is 1.45% on all wages (plus 0.9% additional Medicare for high earners). Your net take-home pay is your gross income minus these federal taxes only.
                     </>
                   ) : stateData.type === "Flat" ? (
                     <>
-                      The calculator first calculates your federal taxes using 2025 tax brackets and standard deductions. It then calculates {stateData.name} state tax by applying the flat rate of {((stateData.rate || 0) * 100).toFixed(2)}% to your taxable income. Social Security tax (6.2% on first $176,100) and Medicare tax (1.45% on all wages) are also calculated. Your net take-home pay is your gross income minus federal tax, state tax, Social Security, and Medicare.
+                      The calculator first calculates your federal taxes using 2025-2026 tax brackets and standard deductions. It then calculates {stateData.name} state tax by applying the flat rate of {((stateData.rate || 0) * 100).toFixed(2)}% to your taxable income. Social Security tax (6.2% on first $176,100) and Medicare tax (1.45% on all wages) are also calculated. Your net take-home pay is your gross income minus federal tax, state tax, Social Security, and Medicare.
                     </>
                   ) : (
                     <>
-                      The calculator uses {stateData.name}'s progressive tax brackets to calculate state income tax. Your income is taxed at increasing rates as it passes through each bracket - only the income within each bracket is taxed at that bracket's rate. Federal income tax is calculated separately using 2025 federal brackets and standard deductions. Social Security (6.2% on first $176,100) and Medicare (1.45% on all wages) are also deducted. Your net take-home pay is your gross income minus all these taxes combined.
+                      The calculator uses {stateData.name}'s progressive tax brackets to calculate state income tax. Your income is taxed at increasing rates as it passes through each bracket - only the income within each bracket is taxed at that bracket's rate. Federal income tax is calculated separately using 2025-2026 federal brackets and standard deductions. Social Security (6.2% on first $176,100) and Medicare (1.45% on all wages) are also deducted. Your net take-home pay is your gross income minus all these taxes combined.
                     </>
                   )}
                 </p>
@@ -360,7 +360,7 @@ export function StateCalculator({ stateSlug, stateData }: StateCalculatorProps) 
                   <AccordionItem value="item-4">
                     <AccordionTrigger className="text-sm">What deductions are included?</AccordionTrigger>
                     <AccordionContent className="text-sm text-muted-foreground">
-                      This calculator uses the federal standard deduction for 2025 ($15,000 for single filers, $30,000
+                      This calculator uses the federal standard deduction for 2025-2026 ($15,000 for single filers, $30,000
                       for married filing jointly). State-specific deductions may vary. Consult a tax professional for
                       personalized advice.
                     </AccordionContent>

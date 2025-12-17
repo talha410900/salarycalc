@@ -6,11 +6,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Customs & Import Duty Calculator | US Import Tax Calculator 2025",
+  title: "Customs & Import Duty Calculator | US Import Tax Calculator 2025-2026",
   description: "Estimate US import duties based on product value and duty rate. Calculate total landed cost including MPF fees. Free customs tax calculator.",
   keywords: "customs tax calculator, import duty calculator, US import tax, customs duty, MPF fee, landed cost calculator",
   openGraph: {
-    title: "Customs & Import Duty Calculator | US Import Tax Calculator 2025",
+    title: "Customs & Import Duty Calculator | US Import Tax Calculator 2025-2026",
     description: "Estimate US import duties based on product value and duty rate. Calculate total landed cost including MPF fees.",
   },
 }
@@ -24,7 +24,7 @@ export default function CustomsImportDutyPage() {
           <div className="text-center mb-10">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Customs & Import Duty Calculator</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Estimates US import duties based on product value and duty rate. Note: 2025 tariffs may apply.
+              Estimates US import duties based on product value and duty rate. Note: 2025-2026 tariffs may apply.
             </p>
           </div>
 

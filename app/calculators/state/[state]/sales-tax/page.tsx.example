@@ -1,0 +1,87 @@
+/**
+ * EXAMPLE: State Sales Tax Calculator Page
+ * 
+ * This is an example implementation showing how to create a nested calculator
+ * for a specific state. Copy this structure for other calculator types.
+ * 
+ * File location: app/calculators/state/[state]/sales-tax/page.tsx
+ */
+
+import { notFound } from "next/navigation"
+import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
+import { getStateCalculators, hasCalculatorType, getCalculatorTypeMetadata } from "@/lib/state-calculator-types"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { StateSalesTaxCalculator } from "@/components/calculators/state-sales-tax-calculator"
+import type { Metadata } from "next"
+
+interface PageProps {
+  params: Promise<{ state: string }>
+}
+
+export async function generateStaticParams() {
+  // Only generate params for states that have sales tax calculator
+  return ALL_STATES.filter((state) => 
+    hasCalculatorType(state.slug, "sales-tax")
+  ).map((state) => ({
+    state: state.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { state: stateSlug } = await params
+  const stateData = STATE_TAX_DATA[stateSlug]
+
+  if (!stateData || !hasCalculatorType(stateSlug, "sales-tax")) {
+    return { title: "State Not Found" }
+  }
+
+  const metadata = getCalculatorTypeMetadata("sales-tax")
+
+  return {
+    title: `${stateData.name} ${metadata.name} Calculator 2025-2026 | SalaryCalc`,
+    description: `Calculate ${stateData.name} ${metadata.description.toLowerCase()} for 2025-2026. Free ${stateData.name} ${metadata.name.toLowerCase()} calculator.`,
+    keywords: `${stateData.name.toLowerCase()} ${metadata.slug}, ${stateData.name.toLowerCase()} sales tax calculator, ${stateData.code} sales tax`,
+  }
+}
+
+export default async function StateSalesTaxPage({ params }: PageProps) {
+  const { state: stateSlug } = await params
+  const stateData = STATE_TAX_DATA[stateSlug]
+
+  if (!stateData || !hasCalculatorType(stateSlug, "sales-tax")) {
+    notFound()
+  }
+
+  return (
+    <>
+      <Header />
+      <main className="flex-1 py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {stateData.name} Sales Tax Calculator 2025-2026
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Calculate sales tax for {stateData.name} including state and local rates.
+            </p>
+          </div>
+
+          {/* SEO-focused first paragraph */}
+          <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
+            <p className="text-base leading-relaxed">
+              Our free <strong>{stateData.name.toLowerCase()} sales tax calculator</strong> helps you calculate total sales tax for purchases in {stateData.name}. 
+              This <strong>{stateData.code} sales tax calculator</strong> includes state and local tax rates to give you accurate total tax and purchase price calculations.
+            </p>
+          </div>
+
+          <StateSalesTaxCalculator stateSlug={stateSlug} stateData={stateData} />
+
+          {/* How It Works, Formulas, FAQ sections would go here */}
+        </div>
+      </main>
+      <Footer />
+    </>
+  )
+}
+

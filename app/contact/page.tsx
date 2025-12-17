@@ -142,7 +142,7 @@ export default function ContactPage() {
                     How accurate are the tax calculations?
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Our calculators use the latest IRS tax brackets and state-specific tax rates for 2025. 
+                    Our calculators use the latest IRS tax brackets and state-specific tax rates for 2025-2026. 
                     However, these are estimates and should not replace professional tax advice for complex situations.
                   </p>
                 </div>

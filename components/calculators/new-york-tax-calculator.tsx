@@ -148,7 +148,7 @@ export function NewYorkTaxCalculator() {
         <CardHeader>
           <CardTitle className="text-card-foreground flex items-center gap-2">
             <Info className="h-5 w-5 text-primary" />
-            NY Tax Brackets (2025)
+            NY Tax Brackets (2025-2026)
           </CardTitle>
         </CardHeader>
         <CardContent>

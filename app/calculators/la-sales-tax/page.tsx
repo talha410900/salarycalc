@@ -6,12 +6,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Louisiana Sales Tax Calculator 2025 | LA State Sales Tax",
-  description: "Calculate sales tax for Louisiana with new 2025 rate. Includes state and parish/local rates. Free Louisiana sales tax calculator.",
+  title: "Louisiana Sales Tax Calculator 2025-2026 | LA State Sales Tax",
+  description: "Calculate sales tax for Louisiana with new 2025-2026 rate. Includes state and parish/local rates. Free Louisiana sales tax calculator.",
   keywords: "louisiana sales tax calculator, LA sales tax, louisiana tax calculator, parish tax calculator",
   openGraph: {
-    title: "Louisiana Sales Tax Calculator 2025 | LA State Sales Tax",
-    description: "Calculate sales tax for Louisiana with new 2025 rate. Includes state and parish/local rates.",
+    title: "Louisiana Sales Tax Calculator 2025-2026 | LA State Sales Tax",
+    description: "Calculate sales tax for Louisiana with new 2025-2026 rate. Includes state and parish/local rates.",
   },
 }
 
@@ -22,15 +22,15 @@ export default function LASalesTaxPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Louisiana Sales Tax Calculator 2025</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Louisiana Sales Tax Calculator 2025-2026</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Calculates sales tax for Louisiana (New 2025 Rate).
+              Calculates sales tax for Louisiana (New 2025-2026 Rate).
             </p>
           </div>
 
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
-              Our free <strong>Louisiana sales tax calculator</strong> calculates sales tax using the 2025 state rate (5%) plus parish/local rates. 
+              Our free <strong>Louisiana sales tax calculator</strong> calculates sales tax using the 2025-2026 state rate (5%) plus parish/local rates. 
               This <strong>Louisiana tax calculator</strong> combines state and local taxes (often exceeding 10% total). Enter purchase amount and parish rate for instant calculations.
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function LASalesTaxPage() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
-                The calculator multiplies your purchase amount by Louisiana's state sales tax rate (5% for 2025) to calculate state tax. It then adds the parish (county) and local tax rates you specify, which typically range from 4% to 5% or more. The total sales tax is the sum of state and local taxes, and your final price includes the purchase amount plus all taxes. Louisiana has one of the highest combined sales tax rates in the nation.
+                The calculator multiplies your purchase amount by Louisiana's state sales tax rate (5% for 2025-2026) to calculate state tax. It then adds the parish (county) and local tax rates you specify, which typically range from 4% to 5% or more. The total sales tax is the sum of state and local taxes, and your final price includes the purchase amount plus all taxes. Louisiana has one of the highest combined sales tax rates in the nation.
               </p>
             </CardContent>
           </Card>

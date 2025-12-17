@@ -29,7 +29,7 @@ export function LASalesTaxCalculator() {
       return
     }
 
-    const stateTax = purchaseAmount * LA_STATE_RATE_2025
+    const stateTax = purchaseAmount * LA_STATE_RATE_2025-2026
     const localTax = purchaseAmount * parish
     const totalTax = stateTax + localTax
     const totalPrice = purchaseAmount + totalTax
@@ -52,10 +52,10 @@ export function LASalesTaxCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <ShoppingCart className="h-5 w-5" />
-            Louisiana Sales Tax Calculator 2025
+            Louisiana Sales Tax Calculator 2025-2026
           </CardTitle>
           <CardDescription>
-            Calculates sales tax for Louisiana (New 2025 Rate).
+            Calculates sales tax for Louisiana (New 2025-2026 Rate).
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -116,7 +116,7 @@ export function LASalesTaxCalculator() {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription>
-          Louisiana state sales tax rate is 5% for 2025. Parish/local rates vary by location.
+          Louisiana state sales tax rate is 5% for 2025-2026. Parish/local rates vary by location.
           Enter the specific parish rate for your location. Total tax = State (5%) + Parish/Local rate.
         </AlertDescription>
       </Alert>

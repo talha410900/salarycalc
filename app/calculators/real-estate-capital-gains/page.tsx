@@ -6,9 +6,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Real Estate Capital Gains Calculator | Home Sale Tax Calculator",
+  title: "Real Estate Capital Gains Tax Calculator | Home Sale Tax Calculator",
   description: "Estimate tax on home sale considering the primary residence exclusion. Calculate capital gains tax on real estate. Free calculator.",
-  keywords: "real estate capital gains tax, home sale tax calculator, primary residence exclusion, capital gains on home sale",
+  keywords: "real estate capital gains tax calculator, home sale tax calculator, primary residence exclusion, capital gains on home sale",
   openGraph: {
     title: "Real Estate Capital Gains Calculator | Home Sale Tax Calculator",
     description: "Estimate tax on home sale considering the primary residence exclusion. Calculate capital gains tax on real estate.",
@@ -30,7 +30,7 @@ export default function RealEstateCapitalGainsPage() {
 
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
-              Use our <strong>real estate capital gains tax calculator</strong> to estimate federal tax on home sales with primary residence exclusion ($250k single, $500k married). 
+              Our free <strong>real estate capital gains tax calculator</strong> helps you estimate federal tax on home sales with primary residence exclusion ($250k single, $500k married). 
               This <strong>home sale tax calculator</strong> calculates total gain, applies exclusion, and determines taxable gain at long-term capital gains rates (0%, 15%, 20%) plus 3.8% NIIT. Enter sale price, purchase price, and filing status.
             </p>
           </div>

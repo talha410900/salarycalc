@@ -58,7 +58,7 @@ const ADDITIONAL_MEDICARE_THRESHOLD = {
 function calculateFederalTax(annualIncome: number, filingStatus: string): number {
   const deduction = STANDARD_DEDUCTIONS_2025[filingStatus as keyof typeof STANDARD_DEDUCTIONS_2025] || 15750
   const taxableIncome = Math.max(0, annualIncome - deduction)
-  const brackets = FEDERAL_BRACKETS_2025[filingStatus as keyof typeof FEDERAL_BRACKETS_2025] || FEDERAL_BRACKETS_2025.single
+  const brackets = FEDERAL_BRACKETS_20252026[filingStatus as keyof typeof FEDERAL_BRACKETS_2025] || FEDERAL_BRACKETS_20252026.single
 
   let tax = 0
   let remainingIncome = taxableIncome
@@ -162,7 +162,7 @@ export function PayrollTaxCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5" />
-            Payroll Tax Calculator (2025)
+            Payroll Tax Calculator (2025-2026)
           </CardTitle>
           <CardDescription>
             Calculate net pay by deducting Federal Tax, Social Security, and Medicare from gross wages.
@@ -264,7 +264,7 @@ export function PayrollTaxCalculator() {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription>
-          This calculator uses 2025 tax brackets and rates. Results are estimates and should not be considered tax advice.
+          This calculator uses 2025-2026 tax brackets and rates. Results are estimates and should not be considered tax advice.
           Consult a tax professional for specific situations.
         </AlertDescription>
       </Alert>

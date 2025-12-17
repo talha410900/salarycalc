@@ -87,7 +87,7 @@ export function NorthCarolinaTaxCalculator() {
 
           <div className="p-3 rounded-lg bg-secondary/50 text-sm text-muted-foreground">
             <p>
-              North Carolina has a flat income tax rate of {(NC_TAX_RATE * 100).toFixed(2)}% (2025). Standard deduction
+              North Carolina has a flat income tax rate of {(NC_TAX_RATE * 100).toFixed(2)}% (2025-2026). Standard deduction
               of $14,500 applied.
             </p>
           </div>

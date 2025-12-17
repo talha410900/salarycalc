@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Texas Paycheck Calculator (No State Tax) | Calculate Take-Home Pay",
-  description: "Calculate take-home pay for Texas residents. Federal taxes only, no state income tax. Free Texas paycheck calculator for 2025.",
+  description: "Calculate take-home pay for Texas residents. Federal taxes only, no state income tax. Free Texas paycheck calculator for 2025-2026.",
   keywords: "texas paycheck calculator, texas tax calculator, texas no state tax, texas take home pay, texas salary calculator",
   openGraph: {
     title: "Texas Paycheck Calculator (No State Tax) | Calculate Take-Home Pay",
@@ -31,7 +31,7 @@ export default function TexasPaycheckPage() {
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
               Our <strong>Texas paycheck tax calculator</strong> calculates net pay for Texas residents with no state income tax. 
-              This free <strong>Texas paycheck calculator</strong> deducts only federal taxes using 2025 brackets. Enter your gross pay and filing status for instant results.
+              This free <strong>Texas paycheck calculator</strong> deducts only federal taxes using 2025-2026 brackets. Enter your gross pay and filing status for instant results.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export default function TexasPaycheckPage() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
-                Since Texas has no state income tax, the calculator only deducts federal taxes from your gross pay. It calculates federal income tax using 2025 brackets and standard deductions, Social Security tax at 6.2% on wages up to $176,100, and Medicare tax at 1.45% on all wages (plus 0.9% additional Medicare for high earners). Your net pay is your gross pay minus these federal taxes only.
+                Since Texas has no state income tax, the calculator only deducts federal taxes from your gross pay. It calculates federal income tax using 2025-2026 brackets and standard deductions, Social Security tax at 6.2% on wages up to $176,100, and Medicare tax at 1.45% on all wages (plus 0.9% additional Medicare for high earners). Your net pay is your gross pay minus these federal taxes only.
               </p>
             </CardContent>
           </Card>

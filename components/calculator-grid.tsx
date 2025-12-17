@@ -6,7 +6,7 @@ const calculators = [
   {
     icon: Calculator,
     title: "Payroll Tax Calculator",
-    description: "Calculate net pay after all taxes (2025)",
+    description: "Calculate net pay after all taxes (2025-2026)",
     href: "/calculators/payroll-tax",
     iconColor: "text-blue-600",
     iconBg: "bg-blue-500/10",
@@ -33,7 +33,7 @@ const calculators = [
   {
     icon: Calculator,
     title: "AMT Calculator",
-    description: "Alternative Minimum Tax for 2025",
+    description: "Alternative Minimum Tax for 2025-2026",
     href: "/calculators/amt",
     iconColor: "text-indigo-600",
     iconBg: "bg-indigo-500/10",
@@ -77,7 +77,7 @@ const calculators = [
   {
     icon: ShoppingCart,
     title: "LA Sales Tax",
-    description: "Louisiana sales tax calculator 2025",
+    description: "Louisiana sales tax calculator 2025-2026",
     href: "/calculators/la-sales-tax",
     iconColor: "text-pink-600",
     iconBg: "bg-pink-500/10",

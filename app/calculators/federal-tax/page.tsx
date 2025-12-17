@@ -17,7 +17,7 @@ export default function FederalTaxPage() {
           <div className="text-center mb-10">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Federal Tax Withholding Calculator</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Estimate your federal income tax, Social Security, and Medicare deductions based on 2025 tax brackets.
+              Estimate your federal income tax, Social Security, and Medicare deductions based on 2025-2026 tax brackets.
             </p>
           </div>
           <FederalTaxCalculator />

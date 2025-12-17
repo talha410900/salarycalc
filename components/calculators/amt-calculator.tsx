@@ -9,12 +9,12 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Info, Calculator } from "lucide-react"
 import { formatCurrency } from "@/lib/format"
 
-const AMT_EXEMPTIONS_2025 = {
+const AMT_EXEMPTIONS_2025- = {
   single: 88100,
   married_joint: 137000,
 }
 
-const AMT_PHASEOUT_THRESHOLDS_2025 = {
+const AMT_PHASEOUT_THRESHOLDS_2025- = {
   single: 626350,
   married_joint: 1252700,
 }
@@ -86,10 +86,10 @@ export function AMTCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Calculator className="h-5 w-5" />
-            Alternative Minimum Tax (AMT) Calculator 2025
+            Alternative Minimum Tax (AMT) Calculator 2025-2026
           </CardTitle>
           <CardDescription>
-            Determines if you owe AMT based on 2025 exemption amounts and rates.
+            Determines if you owe AMT based on 2025-2026 exemption amounts and rates.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -169,7 +169,7 @@ export function AMTCalculator() {
         <Info className="h-4 w-4" />
         <AlertDescription>
           You only pay AMT if it exceeds your regular tax liability. Compare the tentative AMT to your regular tax to determine if AMT applies.
-          This calculator uses 2025 AMT exemption amounts and rates. Consult a tax professional for complex situations.
+          This calculator uses 2025-2026 AMT exemption amounts and rates. Consult a tax professional for complex situations.
         </AlertDescription>
       </Alert>
     </div>

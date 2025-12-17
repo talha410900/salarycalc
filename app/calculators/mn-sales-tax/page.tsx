@@ -6,11 +6,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Minnesota Sales Tax Calculator 2025 | MN State Sales Tax",
-  description: "Calculate total sales tax for Minnesota including state and local rates. Free Minnesota sales tax calculator for 2025.",
+  title: "Minnesota Sales Tax Calculator 2025-2026 | MN State Sales Tax",
+  description: "Calculate total sales tax for Minnesota including state and local rates. Free Minnesota sales tax calculator for 2025-2026.",
   keywords: "minnesota sales tax calculator, MN sales tax, minneapolis sales tax, st paul sales tax, minnesota tax calculator",
   openGraph: {
-    title: "Minnesota Sales Tax Calculator 2025 | MN State Sales Tax",
+    title: "Minnesota Sales Tax Calculator 2025-2026 | MN State Sales Tax",
     description: "Calculate total sales tax for Minnesota including state and local rates.",
   },
 }
@@ -22,7 +22,7 @@ export default function MNSalesTaxPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Minnesota Sales Tax Calculator 2025</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Minnesota Sales Tax Calculator 2025-2026</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Calculates total sales tax for Minnesota (State + Local).
             </p>
@@ -30,7 +30,7 @@ export default function MNSalesTaxPage() {
 
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
-              Use our free <strong>Minnesota state sales tax calculator</strong> to calculate total sales tax including state (6.875%) and local rates for 2025. 
+              Use our free <strong>Minnesota state sales tax calculator</strong> to calculate total sales tax including state (6.875%) and local rates for 2025-2026. 
               This <strong>Minnesota sales tax calculator</strong> calculates combined taxes (Minneapolis +2.155%, St. Paul +2.0%). Enter purchase amount and location for instant results.
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function MNSalesTaxPage() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
-                The calculator multiplies your purchase amount by Minnesota's state sales tax rate (6.875% for 2025) to get the state tax. It then adds any applicable local sales tax based on your location (Minneapolis adds 2.155%, St. Paul adds 2.0%, other areas may have different rates). The total sales tax is the sum of state and local taxes, and your final price is the purchase amount plus total tax.
+                The calculator multiplies your purchase amount by Minnesota's state sales tax rate (6.875% for 2025-2026) to get the state tax. It then adds any applicable local sales tax based on your location (Minneapolis adds 2.155%, St. Paul adds 2.0%, other areas may have different rates). The total sales tax is the sum of state and local taxes, and your final price is the purchase amount plus total tax.
               </p>
             </CardContent>
           </Card>

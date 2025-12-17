@@ -4,17 +4,17 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
-import { FEDERAL_TAX_BRACKETS_2025, STANDARD_DEDUCTIONS_2025 } from '@/lib/tax'
+import { FEDERAL_TAX_BRACKETS_2025-2026, STANDARD_DEDUCTIONS_2025-2026 } from '@/lib/tax'
 import { STATE_TAX_DATA, ALL_STATES } from '@/lib/state-tax-data'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 export const metadata: Metadata = {
-  title: '2025 Tax Brackets - Federal & State Income Tax Rates | SalaryCalc',
-  description: 'Complete guide to 2025 federal and state income tax brackets. View tax rates for all 50 states, filing statuses, and income thresholds.',
-  keywords: 'tax brackets 2025, federal tax brackets, state tax brackets, income tax rates, tax calculator',
+  title: '2025-2026 Tax Brackets - Federal & State Income Tax Rates | SalaryCalc',
+  description: 'Complete guide to 2025-2026 federal and state income tax brackets. View tax rates for all 50 states, filing statuses, and income thresholds.',
+  keywords: 'tax brackets 2025-2026, federal tax brackets, state tax brackets, income tax rates, tax calculator',
   openGraph: {
-    title: '2025 Tax Brackets - Federal & State Income Tax Rates',
-    description: 'Complete guide to 2025 federal and state income tax brackets for all US states.',
+    title: '2025-2026 Tax Brackets - Federal & State Income Tax Rates',
+    description: 'Complete guide to 2025-2026 federal and state income tax brackets for all US states.',
     type: 'website',
   },
 }
@@ -45,10 +45,10 @@ export default function TaxBracketsPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-10">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">
-              2025 Tax Brackets
+              2025-2026 Tax Brackets
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              Complete reference guide to federal and state income tax brackets, rates, and thresholds for 2025
+              Complete reference guide to federal and state income tax brackets, rates, and thresholds for 2025-2026
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function TaxBracketsPage() {
             <TabsContent value="federal" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Federal Income Tax Brackets 2025</CardTitle>
+                  <CardTitle>Federal Income Tax Brackets 2025-2026</CardTitle>
                   <p className="text-sm text-muted-foreground mt-2">
                     Standard Deduction: Single - {formatCurrency(STANDARD_DEDUCTIONS_2025.single)}, Married Filing Jointly - {formatCurrency(STANDARD_DEDUCTIONS_2025.married)}
                   </p>

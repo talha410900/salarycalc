@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next"
 import { getPublishedBlogs } from "@/lib/supabase/server"
 import { supabase } from "@/lib/supabase/server"
-import { STATE_TAX_DATA } from "@/lib/state-tax-data"
+import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
+import { hasCalculatorType } from "@/lib/state-calculator-types"
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
@@ -25,6 +26,13 @@ const staticRoutes = [
   "/calculators/mn-sales-tax",
   "/calculators/la-sales-tax",
   "/calculators/us-import-tax",
+  "/calculators/tax-return",
+  "/calculators/mortgage-tax",
+  "/calculators/ny-mortgage-tax",
+  "/calculators/va-property-tax-car",
+  "/calculators/illinois-property-tax",
+  "/calculators/rental-property-capital-gains",
+  "/calculators/nc-capital-gains",
   "/calculators/hourly-to-salary",
   "/calculators/salary-to-hourly",
   "/calculators/monthly-to-yearly",
@@ -60,12 +68,51 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
+  // State income tax calculators (default)
   const stateEntries: MetadataRoute.Sitemap = Object.keys(STATE_TAX_DATA).map((slug) => ({
     url: `${baseUrl}/calculators/state/${slug}`,
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.5,
   }))
+
+  // State withholding calculators
+  const stateWithholdingEntries: MetadataRoute.Sitemap = ALL_STATES.filter((state) =>
+    hasCalculatorType(state.slug, "withholding")
+  ).map((state) => ({
+    url: `${baseUrl}/calculators/state/${state.slug}/withholding`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.5,
+  }))
+
+  // State sales tax calculators
+  const stateSalesTaxEntries: MetadataRoute.Sitemap = ALL_STATES.filter((state) =>
+    hasCalculatorType(state.slug, "sales-tax")
+  ).map((state) => ({
+    url: `${baseUrl}/calculators/state/${state.slug}/sales-tax`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.5,
+  }))
+
+  // State vehicle tax calculators
+  const stateVehicleTaxEntries: MetadataRoute.Sitemap = ALL_STATES.filter((state) =>
+    hasCalculatorType(state.slug, "vehicle-tax")
+  ).map((state) => ({
+    url: `${baseUrl}/calculators/state/${state.slug}/vehicle-tax`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.5,
+  }))
+
+  // Maine excise tax calculator (special route)
+  const maineExciseTaxEntry: MetadataRoute.Sitemap = [{
+    url: `${baseUrl}/calculators/state/maine/excise-tax`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.5,
+  }]
 
   const categoryEntries: MetadataRoute.Sitemap =
     (categories || []).map((category) => ({
@@ -94,6 +141,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticEntries,
     ...stateEntries,
+    ...stateWithholdingEntries,
+    ...stateSalesTaxEntries,
+    ...stateVehicleTaxEntries,
+    ...maineExciseTaxEntry,
     ...categoryEntries,
     ...tagEntries,
     ...blogEntries,
