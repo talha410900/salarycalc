@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const metadata = getCalculatorTypeMetadata("sales-tax")
 
   return {
-    title: `${stateData.name} ${metadata.name} Calculator 2025-2026 | SalaryCalc`,
+    title: `${stateData.name} ${metadata.name} Calculator 2025-2026 | TaxSal`,
     description: `Calculate ${stateData.name} ${metadata.description.toLowerCase()} for 2025-2026. Free ${stateData.name} ${metadata.name.toLowerCase()} calculator.`,
     keywords: `${stateData.name.toLowerCase()} ${metadata.slug}, ${stateData.name.toLowerCase()} sales tax calculator, ${stateData.code} sales tax`,
   }

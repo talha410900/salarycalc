@@ -84,11 +84,11 @@ const blogPosts = [
       "description": "Learn how to calculate your take-home pay and understand all the deductions that affect your paycheck.",
       "author": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "datePublished": new Date().toISOString(),
       "dateModified": new Date().toISOString()
@@ -189,11 +189,11 @@ const blogPosts = [
       "description": "Complete guide to 2025 federal tax brackets, including rates for single and married filers, standard deductions, and tax planning tips.",
       "author": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "datePublished": new Date().toISOString(),
       "dateModified": new Date().toISOString()
@@ -326,11 +326,11 @@ const blogPosts = [
       "description": "Learn how to convert hourly wages to annual salary with step-by-step examples, formulas, and tips for accurate calculations.",
       "author": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "datePublished": new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
       "dateModified": new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString()
@@ -461,11 +461,11 @@ const blogPosts = [
       "description": "Complete guide to the 9 states with no income tax in 2025, including tax implications, cost of living considerations, and relocation tips.",
       "author": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "datePublished": new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days ago
       "dateModified": new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
@@ -620,11 +620,11 @@ const blogPosts = [
       "description": "Learn proven strategies for salary negotiation, including research tips, negotiation scripts, and maximizing your total compensation package.",
       "author": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "SalaryCalc"
+        "name": "TaxSal"
       },
       "datePublished": new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(), // 10 days ago
       "dateModified": new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString()

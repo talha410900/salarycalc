@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { NorthCarolinaTaxCalculator } from "@/components/calculators/north-carolina-tax-calculator"
 
 export const metadata = {
-  title: "North Carolina Tax Calculator | SalaryCalc",
+  title: "North Carolina Tax Calculator | TaxSal",
   description: "Calculate your North Carolina state income tax using the 4.5% flat rate.",
 }
 

@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { FederalTaxCalculator } from "@/components/calculators/federal-tax-calculator"
 
 export const metadata = {
-  title: "Federal Tax Withholding Calculator | SalaryCalc",
+  title: "Federal Tax Withholding Calculator | TaxSal",
   description:
     "Calculate your federal income tax, Social Security, and Medicare withholdings. Estimate your net take-home pay.",
 }

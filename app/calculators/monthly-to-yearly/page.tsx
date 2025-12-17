@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { MonthlyToYearlyCalculator } from "@/components/calculators/monthly-to-yearly-calculator"
 
 export const metadata = {
-  title: "Monthly to Yearly Calculator | SalaryCalc",
+  title: "Monthly to Yearly Calculator | TaxSal",
   description: "Convert your monthly salary to annual income. Calculate weekly and hourly rates too.",
 }
 

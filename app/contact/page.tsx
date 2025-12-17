@@ -10,11 +10,11 @@ import { Mail, MessageSquare, Send } from 'lucide-react'
 import { ContactForm } from '@/components/contact-form'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Get in Touch | SalaryCalc',
+  title: 'Contact Us - Get in Touch | TaxSal',
   description: 'Have questions about our salary and tax calculators? Contact us for support, feedback, or inquiries. We\'re here to help!',
   keywords: 'contact, support, help, feedback, salary calculator support',
   openGraph: {
-    title: 'Contact Us - Get in Touch | SalaryCalc',
+    title: 'Contact Us - Get in Touch | TaxSal',
     description: 'Have questions about our salary and tax calculators? Contact us for support, feedback, or inquiries.',
     type: 'website',
   },
@@ -52,10 +52,10 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <a
-                    href="mailto:support@salarycalc.com"
+                    href="mailto:support@taxsal.com"
                     className="text-primary hover:underline font-medium"
                   >
-                    support@salarycalc.com
+                    support@taxsal.com
                   </a>
                 </CardContent>
               </Card>

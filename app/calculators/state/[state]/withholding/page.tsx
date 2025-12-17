@@ -7,6 +7,8 @@ import { StateWithholdingCalculator } from "@/components/calculators/state-withh
 import { StateCalculatorNav } from "@/components/state-calculator-nav"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { HowItWorksCard } from "@/components/how-it-works-card"
+import { Calculator, TrendingUp } from "lucide-react"
 import type { Metadata } from "next"
 
 interface PageProps {
@@ -175,16 +177,29 @@ export default async function StateWithholdingPage({ params }: PageProps) {
           <StateWithholdingCalculator stateSlug={stateSlug} stateData={stateData} />
 
           {/* How It Works Section */}
-          <Card className="mt-12">
-            <CardHeader>
-              <CardTitle>How It Works</CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none text-muted-foreground">
-              <p className="leading-relaxed">
-                The calculator converts your gross pay to an annual amount based on your pay period. It then calculates federal income tax using progressive tax brackets after applying the standard deduction. {stateData.name} state tax is calculated using {stateData.type === "Flat" ? `a flat rate of ${((stateData.rate || 0) * 100).toFixed(2)}%` : "progressive tax brackets"} based on your filing status. Social Security tax is calculated at 6.2% on income up to $176,100, and Medicare tax is 1.45% on all income, with an additional 0.9% on income above $200,000 (single) or $250,000 (married filing jointly). The total withholding is the sum of all these taxes, and your net pay is your gross pay minus total withholding.
-              </p>
-            </CardContent>
-          </Card>
+          <HowItWorksCard
+            steps={[
+              {
+                number: '01',
+                icon: Calculator,
+                title: 'Enter Your Details',
+                description: `Input your gross pay, pay period, and filing status for ${stateData.name}.`,
+              },
+              {
+                number: '02',
+                icon: Calculator,
+                title: 'Calculate Taxes',
+                description: `We calculate federal tax, ${stateData.name} state tax, Social Security, and Medicare based on 2025-2026 rates.`,
+              },
+              {
+                number: '03',
+                icon: TrendingUp,
+                title: 'View Results',
+                description: 'Get instant breakdown of all taxes and your net take-home pay with detailed insights.',
+              },
+            ]}
+            subtitle={`Calculate your ${stateData.name} payroll withholding taxes in three simple steps`}
+          />
 
           {/* Formulas Used Section */}
           <Card className="mt-6">

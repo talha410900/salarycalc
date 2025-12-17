@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { HourlyToSalaryCalculator } from "@/components/calculators/hourly-to-salary-calculator"
 
 export const metadata = {
-  title: "Hourly to Salary Calculator | SalaryCalc",
+  title: "Hourly to Salary Calculator | TaxSal",
   description:
     "Convert your hourly wage to annual salary. Calculate your yearly income based on hours worked per week.",
 }

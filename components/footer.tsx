@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Calculator } from "lucide-react"
+import { Logo } from "@/components/logo"
 
 export function Footer() {
   return (
@@ -8,14 +8,11 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2 mb-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <Calculator className="h-4 w-4 text-primary-foreground" />
-              </div>
-              <span className="text-lg font-bold text-background">SalaryCalc</span>
+            <Link href="/" className="inline-block mb-3">
+              <Logo size="md" variant="footer" />
             </Link>
             <p className="text-background/60 text-sm leading-relaxed mb-4">
-              Free salary and tax calculators for the United States. Calculate payroll taxes, state taxes, 
+              Free tax and salary calculators for the United States. Calculate payroll taxes, state taxes, 
               capital gains, property taxes, and more with our comprehensive suite of financial tools.
             </p>
             <p className="text-background/50 text-xs leading-relaxed">
@@ -213,9 +210,9 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-background/10 pt-6">
-          <p className="text-xs text-background/50 text-center">
-            © {new Date().getFullYear()} SalaryCalc. All rights reserved. For informational purposes only.
-          </p>
+            <p className="text-xs text-background/50 text-center">
+              © {new Date().getFullYear()} TaxSal. All rights reserved. For informational purposes only.
+            </p>
         </div>
       </div>
     </footer>

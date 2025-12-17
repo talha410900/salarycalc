@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { BiweeklyToAnnualCalculator } from "@/components/calculators/biweekly-to-annual-calculator"
 
 export const metadata = {
-  title: "Bi-Weekly to Annual Salary Calculator | SalaryCalc",
+  title: "Bi-Weekly to Annual Salary Calculator | TaxSal",
   description: "Convert your bi-weekly paycheck to annual salary and monthly equivalent.",
 }
 

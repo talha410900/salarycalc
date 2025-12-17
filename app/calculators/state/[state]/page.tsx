@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${stateData.name} State Tax Calculator 2025-2026 | SalaryCalc`,
+    title: `${stateData.name} State Tax Calculator 2025-2026 | TaxSal`,
     description: `Calculate your ${stateData.name} state income tax for 2025-2026. ${stateData.notes}`,
   }
 }

@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { ArizonaTaxCalculator } from "@/components/calculators/arizona-tax-calculator"
 
 export const metadata = {
-  title: "Arizona State Tax Calculator | SalaryCalc",
+  title: "Arizona State Tax Calculator | TaxSal",
   description: "Calculate your Arizona state income tax withholding using the flat 2.5% rate.",
 }
 

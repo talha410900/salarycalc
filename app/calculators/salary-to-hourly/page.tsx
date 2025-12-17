@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { SalaryToHourlyCalculator } from "@/components/calculators/salary-to-hourly-calculator"
 
 export const metadata = {
-  title: "Salary to Hourly Calculator | SalaryCalc",
+  title: "Salary to Hourly Calculator | TaxSal",
   description:
     "Convert your annual salary to hourly rate. Find out your equivalent hourly wage based on your work schedule.",
 }

@@ -6,10 +6,10 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AlertTriangle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Disclaimer - SalaryCalc',
+  title: 'Disclaimer - TaxSal',
   description: 'Important disclaimer regarding the use of our salary and tax calculators. Read about limitations, accuracy, and professional advice.',
   openGraph: {
-    title: 'Disclaimer - SalaryCalc',
+    title: 'Disclaimer - TaxSal',
     description: 'Important disclaimer regarding the use of our salary and tax calculators.',
   },
 }
@@ -33,7 +33,7 @@ export default function DisclaimerPage() {
             <AlertTriangle className="h-4 w-4 text-amber-600" />
             <AlertTitle className="text-amber-900 dark:text-amber-100">Important Notice</AlertTitle>
             <AlertDescription className="text-amber-800 dark:text-amber-200">
-              The information provided by SalaryCalc is for general informational purposes only. All calculations are estimates and should not be used as the sole basis for financial or tax decisions.
+              The information provided by TaxSal is for general informational purposes only. All calculations are estimates and should not be used as the sole basis for financial or tax decisions.
             </AlertDescription>
           </Alert>
 
@@ -42,7 +42,7 @@ export default function DisclaimerPage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">1. General Information</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The information on this website is provided on an "as is" basis. To the fullest extent permitted by law, SalaryCalc excludes all representations, warranties, obligations, and liabilities arising out of or in connection with this website and the calculators provided.
+                  The information on this website is provided on an "as is" basis. To the fullest extent permitted by law, TaxSal excludes all representations, warranties, obligations, and liabilities arising out of or in connection with this website and the calculators provided.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   While we strive to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.
@@ -94,7 +94,7 @@ export default function DisclaimerPage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">4. No Professional Advice</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The information provided on this website does not constitute financial, tax, legal, or professional advice. SalaryCalc is not a financial advisor, tax preparer, or legal professional.
+                  The information provided on this website does not constitute financial, tax, legal, or professional advice. TaxSal is not a financial advisor, tax preparer, or legal professional.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Before making any financial or tax decisions, you should consult with qualified professionals, including:
@@ -120,7 +120,7 @@ export default function DisclaimerPage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">6. Limitation of Liability</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  In no event will SalaryCalc, its owners, employees, or affiliates be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits, arising out of or in connection with the use of this website or our calculators.
+                  In no event will TaxSal, its owners, employees, or affiliates be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits, arising out of or in connection with the use of this website or our calculators.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   By using our website and calculators, you acknowledge that you understand and agree to these limitations.
@@ -171,7 +171,7 @@ export default function DisclaimerPage() {
                 </p>
                 <div className="bg-muted p-4 rounded-lg">
                   <p className="text-muted-foreground mb-2">
-                    <strong className="text-foreground">Email:</strong> support@salarycalc.com
+                    <strong className="text-foreground">Email:</strong> support@taxsal.com
                   </p>
                   <p className="text-muted-foreground">
                     <strong className="text-foreground">Website:</strong>{' '}

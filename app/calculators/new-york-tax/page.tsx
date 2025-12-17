@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { NewYorkTaxCalculator } from "@/components/calculators/new-york-tax-calculator"
 
 export const metadata = {
-  title: "New York State Tax Calculator | SalaryCalc",
+  title: "New York State Tax Calculator | TaxSal",
   description: "Calculate your New York state income tax using progressive tax brackets.",
 }
 

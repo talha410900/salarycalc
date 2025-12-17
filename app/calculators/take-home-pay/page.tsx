@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { TakeHomePayCalculator } from "@/components/calculators/take-home-pay-calculator"
 
 export const metadata = {
-  title: "Take-Home Pay Calculator | SalaryCalc",
+  title: "Take-Home Pay Calculator | TaxSal",
   description:
     "Calculate your net take-home pay after all tax deductions including federal, state, Social Security, and Medicare.",
 }

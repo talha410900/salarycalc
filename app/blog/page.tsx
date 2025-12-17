@@ -12,17 +12,17 @@ import { Footer } from '@/components/footer'
 import { BlogFilters } from '@/components/blog-filters'
 
 export const metadata: Metadata = {
-  title: 'Blog - Salary & Tax Articles | SalaryCalc',
+  title: 'Blog - Tax & Salary Articles | TaxSal',
   description: 'Expert articles on salary calculations, tax planning, and financial advice. Learn about income taxes, take-home pay, and more.',
   keywords: 'salary blog, tax articles, financial planning, income tax advice',
   openGraph: {
-    title: 'Blog - Salary & Tax Articles | SalaryCalc',
+    title: 'Blog - Tax & Salary Articles | TaxSal',
     description: 'Expert articles on salary calculations, tax planning, and financial advice.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - Salary & Tax Articles | SalaryCalc',
+    title: 'Blog - Tax & Salary Articles | TaxSal',
     description: 'Expert articles on salary calculations, tax planning, and financial advice.',
   },
 }

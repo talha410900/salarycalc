@@ -4,10 +4,10 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - SalaryCalc',
+  title: 'Terms of Service - TaxSal',
   description: 'Read our terms of service to understand the rules and regulations for using our salary and tax calculator services.',
   openGraph: {
-    title: 'Terms of Service - SalaryCalc',
+    title: 'Terms of Service - TaxSal',
     description: 'Read our terms of service to understand the rules and regulations for using our services.',
   },
 }
@@ -32,7 +32,7 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  By accessing and using SalaryCalc ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                  By accessing and using TaxSal ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   These Terms of Service ("Terms") govern your access to and use of our website, calculators, and related services. Please read these Terms carefully before using our Service.
@@ -42,7 +42,7 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">2. Description of Service</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  SalaryCalc provides free online calculators for salary conversions, tax calculations, and financial planning tools. Our services include:
+                  TaxSal provides free online calculators for tax calculations, salary conversions, and financial planning tools. Our services include:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                   <li>Salary and wage conversion calculators</li>
@@ -100,7 +100,7 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">6. Limitation of Liability</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL SALARYCALC, ITS AFFILIATES, OR THEIR RESPECTIVE OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR USE OF THE SERVICE.
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL TAXSAL, ITS AFFILIATES, OR THEIR RESPECTIVE OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR USE OF THE SERVICE.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Our total liability to you for all claims arising from or related to the use of the Service shall not exceed the amount you paid to us, if any, for accessing the Service, or $100, whichever is greater.
@@ -110,7 +110,7 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">7. Intellectual Property</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The Service and its original content, features, and functionality are owned by SalaryCalc and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+                  The Service and its original content, features, and functionality are owned by TaxSal and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   You may not modify, reproduce, distribute, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Service without our prior written consent.
@@ -130,14 +130,14 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">9. Third-Party Links</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our Service may contain links to third-party websites or services that are not owned or controlled by SalaryCalc. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You acknowledge and agree that SalaryCalc shall not be responsible or liable for any damage or loss caused by or in connection with the use of any such content, goods, or services available on or through any such websites or services.
+                  Our Service may contain links to third-party websites or services that are not owned or controlled by TaxSal. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You acknowledge and agree that TaxSal shall not be responsible or liable for any damage or loss caused by or in connection with the use of any such content, goods, or services available on or through any such websites or services.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">10. Indemnification</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  You agree to defend, indemnify, and hold harmless SalaryCalc and its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable attorney's fees, arising out of or in any way connected with your access to or use of the Service, your violation of these Terms, or your violation of any rights of another.
+                  You agree to defend, indemnify, and hold harmless TaxSal and its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable attorney's fees, arising out of or in any way connected with your access to or use of the Service, your violation of these Terms, or your violation of any rights of another.
                 </p>
               </section>
 
@@ -172,7 +172,7 @@ export default function TermsOfServicePage() {
                 </p>
                 <div className="bg-muted p-4 rounded-lg">
                   <p className="text-muted-foreground mb-2">
-                    <strong className="text-foreground">Email:</strong> legal@salarycalc.com
+                    <strong className="text-foreground">Email:</strong> legal@taxsal.com
                   </p>
                   <p className="text-muted-foreground">
                     <strong className="text-foreground">Website:</strong>{' '}

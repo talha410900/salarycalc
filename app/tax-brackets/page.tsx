@@ -9,7 +9,7 @@ import { STATE_TAX_DATA, ALL_STATES } from '@/lib/state-tax-data'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 export const metadata: Metadata = {
-  title: '2025-2026 Tax Brackets - Federal & State Income Tax Rates | SalaryCalc',
+  title: '2025-2026 Tax Brackets - Federal & State Income Tax Rates | TaxSal',
   description: 'Complete guide to 2025-2026 federal and state income tax brackets. View tax rates for all 50 states, filing statuses, and income thresholds.',
   keywords: 'tax brackets 2025-2026, federal tax brackets, state tax brackets, income tax rates, tax calculator',
   openGraph: {

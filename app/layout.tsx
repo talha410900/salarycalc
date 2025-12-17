@@ -20,9 +20,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "SalaryCalc - Salary & Tax Calculator",
+  title: "TaxSal - Free Tax & Salary Calculator",
   description:
-    "Fast, accurate salary & tax calculators for every U.S. state. Calculate your take-home pay, federal tax withholding, and more.",
+    "Fast, accurate tax & salary calculators for every U.S. state. Calculate your take-home pay, federal tax withholding, state taxes, and more.",
     generator: 'v0.app'
 }
 

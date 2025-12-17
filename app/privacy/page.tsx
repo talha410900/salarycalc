@@ -4,10 +4,10 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - SalaryCalc',
+  title: 'Privacy Policy - TaxSal',
   description: 'Read our privacy policy to understand how we collect, use, and protect your information when using our salary and tax calculators.',
   openGraph: {
-    title: 'Privacy Policy - SalaryCalc',
+    title: 'Privacy Policy - TaxSal',
     description: 'Read our privacy policy to understand how we collect, use, and protect your information.',
   },
 }
@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Welcome to SalaryCalc ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
+                  Welcome to TaxSal ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   By using our website, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.
@@ -153,7 +153,7 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="bg-muted p-4 rounded-lg">
                   <p className="text-muted-foreground mb-2">
-                    <strong className="text-foreground">Email:</strong> privacy@salarycalc.com
+                    <strong className="text-foreground">Email:</strong> privacy@taxsal.com
                   </p>
                   <p className="text-muted-foreground">
                     <strong className="text-foreground">Website:</strong>{' '}

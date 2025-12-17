@@ -1,6 +1,22 @@
-import { Search, Calculator, TrendingUp } from 'lucide-react'
+"use client"
 
-const steps = [
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Search, Calculator, TrendingUp } from "lucide-react"
+
+interface Step {
+  number: string
+  icon: typeof Search
+  title: string
+  description: string
+}
+
+interface HowItWorksCardProps {
+  steps?: Step[]
+  title?: string
+  subtitle?: string
+}
+
+const defaultSteps: Step[] = [
   {
     number: '01',
     icon: Search,
@@ -21,19 +37,24 @@ const steps = [
   },
 ]
 
-export function HowItWorksSection() {
+export function HowItWorksCard({ 
+  steps = defaultSteps, 
+  title = "How It Works",
+  subtitle = "Get accurate financial calculations in three simple steps"
+}: HowItWorksCardProps) {
   return (
-    <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 tracking-tight">
-            How It Works
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get accurate financial calculations in three simple steps
+    <Card className="mt-12 border-2">
+      <CardHeader className="text-center pb-8">
+        <CardTitle className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+          {title}
+        </CardTitle>
+        {subtitle && (
+          <p className="text-muted-foreground text-sm md:text-base">
+            {subtitle}
           </p>
-        </div>
-
+        )}
+      </CardHeader>
+      <CardContent className="px-6 pb-8">
         <div className="relative">
           {/* Steps Grid */}
           <div className="grid md:grid-cols-3 gap-8 md:gap-6 relative">
@@ -46,7 +67,7 @@ export function HowItWorksSection() {
                 >
                   {/* Step Icon Circle */}
                   <div className="relative mb-6">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 shadow-sm">
                       <Icon className="w-10 h-10 text-primary" strokeWidth={1.5} />
                     </div>
                     {/* Step Number Badge */}
@@ -56,8 +77,8 @@ export function HowItWorksSection() {
                   </div>
 
                   {/* Step Content */}
-                  <div className="space-y-2 max-w-xs">
-                    <h3 className="text-xl font-bold text-foreground">
+                  <div className="space-y-2 max-w-xs mx-auto">
+                    <h3 className="text-lg font-bold text-foreground">
                       {step.title}
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -69,7 +90,8 @@ export function HowItWorksSection() {
             })}
           </div>
         </div>
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   )
 }
+

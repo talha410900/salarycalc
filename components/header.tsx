@@ -20,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
 import { heroCalculators } from "@/lib/calculators"
+import { Logo } from "@/components/logo"
 
 const salaryCalculators = [
   { icon: Clock, name: "Hourly to Salary", href: "/calculators/hourly-to-salary" },
@@ -72,11 +73,8 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-md">
-              <Calculator className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="text-lg font-bold text-foreground">SalaryCalc</span>
+          <Link href="/" className="group">
+            <Logo size="md" variant="default" />
           </Link>
 
           {/* Desktop Navigation */}

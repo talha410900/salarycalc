@@ -101,7 +101,7 @@ Based on search volume and RPM:
 ## SEO Considerations
 
 ### Metadata Per Calculator Type
-- Title: `{State} {Calculator Type} Calculator 2025-2026 | SalaryCalc`
+- Title: `{State} {Calculator Type} Calculator 2025-2026 | TaxSal`
 - Description: Include state name, calculator type, and year
 - Keywords: `{state} {calculator-type}`, `{state-code} {calculator-type}`
 

@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { OvertimePayCalculator } from "@/components/calculators/overtime-pay-calculator"
 
 export const metadata = {
-  title: "Overtime Pay Calculator | SalaryCalc",
+  title: "Overtime Pay Calculator | TaxSal",
   description: "Calculate your overtime earnings. See your total weekly pay with regular and overtime hours.",
 }
 
