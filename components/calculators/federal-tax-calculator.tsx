@@ -13,7 +13,7 @@ import {
   calculateSocialSecurity,
   calculateMedicare,
   convertToPayPeriod,
-  STANDARD_DEDUCTIONS_2025-2026,
+  STANDARD_DEDUCTIONS_2025,
 } from "@/lib/tax"
 
 interface Results {

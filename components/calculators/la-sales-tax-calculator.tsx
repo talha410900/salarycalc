@@ -29,7 +29,7 @@ export function LASalesTaxCalculator() {
       return
     }
 
-    const stateTax = purchaseAmount * LA_STATE_RATE_2025-2026
+    const stateTax = purchaseAmount * LA_STATE_RATE_2025
     const localTax = purchaseAmount * parish
     const totalTax = stateTax + localTax
     const totalPrice = purchaseAmount + totalTax

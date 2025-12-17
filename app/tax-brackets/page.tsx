@@ -4,7 +4,7 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
-import { FEDERAL_TAX_BRACKETS_2025-2026, STANDARD_DEDUCTIONS_2025-2026 } from '@/lib/tax'
+import { FEDERAL_TAX_BRACKETS_2025, STANDARD_DEDUCTIONS_2025} from '@/lib/tax'
 import { STATE_TAX_DATA, ALL_STATES } from '@/lib/state-tax-data'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 

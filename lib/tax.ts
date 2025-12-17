@@ -52,7 +52,7 @@ export function calculateFederalTax(annualIncome: number, filingStatus: "single"
 
 // Calculate Social Security tax
 export function calculateSocialSecurity(annualIncome: number): number {
-  const taxableIncome = Math.min(annualIncome, SOCIAL_SECURITY_WAGE_BASE_2025-2026)
+  const taxableIncome = Math.min(annualIncome, SOCIAL_SECURITY_WAGE_BASE_2025)
   return taxableIncome * SOCIAL_SECURITY_RATE
 }
 
