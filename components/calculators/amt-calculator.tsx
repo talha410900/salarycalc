@@ -9,12 +9,12 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Info, Calculator } from "lucide-react"
 import { formatCurrency } from "@/lib/format"
 
-const AMT_EXEMPTIONS_2025- = {
+const AMT_EXEMPTIONS_2025 = {
   single: 88100,
   married_joint: 137000,
 }
 
-const AMT_PHASEOUT_THRESHOLDS_2025- = {
+const AMT_PHASEOUT_THRESHOLDS_2025 = {
   single: 626350,
   married_joint: 1252700,
 }
