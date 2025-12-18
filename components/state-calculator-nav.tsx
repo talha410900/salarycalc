@@ -35,7 +35,7 @@ export function StateCalculatorNav({ stateSlug, stateName, currentType = "income
   }
 
   return (
-    <Card className="mb-8">
+    <Card className="mb-0">
       <CardHeader>
         <CardTitle>{stateName} Tax Calculators</CardTitle>
         <CardDescription>

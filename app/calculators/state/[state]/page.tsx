@@ -41,7 +41,7 @@ export default async function StateTaxPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 pb-0">
         <StateCalculatorNav stateSlug={stateSlug} stateName={stateData.name} currentType="income-tax" />
       </div>
       <StateCalculator stateSlug={stateSlug} stateData={stateData} />

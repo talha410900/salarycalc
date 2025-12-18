@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { FAQSchema } from '@/components/faq-schema'
 
 const faqs = [
   {
@@ -39,6 +40,9 @@ const faqs = [
 export function FAQSection() {
   return (
     <section className="py-10 bg-background">
+      {/* FAQ Schema Markup */}
+      <FAQSchema faqs={faqs} />
+      
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">

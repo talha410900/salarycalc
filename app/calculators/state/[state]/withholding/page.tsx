@@ -8,6 +8,7 @@ import { StateCalculatorNav } from "@/components/state-calculator-nav"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { HowItWorksCard } from "@/components/how-it-works-card"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 interface PageProps {
@@ -97,8 +98,27 @@ export default async function StateWithholdingPage({ params }: PageProps) {
     notFound()
   }
 
+  // FAQ data for schema
+  const faqData = [
+    {
+      question: 'What is payroll withholding tax?',
+      answer: 'Payroll withholding tax is the amount your employer deducts from your paycheck to cover your estimated federal and state income taxes, Social Security, and Medicare taxes. These withholdings are sent to the IRS and state tax authorities on your behalf. At tax time, you\'ll file a return to reconcile what was withheld versus what you actually owe.',
+    },
+    {
+      question: 'How can I adjust my withholding?',
+      answer: 'You can adjust your withholding by submitting a new W-4 form to your employer. The W-4 form allows you to claim allowances, specify additional withholding amounts, or request that less tax be withheld. If you consistently receive large refunds, you may want to reduce your withholding. If you owe taxes each year, you may want to increase your withholding or make estimated tax payments.',
+    },
+    {
+      question: 'When should I review my withholding?',
+      answer: 'You should review your withholding whenever you experience a major life change, such as getting married or divorced, having a child, buying a home, changing jobs, or experiencing significant changes in income. You should also review it at the beginning of each tax year to ensure your withholdings align with your expected tax liability. The IRS recommends using their Tax Withholding Estimator tool to check your withholding mid-year.',
+    },
+  ]
+
   return (
     <div className="min-h-screen flex flex-col">
+      {/* FAQ Schema */}
+      <FAQSchema faqs={faqData} />
+      
       <Header />
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -249,6 +269,8 @@ export default async function StateWithholdingPage({ params }: PageProps) {
               </Accordion>
             </CardContent>
           </Card>
+          
+          {/* FAQ Schema is already added at the top of the component */}
         </div>
       </main>
       <Footer />
