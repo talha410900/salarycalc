@@ -8,7 +8,6 @@ import { StateCalculatorNav } from "@/components/state-calculator-nav"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { HowItWorksCard } from "@/components/how-it-works-card"
-import { Calculator, TrendingUp } from "lucide-react"
 import type { Metadata } from "next"
 
 interface PageProps {
@@ -181,19 +180,19 @@ export default async function StateWithholdingPage({ params }: PageProps) {
             steps={[
               {
                 number: '01',
-                icon: Calculator,
+                icon: 'Calculator',
                 title: 'Enter Your Details',
                 description: `Input your gross pay, pay period, and filing status for ${stateData.name}.`,
               },
               {
                 number: '02',
-                icon: Calculator,
+                icon: 'Calculator',
                 title: 'Calculate Taxes',
                 description: `We calculate federal tax, ${stateData.name} state tax, Social Security, and Medicare based on 2025-2026 rates.`,
               },
               {
                 number: '03',
-                icon: TrendingUp,
+                icon: 'TrendingUp',
                 title: 'View Results',
                 description: 'Get instant breakdown of all taxes and your net take-home pay with detailed insights.',
               },

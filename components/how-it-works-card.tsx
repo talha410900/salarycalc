@@ -1,11 +1,11 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Search, Calculator, TrendingUp } from "lucide-react"
+import { Search, Calculator, TrendingUp, type LucideIcon } from "lucide-react"
 
 interface Step {
   number: string
-  icon: typeof Search
+  icon: string // Icon name as string (e.g., "Calculator", "Search", "TrendingUp")
   title: string
   description: string
 }
@@ -16,22 +16,29 @@ interface HowItWorksCardProps {
   subtitle?: string
 }
 
+// Icon mapping - maps string names to actual icon components
+const iconMap: Record<string, LucideIcon> = {
+  Search,
+  Calculator,
+  TrendingUp,
+}
+
 const defaultSteps: Step[] = [
   {
     number: '01',
-    icon: Search,
+    icon: 'Search',
     title: 'Choose Your Calculator',
     description: 'Select from our range of tax and salary calculators based on your needs.',
   },
   {
     number: '02',
-    icon: Calculator,
+    icon: 'Calculator',
     title: 'Enter Your Information',
     description: 'Input your salary, hourly rate, or other relevant financial details.',
   },
   {
     number: '03',
-    icon: TrendingUp,
+    icon: 'TrendingUp',
     title: 'Get Instant Results',
     description: 'Receive accurate calculations with detailed breakdowns and insights.',
   },
@@ -59,7 +66,7 @@ export function HowItWorksCard({
           {/* Steps Grid */}
           <div className="grid md:grid-cols-3 gap-8 md:gap-6 relative">
             {steps.map((step, index) => {
-              const Icon = step.icon
+              const Icon = iconMap[step.icon] || Calculator // Fallback to Calculator if icon not found
               return (
                 <div
                   key={step.number}
