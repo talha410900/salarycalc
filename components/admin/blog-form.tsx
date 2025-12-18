@@ -31,9 +31,10 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { toast } from 'sonner'
-import { Save, Eye, X, Plus } from 'lucide-react'
+import { Save, Eye, X, Plus, HelpCircle } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Category, Tag } from '@/lib/supabase/types'
+import { SEOChecklist } from './seo-checklist'
 import {
   Command,
   CommandEmpty,
@@ -49,6 +50,7 @@ import {
 } from '@/components/ui/popover'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Checkbox } from '@/components/ui/checkbox'
 
 const blogSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -101,6 +103,8 @@ export function BlogForm({ blog }: BlogFormProps) {
   const [newCategoryName, setNewCategoryName] = useState('')
   const [newCategoryDesc, setNewCategoryDesc] = useState('')
   const [showNewCategory, setShowNewCategory] = useState(false)
+  const [focusKeyword, setFocusKeyword] = useState('')
+  const [isPillarContent, setIsPillarContent] = useState(false)
 
   const form = useForm<BlogFormValues>({
     resolver: zodResolver(blogSchema),
@@ -315,6 +319,7 @@ export function BlogForm({ blog }: BlogFormProps) {
   }
 
   return (
+    <>
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <Tabs defaultValue="content" className="w-full">
@@ -673,6 +678,41 @@ export function BlogForm({ blog }: BlogFormProps) {
           </TabsContent>
 
           <TabsContent value="seo" className="space-y-4">
+            {/* Focus Keyword Input */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Focus Keyword</CardTitle>
+                <CardDescription>Enter your primary keyword for SEO analysis</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Input
+                    value={focusKeyword}
+                    onChange={(e) => setFocusKeyword(e.target.value)}
+                    placeholder="e.g., online dl check by cnic"
+                    className="max-w-md"
+                  />
+                  <p className="text-xs text-muted-foreground mt-2">
+                    This keyword will be used to analyze your content for SEO optimization.
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="pillar-content"
+                    checked={isPillarContent}
+                    onCheckedChange={(checked) => setIsPillarContent(checked === true)}
+                  />
+                  <label
+                    htmlFor="pillar-content"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                  >
+                    This post is Pillar Content
+                  </label>
+                  <HelpCircle className="h-3 w-3 text-muted-foreground" />
+                </div>
+              </CardContent>
+            </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle>SEO Settings</CardTitle>
@@ -741,7 +781,7 @@ export function BlogForm({ blog }: BlogFormProps) {
                     <FormItem>
                       <FormLabel>Canonical URL</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="https://yoursite.com/blog/post-slug" />
+                        <Input {...field} placeholder="https://taxsal.com/blog/post-slug" />
                       </FormControl>
                       <FormDescription>
                         Preferred URL if content is duplicated elsewhere
@@ -982,6 +1022,20 @@ export function BlogForm({ blog }: BlogFormProps) {
         </div>
       </form>
     </Form>
+
+    {/* SEO Checklist Widget - Fixed on bottom right */}
+    {focusKeyword && (
+      <SEOChecklist
+        focusKeyword={focusKeyword}
+        title={form.watch('title')}
+        metaTitle={form.watch('meta_title') || ''}
+        metaDescription={form.watch('meta_description') || ''}
+        slug={form.watch('slug')}
+        content={content}
+        excerpt={form.watch('excerpt') || ''}
+      />
+    )}
+  </>
   )
 }
 

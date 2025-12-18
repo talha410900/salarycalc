@@ -708,7 +708,7 @@ async function seedBlogs() {
   console.log('\n✨ Blog seeding completed!')
   console.log(`📊 Summary: ${inserted} inserted, ${updated} updated`)
   console.log(`\nYou can view your blogs at:`)
-  console.log(`- Blog List: http://localhost:3000/blog`)
+  console.log(`- Blog List: https://taxsal.com/blog`)
 }
 
 // Run the seed function

@@ -374,7 +374,7 @@ export function RichTextEditor({
                   type="text"
                   value={imageUrl}
                   onChange={(e) => setImageUrl(e.target.value)}
-                  placeholder="https://example.com/image.jpg"
+                  placeholder="https://taxsal.com/image.jpg"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       handleImageUrlSubmit()

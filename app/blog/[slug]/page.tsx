@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const title = blog.meta_title || blog.og_title || blog.title
   const description = blog.meta_description || blog.og_description || blog.excerpt || blog.title
   const image = blog.og_image || blog.twitter_image || blog.featured_image
-  const canonicalUrl = blog.canonical_url || `https://yoursite.com/blog/${blog.slug}`
+  const canonicalUrl = blog.canonical_url || `https://taxsal.com/blog/${blog.slug}`
 
   const metadata: Metadata = {
     title,
