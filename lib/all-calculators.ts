@@ -16,7 +16,7 @@ import {
   Car,
 } from "lucide-react"
 import { ALL_STATES } from "@/lib/state-tax-data"
-import { STATE_CALCULATOR_CONFIG, getStateCalculatorUrl, type StateCalculatorType } from "@/lib/state-calculator-types"
+import { STATE_CALCULATOR_CONFIG, STATE_WITHHOLDING_KEYWORDS, getStateCalculatorUrl, type StateCalculatorType } from "@/lib/state-calculator-types"
 
 export interface CalculatorItem {
   name: string
@@ -131,151 +131,143 @@ const salaryCalculators: CalculatorItem[] = [
   },
 ]
 
-// Capital Gains Calculators
+// Capital Gains / Investment Calculators - EXACT keywords from priority list
 const capitalGainsCalculators: CalculatorItem[] = [
   {
     name: "California Capital Gains Tax Calculator",
     href: "/calculators/ca-capital-gains",
-    category: "Capital Gains",
+    category: "Capital Gains / Investment",
     icon: TrendingUp,
-    description: "California capital gains tax",
-    keywords: ["california", "ca", "capital gains", "capital gains tax", "investment"],
+    description: "California capital gains tax calculator",
+    keywords: ["california capital gains tax calculator", "california", "ca", "capital gains", "capital gains tax", "investment"],
+  },
+  {
+    name: "Capital Gains Tax Calculator on Rental Property",
+    href: "/calculators/rental-property-capital-gains",
+    category: "Capital Gains / Investment",
+    icon: Home,
+    description: "Capital gains tax calculator on rental property",
+    keywords: ["capital gains tax calculator on rental property", "rental property capital gains", "rental property", "rental", "investment property", "capital gains"],
+  },
+  {
+    name: "Real Estate Capital Gains Tax Calculator",
+    href: "/calculators/real-estate-capital-gains",
+    category: "Capital Gains / Investment",
+    icon: Home,
+    description: "Real estate capital gains tax calculator",
+    keywords: ["real estate capital gains tax calculator", "real estate", "home sale", "property sale", "capital gains", "primary residence"],
   },
   {
     name: "North Carolina Capital Gains Tax Calculator",
     href: "/calculators/nc-capital-gains",
-    category: "Capital Gains",
+    category: "Capital Gains / Investment",
     icon: TrendingUp,
-    description: "NC capital gains tax",
-    keywords: ["north carolina", "nc", "capital gains", "capital gains tax", "investment"],
-  },
-  {
-    name: "Real Estate Capital Gains Calculator",
-    href: "/calculators/real-estate-capital-gains",
-    category: "Capital Gains",
-    icon: Home,
-    description: "Home sale capital gains calculator",
-    keywords: ["real estate", "home sale", "property sale", "capital gains", "primary residence"],
-  },
-  {
-    name: "Rental Property Capital Gains Calculator",
-    href: "/calculators/rental-property-capital-gains",
-    category: "Capital Gains",
-    icon: Home,
-    description: "Capital gains tax on rental property",
-    keywords: ["rental property", "rental", "investment property", "capital gains", "depreciation"],
+    description: "North Carolina capital gains tax calculator",
+    keywords: ["north carolina capital gains tax calculator", "north carolina", "nc", "capital gains", "capital gains tax", "investment"],
   },
 ]
 
-// Property & Mortgage Calculators
+// Property & Mortgage Calculators - EXACT keywords from priority list
 const propertyMortgageCalculators: CalculatorItem[] = [
   {
-    name: "Mortgage Tax Calculator",
+    name: "Tax Mortgage Calculator",
     href: "/calculators/mortgage-tax",
-    category: "Property & Mortgage",
+    category: "Property / Mortgage",
     icon: Home,
-    description: "Calculate mortgage recording tax",
-    keywords: ["mortgage", "mortgage tax", "recording tax", "loan"],
+    description: "Tax mortgage calculator",
+    keywords: ["tax mortgage calculator", "mortgage tax", "recording tax", "loan"],
   },
   {
     name: "NY Mortgage Tax Calculator",
     href: "/calculators/ny-mortgage-tax",
-    category: "Property & Mortgage",
+    category: "Property / Mortgage",
     icon: Home,
-    description: "New York mortgage recording tax",
-    keywords: ["new york", "ny", "nyc", "mortgage tax", "mortgage"],
+    description: "NY mortgage tax calculator",
+    keywords: ["ny mortgage tax calculator", "new york mortgage tax", "new york", "ny", "nyc", "mortgage tax"],
   },
   {
     name: "VA Property Tax Car Calculator",
     href: "/calculators/va-property-tax-car",
-    category: "Property & Mortgage",
+    category: "Property / Mortgage",
     icon: Car,
-    description: "Virginia vehicle property tax",
-    keywords: ["virginia", "va", "property tax", "car", "vehicle", "auto"],
+    description: "VA property tax car calculator",
+    keywords: ["va property tax car calculator", "virginia property tax car", "virginia", "va", "property tax", "car", "vehicle"],
   },
   {
-    name: "Illinois Property Tax Calculator",
+    name: "Property Tax in Illinois Calculator",
     href: "/calculators/illinois-property-tax",
-    category: "Property & Mortgage",
+    category: "Property / Mortgage",
     icon: Home,
-    description: "Property tax for Illinois real estate",
-    keywords: ["illinois", "il", "property tax", "real estate", "home"],
+    description: "Property tax in Illinois calculator",
+    keywords: ["property tax in illinois calculator", "illinois property tax", "illinois", "il", "property tax", "real estate"],
   },
 ]
 
-// Sales & Vehicle Tax Calculators
+// Sales & Vehicle Tax Calculators - EXACT keywords from priority list
 const salesVehicleCalculators: CalculatorItem[] = [
   {
-    name: "Tennessee Car Sales Tax Calculator",
+    name: "TN Car Sales Tax Calculator",
     href: "/calculators/state/tennessee/sales-tax",
-    category: "Sales & Vehicle Tax",
+    category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
-    description: "TN car sales tax",
-    keywords: ["tennessee", "tn", "car sales tax", "auto sales tax", "sales tax"],
+    description: "TN car sales tax calculator",
+    keywords: ["tn car sales tax calculator", "tennessee car sales tax", "tn sales tax calculator auto", "tennessee", "tn", "car sales tax", "auto sales tax"],
   },
   {
-    name: "Maryland Sales Tax Calculator",
+    name: "TN Sales Tax Calculator Auto",
+    href: "/calculators/state/tennessee/sales-tax",
+    category: "Sales / Vehicle / Excise (Golden)",
+    icon: ShoppingCart,
+    description: "TN sales tax calculator auto",
+    keywords: ["tn sales tax calculator auto", "tn car sales tax calculator", "tennessee", "tn", "sales tax", "auto"],
+  },
+  {
+    name: "MD Sales Tax Calculator",
     href: "/calculators/state/maryland/sales-tax",
-    category: "Sales & Vehicle Tax",
+    category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
     description: "MD sales tax calculator",
-    keywords: ["maryland", "md", "sales tax"],
-  },
-  {
-    name: "Texas Auto Sales Tax Calculator",
-    href: "/calculators/state/texas/sales-tax",
-    category: "Sales & Vehicle Tax",
-    icon: ShoppingCart,
-    description: "TX auto sales tax",
-    keywords: ["texas", "tx", "auto sales tax", "car sales tax", "sales tax"],
+    keywords: ["md sales tax calculator", "maryland sales tax", "maryland", "md", "sales tax"],
   },
   {
     name: "Nebraska Car Sales Tax Calculator",
     href: "/calculators/state/nebraska/sales-tax",
-    category: "Sales & Vehicle Tax",
+    category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
-    description: "NE car sales tax",
-    keywords: ["nebraska", "ne", "car sales tax", "auto sales tax", "sales tax"],
+    description: "Nebraska car sales tax calculator",
+    keywords: ["nebraska car sales tax calculator", "nebraska", "ne", "car sales tax", "auto sales tax"],
+  },
+  {
+    name: "TX Auto Sales Tax Calculator",
+    href: "/calculators/state/texas/sales-tax",
+    category: "Sales / Vehicle / Excise (Golden)",
+    icon: ShoppingCart,
+    description: "TX auto sales tax calculator",
+    keywords: ["tx auto sales tax calculator", "texas auto sales tax", "texas", "tx", "auto sales tax", "car sales tax"],
   },
   {
     name: "Virginia Vehicle Tax Calculator",
     href: "/calculators/state/virginia/vehicle-tax",
-    category: "Sales & Vehicle Tax",
+    category: "Sales / Vehicle / Excise (Golden)",
     icon: Car,
-    description: "VA vehicle tax",
-    keywords: ["virginia", "va", "vehicle tax", "car tax", "auto tax"],
+    description: "Virginia vehicle tax calculator",
+    keywords: ["virginia vehicle tax calculator", "virginia", "va", "vehicle tax", "car tax", "auto tax"],
   },
   {
-    name: "West Virginia Vehicle Tax Calculator",
+    name: "WV Vehicle Tax Calculator",
     href: "/calculators/state/west-virginia/vehicle-tax",
-    category: "Sales & Vehicle Tax",
+    category: "Sales / Vehicle / Excise (Golden)",
     icon: Car,
-    description: "WV vehicle tax",
-    keywords: ["west virginia", "wv", "vehicle tax", "car tax"],
+    description: "WV vehicle tax calculator",
+    keywords: ["wv vehicle tax calculator", "west virginia vehicle tax", "west virginia", "wv", "vehicle tax", "car tax"],
   },
   {
-    name: "Maine Excise Tax Calculator",
+    name: "State of Maine Excise Tax Calculator",
     href: "/calculators/state/maine/excise-tax",
-    category: "Sales & Vehicle Tax",
+    category: "Sales / Vehicle / Excise (Golden)",
     icon: Receipt,
-    description: "State of Maine excise tax",
-    keywords: ["maine", "me", "excise tax", "vehicle excise"],
-  },
-  {
-    name: "Minnesota Sales Tax Calculator",
-    href: "/calculators/mn-sales-tax",
-    category: "Sales & Vehicle Tax",
-    icon: ShoppingCart,
-    description: "MN sales tax calculator",
-    keywords: ["minnesota", "mn", "sales tax"],
-  },
-  {
-    name: "Louisiana Sales Tax Calculator",
-    href: "/calculators/la-sales-tax",
-    category: "Sales & Vehicle Tax",
-    icon: ShoppingCart,
-    description: "LA sales tax calculator",
-    keywords: ["louisiana", "la", "sales tax"],
+    description: "State of Maine excise tax calculator",
+    keywords: ["state of maine excise tax calculator", "maine excise tax", "maine", "me", "excise tax", "vehicle excise"],
   },
 ]
 
@@ -299,9 +291,12 @@ const importCustomsCalculators: CalculatorItem[] = [
   },
 ]
 
-// State-specific calculators (withholding, etc.)
+// State-specific calculators (withholding, etc.) - EXACT keywords from priority list
 function getStateCalculators(): CalculatorItem[] {
   const stateCalcs: CalculatorItem[] = []
+  
+  // Import keyword mappings
+  const { STATE_WITHHOLDING_KEYWORDS } = require("@/lib/state-calculator-types")
   
   ALL_STATES.forEach((state) => {
     // State income tax (always available)
@@ -314,27 +309,70 @@ function getStateCalculators(): CalculatorItem[] {
       keywords: [state.name.toLowerCase(), state.code.toLowerCase(), "state tax", "income tax", state.slug],
     })
 
-    // Other state calculators
+    // Other state calculators with EXACT keyword matching
     const config = STATE_CALCULATOR_CONFIG[state.slug]
     if (config) {
       config.availableCalculators.forEach((calcType) => {
         if (calcType !== "income-tax") {
           const url = getStateCalculatorUrl(state.slug, calcType)
-          const typeNames: Record<string, string> = {
-            withholding: "Withholding Tax",
-            "sales-tax": "Sales Tax",
-            "vehicle-tax": "Vehicle Tax",
-            "property-tax": "Property Tax",
-          }
           
-          stateCalcs.push({
-            name: `${state.name} ${typeNames[calcType]} Calculator`,
-            href: url,
-            category: "State Tax Calculators",
-            icon: calcType === "withholding" ? Receipt : calcType === "sales-tax" ? ShoppingCart : calcType === "vehicle-tax" ? Car : Home,
-            description: `${state.name} ${typeNames[calcType]}`,
-            keywords: [state.name.toLowerCase(), state.code.toLowerCase(), calcType, typeNames[calcType].toLowerCase()],
-          })
+          // Use exact keywords from priority list
+          if (calcType === "withholding") {
+            const exactKeyword = STATE_WITHHOLDING_KEYWORDS[state.slug] || "withholding tax calculator"
+            let exactName = ""
+            let exactKeywords: string[] = []
+            
+            if (exactKeyword === "paycheck tax calculator") {
+              if (state.slug === "nevada") {
+                exactName = "Paycheck Tax Calculator Nevada"
+                exactKeywords = ["paycheck tax calculator nevada", "nevada paycheck tax", "nv paycheck tax"]
+              } else if (state.slug === "minnesota") {
+                exactName = "MN Paycheck Tax Calculator"
+                exactKeywords = ["mn paycheck tax calculator", "minnesota paycheck tax", "mn paycheck tax"]
+              } else if (state.slug === "pennsylvania") {
+                exactName = "PA Paycheck Tax Calculator"
+                exactKeywords = ["pa paycheck tax calculator", "pennsylvania paycheck tax", "pa paycheck tax"]
+              } else if (state.slug === "michigan") {
+                exactName = "Michigan Paycheck Tax Calculator"
+                exactKeywords = ["michigan paycheck tax calculator", "michigan paycheck tax", "mi paycheck tax"]
+              } else {
+                exactName = `${state.name} Paycheck Tax Calculator`
+                exactKeywords = [`${state.name.toLowerCase()} paycheck tax calculator`, `${state.code.toLowerCase()} paycheck tax calculator`]
+              }
+            } else if (exactKeyword === "payroll tax calculator") {
+              exactName = `${state.name} Payroll Tax Calculator`
+              exactKeywords = [`${state.name.toLowerCase()} payroll tax calculator`, `${state.code.toLowerCase()} payroll tax calculator`]
+            } else {
+              // Maryland: "withholding tax calculator"
+              exactName = `${state.name} Withholding Tax Calculator`
+              exactKeywords = [`${state.name.toLowerCase()} withholding tax calculator`, `${state.code.toLowerCase()} withholding tax calculator`]
+            }
+            
+            stateCalcs.push({
+              name: exactName,
+              href: url,
+              category: "Payroll / Paycheck / Withholding",
+              icon: Receipt,
+              description: exactName.toLowerCase(),
+              keywords: [...exactKeywords, state.name.toLowerCase(), state.code.toLowerCase(), "withholding", "payroll", "paycheck"],
+            })
+          } else {
+            // For other calculator types, use standard naming
+            const typeNames: Record<string, string> = {
+              "sales-tax": "Sales Tax",
+              "vehicle-tax": "Vehicle Tax",
+              "property-tax": "Property Tax",
+            }
+            
+            stateCalcs.push({
+              name: `${state.name} ${typeNames[calcType]} Calculator`,
+              href: url,
+              category: "State Tax Calculators",
+              icon: calcType === "sales-tax" ? ShoppingCart : calcType === "vehicle-tax" ? Car : Home,
+              description: `${state.name} ${typeNames[calcType]}`,
+              keywords: [state.name.toLowerCase(), state.code.toLowerCase(), calcType, typeNames[calcType].toLowerCase()],
+            })
+          }
         }
       })
     }
@@ -375,11 +413,7 @@ export function searchCalculators(query: string): Record<string, CalculatorItem[
     }
   })
 
-  // Limit results per category
-  Object.keys(results).forEach((category) => {
-    results[category] = results[category].slice(0, 5) // Max 5 per category
-  })
-
+  // Don't limit results - show all matching calculators for better SEO
   return results
 }
 

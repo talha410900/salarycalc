@@ -11,9 +11,10 @@ import { heroCalculators } from "@/lib/calculators"
 const categoryIcons: Record<string, typeof Calculator> = {
   "Tax Calculators": Calculator,
   "Salary Calculators": DollarSign,
-  "Capital Gains": TrendingUp,
-  "Property & Mortgage": Home,
-  "Sales & Vehicle Tax": ShoppingCart,
+  "Capital Gains / Investment": TrendingUp,
+  "Property / Mortgage": Home,
+  "Sales / Vehicle / Excise (Golden)": ShoppingCart,
+  "Payroll / Paycheck / Withholding": Receipt,
   "Import & Customs": Package,
   "State Tax Calculators": MapPin,
 }
