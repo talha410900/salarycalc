@@ -5,8 +5,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, Calendar } from 'lucide-react'
-import { format } from 'date-fns'
+import { ArrowRight } from 'lucide-react'
 import { Blog } from '@/lib/supabase/types'
 
 interface BlogSectionProps {
@@ -56,15 +55,7 @@ export function BlogSection({ blogs }: BlogSectionProps) {
                   </div>
                 )}
                 <CardContent className="p-4">
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <Calendar className="h-3 w-3" />
-                      {blog.published_at && (
-                        <time dateTime={blog.published_at}>
-                          {format(new Date(blog.published_at), 'MMM d, yyyy')}
-                        </time>
-                      )}
-                    </div>
+                  <div className="flex items-center justify-end gap-2 mb-2">
                     {blog.category && (
                       <button
                         type="button"

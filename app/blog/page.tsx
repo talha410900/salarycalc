@@ -3,8 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, Calendar } from 'lucide-react'
-import { format } from 'date-fns'
+import { ArrowRight } from 'lucide-react'
 import { getPublishedBlogs } from '@/lib/supabase/server'
 import { Blog } from '@/lib/supabase/types'
 import { Header } from '@/components/header'
@@ -86,15 +85,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                       </div>
                     )}
                     <CardContent className="p-5">
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <Calendar className="h-3 w-3" />
-                          {blog.published_at && (
-                            <time dateTime={blog.published_at}>
-                              {format(new Date(blog.published_at), 'MMM d, yyyy')}
-                            </time>
-                          )}
-                        </div>
+                      <div className="flex items-center justify-end gap-2 mb-3">
                         {blog.category && (
                           <Badge variant="secondary" className="text-xs">
                             {blog.category}

@@ -2,8 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { format } from 'date-fns'
-import { Calendar, Clock, Tag } from 'lucide-react'
+import { Clock, Tag } from 'lucide-react'
 import { getBlogBySlug, getPublishedBlogs } from '@/lib/supabase/server'
 import { Blog } from '@/lib/supabase/types'
 import { Header } from '@/components/header'
@@ -97,14 +96,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </h1>
             
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-              {blog.published_at && (
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  <time dateTime={blog.published_at}>
-                    {format(new Date(blog.published_at), 'MMMM d, yyyy')}
-                  </time>
-                </div>
-              )}
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
                 <span>{readingTime} min read</span>

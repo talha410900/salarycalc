@@ -2,10 +2,9 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Clock, Calendar } from "lucide-react"
+import { ArrowRight, Clock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { format } from "date-fns"
 import { Blog } from "@/lib/supabase/types"
 
 interface GuidesSectionProps {
@@ -67,15 +66,6 @@ export function GuidesSection({ blogs }: GuidesSectionProps) {
                       <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Clock className="h-3 w-3" />
                         <span>{blog.readingTime}</span>
-                        {blog.published_at && (
-                          <>
-                            <span>•</span>
-                            <Calendar className="h-3 w-3" />
-                            <time dateTime={blog.published_at}>
-                              {format(new Date(blog.published_at), 'MMM d')}
-                            </time>
-                          </>
-                        )}
                       </div>
                       {blog.category && (
                         <Link href={`/blog?category=${encodeURIComponent(blog.category)}`} onClick={(e) => e.stopPropagation()}>
