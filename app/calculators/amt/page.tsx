@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { AMTCalculator } from "@/components/calculators/amt-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -71,6 +72,16 @@ export default function AMTPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'What are tax preference items?',
+                  answer: 'Tax preference items are certain deductions and income items that must be added back to calculate AMTI. Common examples include: incentive stock option (ISO) exercise spread (difference between exercise price and fair market value), tax-exempt interest from private activity bonds, accelerated depreciation deductions, certain itemized deductions, and other AMT adjustments. These items reduce regular tax but are added back for AMT calculations.',
+                },
+                {
+                  question: 'Who typically pays AMT?',
+                  answer: 'AMT typically affects high-income taxpayers with significant deductions, tax preference items, or large capital gains. Taxpayers with income over $200,000-$500,000 are more likely to be subject to AMT, especially those with large state and local tax deductions, incentive stock options, or tax-exempt interest. The exemption phaseout begins at $626,350 (single) and $1,252,700 (married) for 2025-2026.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="preference-items">
                   <AccordionTrigger className="text-left font-semibold">What are tax preference items?</AccordionTrigger>

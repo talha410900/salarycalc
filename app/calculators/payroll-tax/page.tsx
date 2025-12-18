@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { PayrollTaxCalculator } from "@/components/calculators/payroll-tax-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -73,6 +74,12 @@ export default function PayrollTaxPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'How accurate are the calculations?',
+                  answer: 'The calculator uses official 2025-2026 federal tax brackets, standard deductions, and FICA rates. Results are estimates and may vary slightly from actual paychecks due to W-4 elections, additional deductions, or state-specific calculations. For exact amounts, consult your payroll department or tax professional.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="accuracy">
                   <AccordionTrigger className="text-left font-semibold">How accurate are the calculations?</AccordionTrigger>

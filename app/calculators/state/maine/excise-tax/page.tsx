@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { MaineExciseTaxCalculator } from "@/components/calculators/maine-excise-tax-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -83,6 +84,16 @@ export default function MaineExciseTaxPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'What is excise tax?',
+                  answer: 'Excise tax is a tax on specific goods, in this case, vehicles. In Maine, excise tax is assessed annually on vehicle registrations and is based on the vehicle\'s MSRP and age. The tax rate decreases as the vehicle gets older, making it more affordable to register older vehicles.',
+                },
+                {
+                  question: 'When is excise tax due?',
+                  answer: 'Excise tax in Maine is typically due annually when you register or renew your vehicle registration. The tax is assessed by your local municipality and must be paid before you can complete your vehicle registration. Contact your local tax assessor\'s office for specific due dates and payment methods.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="what-is-excise-tax">
                   <AccordionTrigger className="text-left font-semibold">What is excise tax?</AccordionTrigger>

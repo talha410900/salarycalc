@@ -7,6 +7,7 @@ import { StateSalesTaxCalculator } from "@/components/calculators/state-sales-ta
 import { StateCalculatorNav } from "@/components/state-calculator-nav"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 interface PageProps {
@@ -195,6 +196,16 @@ export default async function StateSalesTaxPage({ params }: PageProps) {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'What is sales tax?',
+                  answer: 'Sales tax is a consumption tax imposed by state and local governments on the sale of goods and services. The rate varies by state and often includes both a state rate and local rates that vary by city or county. Sales tax is typically collected at the point of sale and remitted to the taxing authority.',
+                },
+                {
+                  question: 'Do local rates apply?',
+                  answer: 'Many states allow cities and counties to impose additional local sales tax on top of the state rate. This calculator uses the state rate as a baseline. For accurate calculations including local rates, check with your local tax authority or use location-specific calculators.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="what-is-sales-tax">
                   <AccordionTrigger className="text-left font-semibold">What is sales tax?</AccordionTrigger>

@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import { Wallet, DollarSign, Info, AlertCircle } from "lucide-react"
 import { formatCurrency } from "@/lib/format"
 import { calculateFederalTax, calculateSocialSecurity, calculateMedicare } from "@/lib/tax"
@@ -314,6 +315,16 @@ export function TakeHomePayCalculator() {
           <CardTitle className="text-card-foreground">Frequently Asked Questions</CardTitle>
         </CardHeader>
         <CardContent>
+          <FAQSchema faqs={[
+            {
+              question: 'What other deductions might I have?',
+              answer: 'This calculator includes the most common deductions. You may also have 401(k) contributions, health insurance premiums, HSA contributions, and other pre-tax deductions that reduce your take-home pay.',
+            },
+            {
+              question: 'How do I know my state tax rate?',
+              answer: 'State tax rates vary. Some states like Texas and Florida have no income tax (0%). Others range from 2% to over 10%. Use our state-specific calculators for more accurate estimates.',
+            },
+          ]} />
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-foreground">What other deductions might I have?</AccordionTrigger>

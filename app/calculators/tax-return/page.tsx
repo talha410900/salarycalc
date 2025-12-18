@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { TaxReturnCalculator } from "@/components/calculators/tax-return-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -73,6 +74,24 @@ export default function TaxReturnPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'What is Adjusted Gross Income (AGI)?',
+                  answer: 'Adjusted Gross Income (AGI) is your total income from all sources minus certain adjustments (also called "above-the-line" deductions). These adjustments include contributions to traditional IRAs, student loan interest, educator expenses, and health savings account contributions. AGI is used to determine your eligibility for various tax credits and deductions, and it serves as the starting point for calculating your taxable income.',
+                },
+                {
+                  question: 'Should I use the standard deduction or itemized deductions?',
+                  answer: 'You should use whichever deduction method gives you the larger deduction amount. The standard deduction is a fixed amount based on your filing status. Itemized deductions include mortgage interest, state and local taxes (SALT), charitable contributions, and medical expenses that exceed a certain threshold. If your itemized deductions exceed the standard deduction for your filing status, you\'ll save more money by itemizing. Most taxpayers use the standard deduction because it\'s simpler and often larger than their itemized deductions.',
+                },
+                {
+                  question: 'When should I file my tax return?',
+                  answer: 'The deadline to file your federal tax return is typically April 15th of the following year. For 2025-2026 taxes, the deadline would be April 15, 2026. If you\'re expecting a refund, you can file as soon as you have all your tax documents (W-2s, 1099s, etc.), usually in late January or early February. If you owe taxes, you still need to file by the deadline, but you can request an extension to file (though you still need to pay any taxes owed by the original deadline to avoid penalties).',
+                },
+                {
+                  question: 'What if I owe taxes? Do I need to make quarterly payments?',
+                  answer: 'If you expect to owe more than $1,000 in taxes for the year (after subtracting withholdings and estimated tax payments), you may need to make quarterly estimated tax payments. This is common for self-employed individuals, freelancers, or those with significant investment income. Quarterly payments are due on April 15, June 15, September 15, and January 15 of the following year. If you\'re an employee with a regular paycheck, you can adjust your W-4 form to have more tax withheld to avoid owing at tax time.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="what-is-agi">
                   <AccordionTrigger className="text-left font-semibold">What is Adjusted Gross Income (AGI)?</AccordionTrigger>

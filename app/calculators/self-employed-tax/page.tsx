@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { SelfEmployedTaxCalculator } from "@/components/calculators/self-employed-tax-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -71,6 +72,16 @@ export default function SelfEmployedTaxPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'Why is only 92.35% of net profit taxed?',
+                  answer: 'The 92.35% multiplier accounts for the fact that employees only pay half of FICA taxes (7.65%), while employers pay the other half. Since self-employed individuals must pay both halves (15.3% total), the IRS allows them to calculate SE tax on 92.35% of net profit, which effectively reduces the tax base to account for the employer portion. This prevents double taxation and makes the self-employment tax equivalent to what employees and employers pay combined.',
+                },
+                {
+                  question: 'Do I need to make quarterly tax payments?',
+                  answer: 'Yes, if you expect to owe $1,000 or more in taxes for the year (including SE tax and income tax), you generally need to make quarterly estimated tax payments. These payments are due on April 15, June 15, September 15, and January 15 of the following year. Failure to make estimated payments or underpayment can result in penalties. Use this calculator to estimate your SE tax, then divide by 4 to determine your quarterly payment amount.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="why-92-35">
                   <AccordionTrigger className="text-left font-semibold">Why is only 92.35% of net profit taxed?</AccordionTrigger>

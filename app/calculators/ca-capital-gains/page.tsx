@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { CACapitalGainsCalculator } from "@/components/calculators/ca-capital-gains-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -69,6 +70,16 @@ export default function CACapitalGainsPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'Why doesn\'t California have a lower capital gains rate?',
+                  answer: 'California is one of the few states that taxes capital gains at the same rate as ordinary income, with no preferential treatment for long-term capital gains. This means California residents pay state tax on capital gains at their regular income tax rate, which can be as high as 13.3% (12.3% top bracket + 1% Mental Health Services Tax) for the highest earners, significantly higher than the federal long-term capital gains rates of 0%, 15%, or 20%.',
+                },
+                {
+                  question: 'How does California capital gains tax compare to federal?',
+                  answer: 'Federal taxes offer preferential long-term capital gains rates (0%, 15%, or 20% depending on income), while California taxes all capital gains as ordinary income at rates from 1% to 12.3% (plus 1% surcharge for income over $1M). This means California residents often pay significantly more state tax on capital gains than federal tax, especially for high-income taxpayers. You\'ll pay both federal and California taxes on your capital gains.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="no-preferential-rate">
                   <AccordionTrigger className="text-left font-semibold">Why doesn't California have a lower capital gains rate?</AccordionTrigger>

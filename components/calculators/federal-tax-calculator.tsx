@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import { DollarSign, Info, AlertCircle, Landmark } from "lucide-react"
 import { formatCurrency } from "@/lib/format"
 import {
@@ -244,6 +245,16 @@ export function FederalTaxCalculator() {
           <CardTitle className="text-card-foreground">Frequently Asked Questions</CardTitle>
         </CardHeader>
         <CardContent>
+          <FAQSchema faqs={[
+            {
+              question: 'Is this exact or an estimate?',
+              answer: 'This is a simplified estimate using 2025-2026 tax brackets and standard deductions. Your actual withholding may vary based on W-4 elections, additional deductions, and state/local taxes.',
+            },
+            {
+              question: 'What about state taxes?',
+              answer: 'This calculator only includes federal taxes. Use our state-specific calculators for Arizona, New York, or North Carolina taxes.',
+            },
+          ]} />
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-foreground">Is this exact or an estimate?</AccordionTrigger>

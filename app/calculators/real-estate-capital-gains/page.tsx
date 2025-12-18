@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { RealEstateCapitalGainsCalculator } from "@/components/calculators/real-estate-capital-gains-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -72,6 +73,16 @@ export default function RealEstateCapitalGainsPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'What qualifies as a primary residence?',
+                  answer: 'To qualify for the primary residence exclusion, you must have owned and used the home as your main residence for at least 2 years out of the 5 years ending on the date of sale. The 2 years don\'t need to be consecutive, but you must meet both the ownership and use tests. You can only claim this exclusion once every 2 years. If you don\'t meet these requirements, the full gain is taxable.',
+                },
+                {
+                  question: 'What counts as improvements?',
+                  answer: 'Improvements are permanent additions or changes that increase your home\'s value, prolong its useful life, or adapt it to new uses. Examples include: room additions, kitchen or bathroom renovations, new roof, new HVAC system, landscaping, new flooring, built-in appliances, and major repairs. Regular maintenance and repairs (like painting, fixing leaks, or replacing broken items) don\'t count as improvements and cannot be added to your basis.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="primary-residence">
                   <AccordionTrigger className="text-left font-semibold">What qualifies as a primary residence?</AccordionTrigger>

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import { Calculator, DollarSign, Info, AlertCircle } from "lucide-react"
 import { formatCurrency } from "@/lib/format"
 import { hourlyToAnnual, hourlyToMonthly, hourlyToWeekly, hourlyToDaily } from "@/lib/salary"
@@ -232,6 +233,20 @@ export function HourlyToSalaryCalculator() {
           <CardTitle className="text-card-foreground">Frequently Asked Questions</CardTitle>
         </CardHeader>
         <CardContent>
+          <FAQSchema faqs={[
+            {
+              question: 'Should I account for paid time off?',
+              answer: 'Yes! If you receive paid time off (PTO), you\'re still earning during those weeks. Use 52 weeks if you have paid vacation, or subtract unpaid weeks from 52 if your employer doesn\'t offer paid leave.',
+            },
+            {
+              question: 'How do I account for overtime?',
+              answer: 'For overtime, use our Overtime Pay Calculator. Overtime is typically paid at 1.5x your regular rate.',
+            },
+            {
+              question: 'Is this my take-home pay?',
+              answer: 'No, this calculator shows your gross salary before taxes and deductions. Use our Take-Home Pay Calculator for net income.',
+            },
+          ]} />
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-foreground">Should I account for paid time off?</AccordionTrigger>
