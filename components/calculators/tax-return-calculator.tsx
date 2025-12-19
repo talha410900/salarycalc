@@ -142,7 +142,7 @@ export function TaxReturnCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Receipt className="h-5 w-5" />
-            Tax Return Calculator & Refund Estimator 2025-2026
+            Tax Return Calculator and Refund Estimator 2025-2026
           </CardTitle>
           <CardDescription>
             Estimate your tax refund or amount owed by calculating your federal income tax based on your income, deductions, and withholdings.

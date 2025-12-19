@@ -3,6 +3,8 @@ import { Footer } from "@/components/footer"
 import { LASalesTaxCalculator } from "@/components/calculators/la-sales-tax-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -64,12 +66,42 @@ export default function LASalesTaxPage() {
             </CardContent>
           </Card>
 
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/mn-sales-tax" className="text-primary hover:underline">
+                  Minnesota Sales Tax Calculator
+                </Link>
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                  Tax Return Calculator
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* FAQ Section */}
           <Card className="mt-6">
             <CardHeader>
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'How do I find my parish tax rate?',
+                  answer: 'Parish (county) and local sales tax rates in Louisiana vary by location and can change. Common rates range from 4% to 5% or more. You can find your specific rate by checking the Louisiana Department of Revenue website, contacting your local tax authority, or checking receipts from local businesses. Some parishes have multiple local tax districts with different rates, so the exact rate may depend on the specific location within the parish.',
+                },
+                {
+                  question: 'Why are Louisiana sales tax rates so high?',
+                  answer: 'Louisiana has a relatively low state rate (5%), but parishes and local jurisdictions add significant additional rates, often 4-5% or more. This results in combined rates frequently exceeding 10%, making Louisiana one of the highest sales tax states in the nation. These local taxes fund parish and municipal services, infrastructure, and special projects. The state\'s reliance on sales tax (rather than income tax) contributes to these higher rates.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="parish-rates">
                   <AccordionTrigger className="text-left font-semibold">How do I find my parish tax rate?</AccordionTrigger>

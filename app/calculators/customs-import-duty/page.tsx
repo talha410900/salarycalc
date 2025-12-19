@@ -3,14 +3,16 @@ import { Footer } from "@/components/footer"
 import { CustomsImportDutyCalculator } from "@/components/calculators/customs-import-duty-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Customs & Import Duty Calculator | US Import Tax Calculator 2025-2026",
+  title: "Customs and Import Duty Calculator | US Import Tax Calculator 2025-2026",
   description: "Estimate US import duties based on product value and duty rate. Calculate total landed cost including MPF fees. Free customs tax calculator.",
   keywords: "customs tax calculator, import duty calculator, US import tax, customs duty, MPF fee, landed cost calculator",
   openGraph: {
-    title: "Customs & Import Duty Calculator | US Import Tax Calculator 2025-2026",
+    title: "Customs and Import Duty Calculator | US Import Tax Calculator 2025-2026",
     description: "Estimate US import duties based on product value and duty rate. Calculate total landed cost including MPF fees.",
   },
 }
@@ -22,7 +24,7 @@ export default function CustomsImportDutyPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Customs & Import Duty Calculator</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Customs and Import Duty Calculator</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Estimates US import duties based on product value and duty rate. Note: 2025-2026 tariffs may apply.
             </p>
@@ -59,9 +61,39 @@ export default function CustomsImportDutyPage() {
                 <p><strong>Import Duty:</strong> Duty = Product Value × (Duty Rate / 100)</p>
                 <p><strong>MPF (Formal Entries ≥$2,500):</strong> MPF = max($31.67, min(Product Value × 0.003464, $614.35))</p>
                 <p><strong>MPF (Informal Entries &lt;$2,500):</strong> MPF = $5</p>
-                <p><strong>Total Duty & Fees:</strong> Total = Duty + MPF</p>
-                <p><strong>Total Landed Cost:</strong> Landed Cost = Product Value + Total Duty + Shipping & Insurance</p>
+                <p><strong>Total Duty and Fees:</strong> Total = Duty + MPF</p>
+                <p><strong>Total Landed Cost:</strong> Landed Cost = Product Value + Total Duty + Shipping and Insurance</p>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/us-import-tax" className="text-primary hover:underline">
+                  US Import Tax Calculator
+                </Link>
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* External Resources */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Additional Resources</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+              <p className="leading-relaxed">
+                For official import duty information, visit <a href="https://www.cbp.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">U.S. Customs and Border Protection (CBP)</a> and the <a href="https://hts.usitc.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Harmonized Tariff Schedule (HTS)</a> database. 
+                The IRS provides information about <a href="https://www.irs.gov/businesses/small-businesses-self-employed/import-taxes" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">import taxes</a>.
+              </p>
             </CardContent>
           </Card>
 
@@ -71,6 +103,16 @@ export default function CustomsImportDutyPage() {
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'How do I find the correct duty rate?',
+                  answer: 'Duty rates vary by product classification (HTS code), country of origin, and trade agreements. Common rates: Electronics often 0%, General merchandise 2.5%, Clothing typically 16%, and specific tariff lists may have rates of 10-25% or higher. Use the Harmonized Tariff Schedule (HTS) database or consult a customs broker for the exact rate for your specific product.',
+                },
+                {
+                  question: 'Are these calculations exact?',
+                  answer: 'These are estimates based on general duty rates. Actual import duties depend on the specific HTS code, country of origin, trade agreements (like USMCA), current tariffs, and customs classification. For precise calculations, consult with a licensed customs broker or use the official HTS database.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="duty-rates">
                   <AccordionTrigger className="text-left font-semibold">How do I find the correct duty rate?</AccordionTrigger>

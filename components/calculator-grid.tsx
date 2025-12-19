@@ -14,7 +14,7 @@ const calculators = [
   },
   {
     icon: Package,
-    title: "Customs & Import Duty",
+    title: "Customs and Import Duty",
     description: "Estimate US import duties and fees",
     href: "/calculators/customs-import-duty",
     iconColor: "text-purple-600",
@@ -153,7 +153,7 @@ export function CalculatorGrid() {
     <section id="calculators" className="py-10 bg-background">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">Tax & Salary Calculators</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">Tax and Salary Calculators</h2>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto">Professional tools for accurate tax, salary, and income calculations</p>
         </div>
 

@@ -4,11 +4,12 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - TaxSal',
-  description: 'Read our terms of service to understand the rules and regulations for using our salary and tax calculator services.',
+  title: 'Terms of Service - TaxSal | Tax Calculator Terms',
+  description: 'Read our terms of service to understand the rules and regulations for using our tax calculator and salary calculator services.',
+  keywords: 'terms of service, tax calculator terms, user agreement, service terms',
   openGraph: {
     title: 'Terms of Service - TaxSal',
-    description: 'Read our terms of service to understand the rules and regulations for using our services.',
+    description: 'Read our terms of service to understand the rules and regulations for using our tax calculator services.',
   },
 }
 

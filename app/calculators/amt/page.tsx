@@ -4,6 +4,7 @@ import { AMTCalculator } from "@/components/calculators/amt-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -96,6 +97,42 @@ export default function AMTPage() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                  Tax Return Calculator
+                </Link>
+                <Link href="/calculators/ca-capital-gains" className="text-primary hover:underline">
+                  California Capital Gains Calculator
+                </Link>
+                <Link href="/calculators/real-estate-capital-gains" className="text-primary hover:underline">
+                  Real Estate Capital Gains Calculator
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* External Resources */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Additional Resources</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+              <p className="leading-relaxed">
+                For official AMT information, visit the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Internal Revenue Service (IRS)</a> website. 
+                The IRS provides detailed information about <a href="https://www.irs.gov/forms-pubs/about-form-6251" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Alternative Minimum Tax (AMT)</a> and <a href="https://www.irs.gov/forms-pubs/about-publication-17" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">tax preference items</a>.
+              </p>
             </CardContent>
           </Card>
         </div>

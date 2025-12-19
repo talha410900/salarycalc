@@ -11,11 +11,11 @@ import { ContactForm } from '@/components/contact-form'
 
 export const metadata: Metadata = {
   title: 'Contact Us - Get in Touch | TaxSal',
-  description: 'Have questions about our salary and tax calculators? Contact us for support, feedback, or inquiries. We\'re here to help!',
-  keywords: 'contact, support, help, feedback, salary calculator support',
+  description: 'Have questions about our tax calculator and salary calculator? Contact us for support, feedback, or inquiries. We\'re here to help with all your tax calculation needs!',
+  keywords: 'contact tax calculator, support, help, feedback, salary calculator support, tax calculator help',
   openGraph: {
     title: 'Contact Us - Get in Touch | TaxSal',
-    description: 'Have questions about our salary and tax calculators? Contact us for support, feedback, or inquiries.',
+    description: 'Have questions about our tax calculator and salary calculator? Contact us for support, feedback, or inquiries.',
     type: 'website',
   },
 }

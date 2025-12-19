@@ -7,6 +7,7 @@ import { StateVehicleTaxCalculator } from "@/components/calculators/state-vehicl
 import { StateCalculatorNav } from "@/components/state-calculator-nav"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 interface PageProps {
@@ -110,6 +111,29 @@ export default async function StateVehicleTaxPage({ params }: PageProps) {
               <div className="space-y-3">
                 <p><strong>Vehicle Tax:</strong> Vehicle Tax = Vehicle Value × State Vehicle Tax Rate</p>
                 <p><strong>Total Price:</strong> Total Price = Vehicle Value + Vehicle Tax</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href={`/calculators/state/${stateSlug}/withholding`} className="text-primary hover:underline">
+                  {stateData.name} Withholding Tax Calculator
+                </Link>
+                <Link href={`/calculators/state/${stateSlug}/sales-tax`} className="text-primary hover:underline">
+                  {stateData.name} Sales Tax Calculator
+                </Link>
+                <Link href={`/calculators/state/${stateSlug}`} className="text-primary hover:underline">
+                  {stateData.name} Tax Calculator
+                </Link>
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
               </div>
             </CardContent>
           </Card>

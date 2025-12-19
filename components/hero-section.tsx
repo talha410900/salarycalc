@@ -15,7 +15,7 @@ const categoryIcons: Record<string, typeof Calculator> = {
   "Property / Mortgage": Home,
   "Sales / Vehicle / Excise (Golden)": ShoppingCart,
   "Payroll / Paycheck / Withholding": Receipt,
-  "Import & Customs": Package,
+  "Import and Customs": Package,
   "State Tax Calculators": MapPin,
 }
 
@@ -56,11 +56,11 @@ export function HeroSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] text-balance mb-4">
-            Calculate Your <span className="text-primary">Salary</span> & Taxes
+            Calculate Your <span className="text-primary">Salary</span> and Taxes
           </h1>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 text-pretty leading-relaxed">
-            Free, accurate salary & tax calculators for all 50 states. 2025-2026 tax brackets included.
+            Free, accurate salary and tax calculators for all 50 states. 2025-2026 tax brackets included.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -195,7 +195,7 @@ export function HeroSection() {
               </div>
               <div className="text-left">
                 <div className="font-semibold text-sm text-foreground">Tax Breakdown</div>
-                <p className="text-xs text-muted-foreground">Federal & state taxes</p>
+                <p className="text-xs text-muted-foreground">Federal and state taxes</p>
               </div>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border">

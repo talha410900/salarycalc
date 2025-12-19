@@ -25,8 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${stateData.name} State Tax Calculator 2025-2026 | TaxSal`,
-    description: `Calculate your ${stateData.name} state income tax for 2025-2026. ${stateData.notes}`,
+    title: `${stateData.name} State Tax Calculator 2025-2026 | Free ${stateData.name} Tax Calculator`,
+    description: `Calculate your ${stateData.name} state income tax for 2025-2026. Free ${stateData.name.toLowerCase()} tax calculator with federal and state tax estimates. ${stateData.notes}`,
+    keywords: `${stateData.name.toLowerCase()} tax calculator, ${stateData.name.toLowerCase()} state tax calculator, ${stateData.code.toLowerCase()} tax calculator, ${stateData.name.toLowerCase()} income tax calculator`,
+    openGraph: {
+      title: `${stateData.name} State Tax Calculator 2025-2026`,
+      description: `Calculate your ${stateData.name} state income tax for 2025-2026.`,
+    },
   }
 }
 

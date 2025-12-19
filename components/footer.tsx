@@ -31,7 +31,7 @@ export function Footer() {
                 { name: "Take-Home Pay", href: "/calculators/take-home-pay" },
                 { name: "Self-Employed Tax", href: "/calculators/self-employed-tax" },
                 { name: "AMT Calculator", href: "/calculators/amt" },
-                { name: "Tax Return & Refund", href: "/calculators/tax-return" },
+                { name: "Tax Return and Refund", href: "/calculators/tax-return" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-background/60 hover:text-primary transition-colors text-sm">
@@ -63,9 +63,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Sales & Vehicle Tax */}
+          {/* Sales and Vehicle Tax */}
           <div>
-            <h3 className="font-semibold text-background mb-3 text-sm">Sales & Vehicle Tax</h3>
+            <h3 className="font-semibold text-background mb-3 text-sm">Sales and Vehicle Tax</h3>
             <ul className="space-y-2">
               {[
                 { name: "TN Car Sales Tax", href: "/calculators/state/tennessee/sales-tax" },
@@ -84,9 +84,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Property & Mortgage */}
+          {/* Property and Mortgage */}
           <div>
-            <h3 className="font-semibold text-background mb-3 text-sm">Property & Mortgage</h3>
+            <h3 className="font-semibold text-background mb-3 text-sm">Property and Mortgage</h3>
             <ul className="space-y-2">
               {[
                 { name: "Mortgage Tax", href: "/calculators/mortgage-tax" },
@@ -103,7 +103,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Capital Gains & Investment */}
+          {/* Capital Gains and Investment */}
           <div>
             <h3 className="font-semibold text-background mb-3 text-sm">Capital Gains</h3>
             <ul className="space-y-2">
@@ -148,12 +148,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Import & Customs */}
+          {/* Import and Customs */}
           <div>
-            <h3 className="font-semibold text-background mb-3 text-sm">Import & Customs</h3>
+            <h3 className="font-semibold text-background mb-3 text-sm">Import and Customs</h3>
             <ul className="space-y-2">
               {[
-                { name: "Customs & Import Duty", href: "/calculators/customs-import-duty" },
+                { name: "Customs and Import Duty", href: "/calculators/customs-import-duty" },
                 { name: "US Import Tax", href: "/calculators/us-import-tax" },
               ].map((item) => (
                 <li key={item.name}>

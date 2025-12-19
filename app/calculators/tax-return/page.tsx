@@ -7,11 +7,11 @@ import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Tax Return Calculator & Refund Estimator 2025-2026 | Free Tax Refund Calculator",
+    title: "Tax Return Calculator and Refund Estimator 2025-2026 | Free Tax Refund Calculator",
   description: "Estimate your tax refund or amount owed with our free tax return calculator. Calculate federal income tax, AGI, taxable income, and refund estimates for 2025-2026.",
   keywords: "tax return calculator, tax refund calculator, refund estimator, tax owed calculator, income tax calculator, tax return estimator 2025-2026",
   openGraph: {
-    title: "Tax Return Calculator & Refund Estimator 2025-2026 | Free Tax Refund Calculator",
+    title: "Tax Return Calculator and Refund Estimator 2025-2026 | Free Tax Refund Calculator",
     description: "Estimate your tax refund or amount owed with our free tax return calculator. Calculate federal income tax, AGI, taxable income, and refund estimates.",
   },
 }
@@ -23,7 +23,7 @@ export default function TaxReturnPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Tax Return Calculator & Refund Estimator 2025-2026</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Tax Return Calculator and Refund Estimator 2025-2026</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Estimate your tax refund or amount owed by calculating your federal income tax based on your income, deductions, and withholdings.
             </p>

@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { NCCapitalGainsCalculator } from "@/components/calculators/nc-capital-gains-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -49,6 +50,29 @@ export default function NCCapitalGainsPage() {
                 High-income taxpayers may also owe the 3.8% Net Investment Income Tax (NIIT). 
                 This calculator provides estimates for 2025-2026 tax rates.
               </p>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/ca-capital-gains" className="text-primary hover:underline">
+                  California Capital Gains Calculator
+                </Link>
+                <Link href="/calculators/real-estate-capital-gains" className="text-primary hover:underline">
+                  Real Estate Capital Gains Calculator
+                </Link>
+                <Link href="/calculators/rental-property-capital-gains" className="text-primary hover:underline">
+                  Rental Property Capital Gains Calculator
+                </Link>
+                <Link href="/calculators/north-carolina-tax" className="text-primary hover:underline">
+                  North Carolina Tax Calculator
+                </Link>
+              </div>
             </CardContent>
           </Card>
         </div>

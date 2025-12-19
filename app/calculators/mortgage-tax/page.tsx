@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { MortgageTaxCalculator } from "@/components/calculators/mortgage-tax-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -59,6 +60,29 @@ export default function MortgageTaxPage() {
               <div className="space-y-3">
                 <p><strong>Mortgage Tax:</strong> Mortgage Tax = Loan Amount × Mortgage Tax Rate</p>
                 <p><strong>Total Cost:</strong> Total Cost = Loan Amount + Mortgage Tax</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/ny-mortgage-tax" className="text-primary hover:underline">
+                  NY Mortgage Tax Calculator
+                </Link>
+                <Link href="/calculators/va-property-tax-car" className="text-primary hover:underline">
+                  VA Property Tax Calculator
+                </Link>
+                <Link href="/calculators/illinois-property-tax" className="text-primary hover:underline">
+                  Illinois Property Tax Calculator
+                </Link>
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
               </div>
             </CardContent>
           </Card>

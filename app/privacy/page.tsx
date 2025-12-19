@@ -4,11 +4,12 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - TaxSal',
-  description: 'Read our privacy policy to understand how we collect, use, and protect your information when using our salary and tax calculators.',
+  title: 'Privacy Policy - TaxSal | Tax Calculator Privacy',
+  description: 'Read our privacy policy to understand how we collect, use, and protect your information when using our tax calculator and salary calculator services.',
+  keywords: 'privacy policy, tax calculator privacy, data protection, user privacy',
   openGraph: {
     title: 'Privacy Policy - TaxSal',
-    description: 'Read our privacy policy to understand how we collect, use, and protect your information.',
+    description: 'Read our privacy policy to understand how we collect, use, and protect your information when using our tax calculator services.',
   },
 }
 

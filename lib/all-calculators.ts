@@ -70,7 +70,7 @@ const taxCalculators: CalculatorItem[] = [
     keywords: ["amt", "alternative minimum tax", "minimum tax"],
   },
   {
-    name: "Tax Return & Refund Calculator",
+    name: "Tax Return and Refund Calculator",
     href: "/calculators/tax-return",
     category: "Tax Calculators",
     icon: Receipt,
@@ -167,7 +167,7 @@ const capitalGainsCalculators: CalculatorItem[] = [
   },
 ]
 
-// Property & Mortgage Calculators - EXACT keywords from priority list
+// Property and Mortgage Calculators - EXACT keywords from priority list
 const propertyMortgageCalculators: CalculatorItem[] = [
   {
     name: "Tax Mortgage Calculator",
@@ -203,7 +203,7 @@ const propertyMortgageCalculators: CalculatorItem[] = [
   },
 ]
 
-// Sales & Vehicle Tax Calculators - EXACT keywords from priority list
+// Sales and Vehicle Tax Calculators - EXACT keywords from priority list
 const salesVehicleCalculators: CalculatorItem[] = [
   {
     name: "TN Car Sales Tax Calculator",
@@ -271,12 +271,12 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
 ]
 
-// Import & Customs Calculators
+// Import and Customs Calculators
 const importCustomsCalculators: CalculatorItem[] = [
   {
-    name: "Customs & Import Duty Calculator",
+    name: "Customs and Import Duty Calculator",
     href: "/calculators/customs-import-duty",
-    category: "Import & Customs",
+    category: "Import and Customs",
     icon: Package,
     description: "Estimate US import duties and fees",
     keywords: ["customs", "import", "duty", "import duty", "tariff"],
@@ -284,7 +284,7 @@ const importCustomsCalculators: CalculatorItem[] = [
   {
     name: "US Import Tax Calculator",
     href: "/calculators/us-import-tax",
-    category: "Import & Customs",
+    category: "Import and Customs",
     icon: Package,
     description: "General US import duty calculator",
     keywords: ["us import", "import tax", "customs", "duty"],

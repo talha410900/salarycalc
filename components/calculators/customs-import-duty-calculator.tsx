@@ -68,7 +68,7 @@ export function CustomsImportDutyCalculator() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Package className="h-5 w-5" />
-            Customs & Import Duty Calculator
+            Customs and Import Duty Calculator
           </CardTitle>
           <CardDescription>
             Estimates US import duties based on product value and duty rate. Note: 2025-2026 tariffs may apply.
@@ -101,7 +101,7 @@ export function CustomsImportDutyCalculator() {
               </p>
             </div>
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="insurance-freight">Shipping & Insurance Cost (Optional)</Label>
+              <Label htmlFor="insurance-freight">Shipping and Insurance Cost (Optional)</Label>
               <Input
                 id="insurance-freight"
                 type="number"
@@ -129,7 +129,7 @@ export function CustomsImportDutyCalculator() {
               <span className="font-semibold">{formatCurrency(result.mpf)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Total Duty & Fees:</span>
+              <span className="text-muted-foreground">Total Duty and Fees:</span>
               <span className="font-semibold">{formatCurrency(result.totalDuty)}</span>
             </div>
             <div className="border-t pt-3 mt-3">

@@ -6,11 +6,12 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AlertTriangle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Disclaimer - TaxSal',
-  description: 'Important disclaimer regarding the use of our salary and tax calculators. Read about limitations, accuracy, and professional advice.',
+  title: 'Disclaimer - TaxSal | Tax Calculator Disclaimer',
+  description: 'Important disclaimer regarding the use of our tax calculator and salary calculator. Read about limitations, accuracy, and professional tax advice.',
+  keywords: 'disclaimer, tax calculator disclaimer, tax advice, calculator limitations',
   openGraph: {
     title: 'Disclaimer - TaxSal',
-    description: 'Important disclaimer regarding the use of our salary and tax calculators.',
+    description: 'Important disclaimer regarding the use of our tax calculator and salary calculator.',
   },
 }
 

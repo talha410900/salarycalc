@@ -3,6 +3,8 @@ import { Footer } from "@/components/footer"
 import { MNSalesTaxCalculator } from "@/components/calculators/mn-sales-tax-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -64,12 +66,42 @@ export default function MNSalesTaxPage() {
             </CardContent>
           </Card>
 
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/la-sales-tax" className="text-primary hover:underline">
+                  Louisiana Sales Tax Calculator
+                </Link>
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                  Tax Return Calculator
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* FAQ Section */}
           <Card className="mt-6">
             <CardHeader>
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'Why do local rates vary?',
+                  answer: 'Minnesota allows cities, counties, and special taxing districts to add local sales tax on top of the state rate. These local taxes fund local projects, infrastructure, and services. Minneapolis has a 2.155% local rate, St. Paul has 2.0%, and other cities and counties may have different rates ranging from 0% to over 2%. The total combined rate can vary significantly by location within Minnesota.',
+                },
+                {
+                  question: 'What items are exempt from sales tax in Minnesota?',
+                  answer: 'Common exemptions include: most food items (groceries), prescription drugs, clothing (though some items may be taxable), medical devices, and certain services. However, prepared food, restaurant meals, and some clothing items may be subject to sales tax. The calculator assumes all items are taxable; for exempt items, the tax would be $0.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="local-rates">
                   <AccordionTrigger className="text-left font-semibold">Why do local rates vary?</AccordionTrigger>

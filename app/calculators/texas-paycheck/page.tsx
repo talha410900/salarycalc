@@ -3,6 +3,8 @@ import { Footer } from "@/components/footer"
 import { TexasPaycheckCalculator } from "@/components/calculators/texas-paycheck-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -85,6 +87,41 @@ export default function TexasPaycheckPage() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Schema */}
+          <FAQSchema faqs={[
+            {
+              question: 'Why is there no state tax in Texas?',
+              answer: 'Texas is one of nine states with no state income tax. The state generates revenue through other means like sales tax, property tax, and business taxes. This means Texas residents only pay federal taxes (federal income tax, Social Security, and Medicare), resulting in higher take-home pay compared to states with income tax.',
+            },
+            {
+              question: 'Are there other taxes I should know about?',
+              answer: 'While Texas has no state income tax, residents still pay federal taxes, and the state has a 6.25% sales tax (plus local rates that can bring totals to 8.25% or higher). Property taxes in Texas are also relatively high compared to other states. This calculator focuses on income tax only.',
+            },
+          ]} />
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+                <Link href="/calculators/take-home-pay" className="text-primary hover:underline">
+                  Take-Home Pay Calculator
+                </Link>
+                <Link href="/calculators/payroll-tax" className="text-primary hover:underline">
+                  Payroll Tax Calculator
+                </Link>
+                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                  Tax Return Calculator
+                </Link>
+              </div>
             </CardContent>
           </Card>
         </div>

@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   description: 'Expert articles on salary calculations, tax planning, and financial advice. Learn about income taxes, take-home pay, and more.',
   keywords: 'salary blog, tax articles, financial planning, income tax advice',
   openGraph: {
-    title: 'Blog - Tax & Salary Articles | TaxSal',
+    title: 'Blog - Tax and Salary Articles | TaxSal',
     description: 'Expert articles on salary calculations, tax planning, and financial advice.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - Tax & Salary Articles | TaxSal',
+    title: 'Blog - Tax and Salary Articles | TaxSal',
     description: 'Expert articles on salary calculations, tax planning, and financial advice.',
   },
 }

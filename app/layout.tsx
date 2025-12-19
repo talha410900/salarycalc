@@ -20,10 +20,16 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "TaxSal - Free Tax & Salary Calculator",
+    title: "Tax Calculator | Free Tax and Salary Calculator 2025-2026 | TaxSal",
   description:
-    "Fast, accurate tax & salary calculators for every U.S. state. Calculate your take-home pay, federal tax withholding, state taxes, and more.",
-    generator: 'v0.app'
+    "Free tax calculator and salary calculator for 2025-2026. Calculate take-home pay, federal tax withholding, state taxes, payroll taxes, and more. Fast, accurate tax calculators for every U.S. state.",
+  keywords: "tax calculator, salary calculator, tax withholding calculator, paycheck calculator, take home pay calculator, federal tax calculator, state tax calculator",
+  generator: 'v0.app',
+  openGraph: {
+    title: "Tax Calculator | Free Tax and Salary Calculator 2025-2026 | TaxSal",
+    description: "Free tax calculator and salary calculator for 2025-2026. Calculate take-home pay, federal tax withholding, state taxes, and more.",
+    type: "website",
+  },
 }
 
 export const viewport = {

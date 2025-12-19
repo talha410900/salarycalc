@@ -11,7 +11,7 @@ export function CTASection() {
             <Calculator className="h-6 w-6 text-primary" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">
-            Ready to Calculate Your Salary & Taxes?
+            Ready to Calculate Your Salary and Taxes?
           </h2>
           <p className="text-sm text-muted-foreground mb-6 max-w-2xl mx-auto">
             Get started with our free calculators and take control of your financial planning today.

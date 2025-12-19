@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { HowItWorksCard } from "@/components/how-it-works-card"
 import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 interface PageProps {
@@ -267,6 +268,42 @@ export default async function StateWithholdingPage({ params }: PageProps) {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+                <Link href="/calculators/take-home-pay" className="text-primary hover:underline">
+                  Take-Home Pay Calculator
+                </Link>
+                <Link href="/calculators/payroll-tax" className="text-primary hover:underline">
+                  Payroll Tax Calculator
+                </Link>
+                <Link href={`/calculators/state/${stateSlug}`} className="text-primary hover:underline">
+                  {stateData.name} Tax Calculator
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* External Resources */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Additional Resources</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+              <p className="leading-relaxed">
+                For official tax information, visit the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Internal Revenue Service (IRS)</a> website. 
+                The IRS provides detailed information about <a href="https://www.irs.gov/forms-pubs/about-form-w-4" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">W-4 forms</a> and <a href="https://www.irs.gov/individuals/tax-withholding-estimator" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">tax withholding</a>.
+              </p>
             </CardContent>
           </Card>
           

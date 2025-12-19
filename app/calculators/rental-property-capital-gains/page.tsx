@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { RentalPropertyCapitalGainsCalculator } from "@/components/calculators/rental-property-capital-gains-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -49,6 +50,29 @@ export default function RentalPropertyCapitalGainsPage() {
                 capital gains rates (0%, 15%, or 20%). High-income taxpayers may also owe the 3.8% Net Investment Income Tax (NIIT). 
                 Consider a 1031 exchange to defer taxes.
               </p>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/real-estate-capital-gains" className="text-primary hover:underline">
+                  Real Estate Capital Gains Calculator
+                </Link>
+                <Link href="/calculators/ca-capital-gains" className="text-primary hover:underline">
+                  California Capital Gains Calculator
+                </Link>
+                <Link href="/calculators/nc-capital-gains" className="text-primary hover:underline">
+                  North Carolina Capital Gains Calculator
+                </Link>
+                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                  Tax Return Calculator
+                </Link>
+              </div>
             </CardContent>
           </Card>
         </div>

@@ -4,6 +4,7 @@ import { PayrollTaxCalculator } from "@/components/calculators/payroll-tax-calcu
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -65,6 +66,42 @@ export default function PayrollTaxPage() {
                 <p><strong>Medicare:</strong> Base Tax = Annual Income × 1.45%. Additional Medicare = max(0, Annual Income - Threshold) × 0.9% where Threshold is $200,000 (single) or $250,000 (married).</p>
                 <p><strong>Net Pay:</strong> Net Pay = Gross Pay - (Federal Tax + Social Security + Medicare + State Tax) / Pay Period Multiplier</p>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+                <Link href="/calculators/take-home-pay" className="text-primary hover:underline">
+                  Take-Home Pay Calculator
+                </Link>
+                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                  Tax Return Calculator
+                </Link>
+                <Link href="/calculators/self-employed-tax" className="text-primary hover:underline">
+                  Self-Employed Tax Calculator
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* External Resources */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Additional Resources</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+              <p className="leading-relaxed">
+                For official payroll tax information, visit the <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Internal Revenue Service (IRS)</a> website. 
+                The IRS provides detailed information about <a href="https://www.irs.gov/forms-pubs/about-publication-15" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">payroll taxes</a> and <a href="https://www.irs.gov/forms-pubs/about-form-w-4" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">W-4 forms</a>.
+              </p>
             </CardContent>
           </Card>
 

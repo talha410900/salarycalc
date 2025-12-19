@@ -9,11 +9,11 @@ import { STATE_TAX_DATA, ALL_STATES } from '@/lib/state-tax-data'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 export const metadata: Metadata = {
-  title: '2025-2026 Tax Brackets - Federal & State Income Tax Rates | TaxSal',
-  description: 'Complete guide to 2025-2026 federal and state income tax brackets. View tax rates for all 50 states, filing statuses, and income thresholds.',
-  keywords: 'tax brackets 2025-2026, federal tax brackets, state tax brackets, income tax rates, tax calculator',
+  title: 'Tax Brackets 2025-2026 | Federal and State Income Tax Rates | TaxSal',
+  description: 'Complete guide to 2025-2026 federal and state income tax brackets. View tax rates for all 50 states, filing statuses, and income thresholds. Free tax brackets reference.',
+  keywords: 'tax brackets 2025-2026, federal tax brackets, state tax brackets, income tax rates, tax calculator, tax brackets calculator, 2025 tax brackets, 2026 tax brackets',
   openGraph: {
-    title: '2025-2026 Tax Brackets - Federal & State Income Tax Rates',
+    title: 'Tax Brackets 2025-2026 | Federal and State Income Tax Rates',
     description: 'Complete guide to 2025-2026 federal and state income tax brackets for all US states.',
     type: 'website',
   },
@@ -45,10 +45,19 @@ export default function TaxBracketsPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-10">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">
-              2025-2026 Tax Brackets
+              Tax Brackets 2025-2026
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
               Complete reference guide to federal and state income tax brackets, rates, and thresholds for 2025-2026
+            </p>
+          </div>
+
+          {/* SEO-focused first paragraph */}
+          <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
+            <p className="text-base leading-relaxed">
+              Our comprehensive <strong>tax brackets 2025-2026</strong> guide provides complete information about federal and state income tax brackets for all 50 states. 
+              This <strong>tax brackets calculator</strong> reference includes federal tax brackets, state tax brackets, flat tax states, and states with no income tax. 
+              Use this <strong>2025 tax brackets</strong> and <strong>2026 tax brackets</strong> reference to understand how your income is taxed at different levels.
             </p>
           </div>
 

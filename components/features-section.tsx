@@ -14,7 +14,7 @@ const features = [
   },
   {
     icon: Shield,
-    title: 'Secure & Private',
+    title: 'Secure and Private',
     description: 'All calculations are done locally in your browser. We never store your personal information.',
   },
   {

@@ -3,14 +3,16 @@ import { Footer } from "@/components/footer"
 import { USImportTaxCalculator } from "@/components/calculators/us-import-tax-calculator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "US Import Tax Calculator | Calculate Import Duties & Customs Tax",
+  title: "US Import Tax Calculator | Calculate Import Duties and Customs Tax",
   description: "Estimate US import duties based on product category and value. Free import tax calculator for clothing, electronics, auto parts, and more.",
   keywords: "US import tax calculator, import duty calculator, customs tax, import duties, US customs calculator",
   openGraph: {
-    title: "US Import Tax Calculator | Calculate Import Duties & Customs Tax",
+    title: "US Import Tax Calculator | Calculate Import Duties and Customs Tax",
     description: "Estimate US import duties based on product category and value.",
   },
 }
@@ -63,12 +65,51 @@ export default function USImportTaxPage() {
             </CardContent>
           </Card>
 
+          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Related Calculators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/calculators/customs-import-duty" className="text-primary hover:underline">
+                  Customs Import Duty Calculator
+                </Link>
+                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                  Federal Tax Calculator
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* External Resources */}
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle>Additional Resources</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+              <p className="leading-relaxed">
+                For official import tax information, visit <a href="https://www.cbp.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">U.S. Customs and Border Protection (CBP)</a> and the <a href="https://hts.usitc.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Harmonized Tariff Schedule (HTS)</a> database.
+              </p>
+            </CardContent>
+          </Card>
+
           {/* FAQ Section */}
           <Card className="mt-6">
             <CardHeader>
               <CardTitle>Frequently Asked Questions</CardTitle>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'What is an HTS code and why does it matter?',
+                  answer: 'The Harmonized Tariff Schedule (HTS) code is a 10-digit classification number that identifies the specific product being imported. Each product has a unique HTS code that determines its exact duty rate, which can vary significantly even within the same general category. For example, different types of clothing or electronics may have different HTS codes with different duty rates. The HTS code, combined with the country of origin, determines the precise import duty, not just the general category. This calculator uses category averages for estimates.',
+                },
+                {
+                  question: 'How accurate are these estimates?',
+                  answer: 'These are general estimates based on typical duty rates for product categories. Actual import duties can vary significantly based on: the specific HTS code, country of origin, trade agreements (like USMCA, NAFTA), current tariff policies, product classification, and special programs. For accurate calculations, you should: identify the correct HTS code for your product, determine the country of origin, check current trade agreements, and consult with a licensed customs broker or use the official HTS database for precise duty rates.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="hts-code">
                   <AccordionTrigger className="text-left font-semibold">What is an HTS code and why does it matter?</AccordionTrigger>
