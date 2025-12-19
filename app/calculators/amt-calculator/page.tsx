@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { AMTCalculator } from "@/components/calculators/amt-calculator"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { FAQSchema } from "@/components/faq-schema"
 import Link from "next/link"
@@ -42,7 +42,7 @@ export default function AMTPage() {
           {/* How It Works Section */}
           <Card className="mt-12">
             <CardHeader>
-              <CardTitle>How It Works</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">How It Works</h2>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
@@ -54,7 +54,7 @@ export default function AMTPage() {
           {/* Formulas Used Section */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Formulas Used</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Formulas Used</h2>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <div className="space-y-3">
@@ -70,7 +70,7 @@ export default function AMTPage() {
           {/* FAQ Section */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Frequently Asked Questions</h2>
             </CardHeader>
             <CardContent>
               <FAQSchema faqs={[
@@ -103,20 +103,20 @@ export default function AMTPage() {
           {/* Related Calculators */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Related Calculators</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Related Calculators</h2>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                <Link href="/calculators/federal-tax-calculator" className="text-primary hover:underline">
                   Federal Tax Calculator
                 </Link>
-                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                <Link href="/calculators/tax-return-calculator" className="text-primary hover:underline">
                   Tax Return Calculator
                 </Link>
                 <Link href="/calculators/california-capital-gains-tax-calculator" className="text-primary hover:underline">
                   California Capital Gains Calculator
                 </Link>
-                <Link href="/calculators/real-estate-capital-gains" className="text-primary hover:underline">
+                <Link href="/calculators/real-estate-capital-gains-calculator" className="text-primary hover:underline">
                   Real Estate Capital Gains Calculator
                 </Link>
               </div>
@@ -126,7 +126,7 @@ export default function AMTPage() {
           {/* External Resources */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Additional Resources</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Additional Resources</h2>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">

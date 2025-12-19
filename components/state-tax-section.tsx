@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { Search, ArrowRight, MapPin, ChevronRight } from "lucide-react"
 import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
+import { getOptimizedStateCalculatorUrl } from "@/lib/seo-slugs"
 
 const REGIONS: Record<string, string[]> = {
   "No Income Tax": [
@@ -133,7 +134,7 @@ export function StateTaxSection() {
               const isNoTax = REGIONS["No Income Tax"].includes(state.slug)
               
               return (
-                <Link key={state.slug} href={`/calculators/state/${state.slug}`}>
+                <Link key={state.slug} href={getOptimizedStateCalculatorUrl(state.slug, "income-tax")}>
                   <Card className="group relative overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 bg-card border border-border hover:border-primary/50 h-full !py-2">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <CardContent className="p-3 flex flex-col gap-2 relative">
@@ -175,7 +176,7 @@ export function StateTaxSection() {
             {ALL_STATES.sort((a, b) => a.name.localeCompare(b.name)).map((state) => (
               <Link
                 key={state.slug}
-                href={`/calculators/state/${state.slug}`}
+                href={getOptimizedStateCalculatorUrl(state.slug, "income-tax")}
                 className="group flex items-center gap-2 p-2 rounded-lg hover:bg-card hover:shadow-sm transition-all border border-transparent hover:border-border"
               >
                 <span className="text-xs font-bold text-primary w-6">{state.code}</span>
@@ -200,7 +201,7 @@ export function StateTaxSection() {
               return (
                 <Link
                   key={slug}
-                  href={`/calculators/state/${slug}`}
+                  href={getOptimizedStateCalculatorUrl(slug, "income-tax")}
                   className="px-3 py-1 bg-emerald-600 text-white rounded-full text-xs font-medium hover:bg-emerald-700 transition-colors"
                 >
                   {state.name}

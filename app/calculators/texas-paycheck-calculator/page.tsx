@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { TexasPaycheckCalculator } from "@/components/calculators/texas-paycheck-calculator"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { FAQSchema } from "@/components/faq-schema"
 import Link from "next/link"
@@ -39,10 +39,10 @@ export default function TexasPaycheckPage() {
 
           <TexasPaycheckCalculator />
 
-          {/* How It Works Section */}
+          {/* How the Texas Paycheck Calculator Works */}
           <Card className="mt-12">
             <CardHeader>
-              <CardTitle>How It Works</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">How the Texas Paycheck Calculator Works</h2>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
@@ -54,7 +54,7 @@ export default function TexasPaycheckPage() {
           {/* Formulas Used Section */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Formulas Used</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Formulas Used</h2>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <div className="space-y-3">
@@ -70,9 +70,19 @@ export default function TexasPaycheckPage() {
           {/* FAQ Section */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Frequently Asked Questions</h2>
             </CardHeader>
             <CardContent>
+              <FAQSchema faqs={[
+                {
+                  question: 'Why is there no state tax in Texas?',
+                  answer: 'Texas is one of nine states with no state income tax. The state generates revenue through other means like sales tax, property tax, and business taxes. This means Texas residents only pay federal taxes (federal income tax, Social Security, and Medicare), resulting in higher take-home pay compared to states with income tax.',
+                },
+                {
+                  question: 'Are there other taxes I should know about?',
+                  answer: 'While Texas has no state income tax, residents still pay federal taxes, and the state has a 6.25% sales tax (plus local rates that can bring totals to 8.25% or higher). Property taxes in Texas are also relatively high compared to other states. This calculator focuses on income tax only.',
+                },
+              ]} />
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="no-state-tax">
                   <AccordionTrigger className="text-left font-semibold">Why is there no state tax in Texas?</AccordionTrigger>
@@ -90,35 +100,23 @@ export default function TexasPaycheckPage() {
             </CardContent>
           </Card>
 
-          {/* FAQ Schema */}
-          <FAQSchema faqs={[
-            {
-              question: 'Why is there no state tax in Texas?',
-              answer: 'Texas is one of nine states with no state income tax. The state generates revenue through other means like sales tax, property tax, and business taxes. This means Texas residents only pay federal taxes (federal income tax, Social Security, and Medicare), resulting in higher take-home pay compared to states with income tax.',
-            },
-            {
-              question: 'Are there other taxes I should know about?',
-              answer: 'While Texas has no state income tax, residents still pay federal taxes, and the state has a 6.25% sales tax (plus local rates that can bring totals to 8.25% or higher). Property taxes in Texas are also relatively high compared to other states. This calculator focuses on income tax only.',
-            },
-          ]} />
-
           {/* Related Calculators */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Related Calculators</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Related Calculators</h2>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/calculators/federal-tax" className="text-primary hover:underline">
+                <Link href="/calculators/federal-tax-calculator" className="text-primary hover:underline">
                   Federal Tax Calculator
                 </Link>
-                <Link href="/calculators/take-home-pay" className="text-primary hover:underline">
+                <Link href="/calculators/take-home-pay-calculator" className="text-primary hover:underline">
                   Take-Home Pay Calculator
                 </Link>
-                <Link href="/calculators/payroll-tax" className="text-primary hover:underline">
+                <Link href="/calculators/payroll-tax-calculator" className="text-primary hover:underline">
                   Payroll Tax Calculator
                 </Link>
-                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                <Link href="/calculators/tax-return-calculator" className="text-primary hover:underline">
                   Tax Return Calculator
                 </Link>
               </div>

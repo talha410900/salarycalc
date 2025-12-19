@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RentalPropertyCapitalGainsCalculator } from "@/components/calculators/rental-property-capital-gains-calculator"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader} from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
 import type { Metadata } from "next"
@@ -12,9 +12,7 @@ export const metadata: Metadata = {
   keywords: "capital gains tax calculator on rental property, rental property capital gains calculator, rental property sale tax calculator, depreciation recapture calculator",
   openGraph: {
     title: "Capital Gains Tax Calculator on Rental Property 2025-2026",
-    description: "Calculate capital gains tax on the sale of rental property, including depreciation recapture.",
-  },
-}
+    description: "Calculate capital gains tax on the sale of rental property, including depreciation recapture."}}
 
 export default function RentalPropertyCapitalGainsPage() {
   return (
@@ -41,7 +39,7 @@ export default function RentalPropertyCapitalGainsPage() {
 
           <Card className="mt-12">
             <CardHeader>
-              <CardTitle>How It Works</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">How It Works</h2>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
@@ -56,20 +54,20 @@ export default function RentalPropertyCapitalGainsPage() {
           {/* Related Calculators */}
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Related Calculators</CardTitle>
+              <h2 className="text-2xl font-bold text-foreground">Related Calculators</h2>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/calculators/real-estate-capital-gains" className="text-primary hover:underline">
+                <Link href="/calculators/real-estate-capital-gains-calculator" className="text-primary hover:underline">
                   Real Estate Capital Gains Calculator
                 </Link>
                 <Link href="/calculators/california-capital-gains-tax-calculator" className="text-primary hover:underline">
                   California Capital Gains Calculator
                 </Link>
-                <Link href="/calculators/nc-capital-gains" className="text-primary hover:underline">
+                <Link href="/calculators/nc-capital-gains-calculator" className="text-primary hover:underline">
                   North Carolina Capital Gains Calculator
                 </Link>
-                <Link href="/calculators/tax-return" className="text-primary hover:underline">
+                <Link href="/calculators/tax-return-calculator" className="text-primary hover:underline">
                   Tax Return Calculator
                 </Link>
               </div>

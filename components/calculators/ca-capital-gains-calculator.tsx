@@ -103,7 +103,7 @@ export function CACapitalGainsCalculator() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5" />
+            <TrendingUp className="h-5 w-5" aria-label="California Capital Gains tax calculator icon" />
             California Capital Gains Tax Calculator 2025-2026
           </CardTitle>
           <CardDescription>

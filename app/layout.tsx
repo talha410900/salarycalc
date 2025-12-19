@@ -4,6 +4,7 @@ import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
 import { Toaster } from "@/components/ui/sonner"
+import { DevSEOWidget } from "@/components/dev-seo-widget"
 import "./globals.css"
 
 const inter = Inter({ 
@@ -48,6 +49,7 @@ export default function RootLayout({
         <Analytics />
         <CookieConsent />
         <Toaster />
+        <DevSEOWidget />
       </body>
     </html>
   )

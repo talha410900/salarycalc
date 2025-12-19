@@ -201,8 +201,24 @@ export function getCalculatorTypeMetadata(type: StateCalculatorType) {
 
 /**
  * Generate URL for a state calculator
+ * Now uses SEO-optimized URLs that match focus keywords
  */
 export function getStateCalculatorUrl(stateSlug: string, type: StateCalculatorType = "income-tax"): string {
+  // Import optimized URL generator
+  const { getOptimizedStateCalculatorUrl } = require("@/lib/seo-slugs")
+  
+  // Map our calculator types to the optimized URL function
+  if (type === "income-tax") {
+    return getOptimizedStateCalculatorUrl(stateSlug, "income-tax")
+  } else if (type === "withholding") {
+    return getOptimizedStateCalculatorUrl(stateSlug, "withholding")
+  } else if (type === "sales-tax") {
+    return getOptimizedStateCalculatorUrl(stateSlug, "sales-tax")
+  } else if (type === "vehicle-tax") {
+    return getOptimizedStateCalculatorUrl(stateSlug, "vehicle-tax")
+  }
+  
+  // Fallback to old structure if type not recognized
   const metadata = getCalculatorTypeMetadata(type)
   const basePath = `/calculators/state/${stateSlug}`
   return `${basePath}${metadata.path}`

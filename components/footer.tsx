@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Logo } from "@/components/logo"
+import { getOptimizedStateCalculatorUrl, getMaineExciseTaxCalculatorSlug } from "@/lib/seo-slugs"
 
 export function Footer() {
   return (
@@ -26,12 +27,12 @@ export function Footer() {
             <h3 className="font-semibold text-background mb-3 text-sm">Tax Calculators</h3>
             <ul className="space-y-2">
               {[
-                { name: "Payroll Tax", href: "/calculators/payroll-tax" },
-                { name: "Federal Tax", href: "/calculators/federal-tax" },
-                { name: "Take-Home Pay", href: "/calculators/take-home-pay" },
-                { name: "Self-Employed Tax", href: "/calculators/self-employed-tax" },
-                { name: "AMT Calculator", href: "/calculators/amt" },
-                { name: "Tax Return and Refund", href: "/calculators/tax-return" },
+                { name: "Payroll Tax", href: "/calculators/payroll-tax-calculator" },
+                { name: "Federal Tax", href: "/calculators/federal-tax-calculator" },
+                { name: "Take-Home Pay", href: "/calculators/take-home-pay-calculator" },
+                { name: "Self-Employed Tax", href: "/calculators/self-employed-tax-calculator" },
+                { name: "AMT Calculator", href: "/calculators/amt-calculator" },
+                { name: "Tax Return and Refund", href: "/calculators/tax-return-calculator" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-background/60 hover:text-primary transition-colors text-sm">
@@ -48,10 +49,10 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { name: "All State Taxes", href: "/#states" },
-                { name: "MD Withholding", href: "/calculators/state/maryland/withholding" },
-                { name: "MN Paycheck", href: "/calculators/state/minnesota/withholding" },
-                { name: "VA Payroll", href: "/calculators/state/virginia/withholding" },
-                { name: "TX Paycheck", href: "/calculators/texas-paycheck" },
+                { name: "MD Withholding", href: getOptimizedStateCalculatorUrl("maryland", "withholding") },
+                { name: "MN Paycheck", href: getOptimizedStateCalculatorUrl("minnesota", "withholding") },
+                { name: "VA Payroll", href: getOptimizedStateCalculatorUrl("virginia", "withholding") },
+                { name: "TX Paycheck", href: "/calculators/texas-paycheck-calculator" },
                 { name: "More States...", href: "/#states" },
               ].map((item) => (
                 <li key={item.name}>
@@ -68,12 +69,12 @@ export function Footer() {
             <h3 className="font-semibold text-background mb-3 text-sm">Sales and Vehicle Tax</h3>
             <ul className="space-y-2">
               {[
-                { name: "TN Car Sales Tax", href: "/calculators/state/tennessee/sales-tax" },
-                { name: "MD Sales Tax", href: "/calculators/state/maryland/sales-tax" },
-                { name: "TX Auto Sales Tax", href: "/calculators/state/texas/sales-tax" },
-                { name: "VA Vehicle Tax", href: "/calculators/state/virginia/vehicle-tax" },
-                { name: "WV Vehicle Tax", href: "/calculators/state/west-virginia/vehicle-tax" },
-                { name: "ME Excise Tax", href: "/calculators/state/maine/excise-tax" },
+                { name: "TN Car Sales Tax", href: getOptimizedStateCalculatorUrl("tennessee", "sales-tax") },
+                { name: "MD Sales Tax", href: getOptimizedStateCalculatorUrl("maryland", "sales-tax") },
+                { name: "TX Auto Sales Tax", href: getOptimizedStateCalculatorUrl("texas", "sales-tax") },
+                { name: "VA Vehicle Tax", href: getOptimizedStateCalculatorUrl("virginia", "vehicle-tax") },
+                { name: "WV Vehicle Tax", href: getOptimizedStateCalculatorUrl("west-virginia", "vehicle-tax") },
+                { name: "ME Excise Tax", href: `/calculators/${getMaineExciseTaxCalculatorSlug()}` },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-background/60 hover:text-primary transition-colors text-sm">
@@ -89,10 +90,10 @@ export function Footer() {
             <h3 className="font-semibold text-background mb-3 text-sm">Property and Mortgage</h3>
             <ul className="space-y-2">
               {[
-                { name: "Mortgage Tax", href: "/calculators/mortgage-tax" },
-                { name: "NY Mortgage Tax", href: "/calculators/ny-mortgage-tax" },
-                { name: "VA Property Tax Car", href: "/calculators/va-property-tax-car" },
-                { name: "IL Property Tax", href: "/calculators/illinois-property-tax" },
+                { name: "Mortgage Tax", href: "/calculators/mortgage-tax-calculator" },
+                { name: "NY Mortgage Tax", href: "/calculators/ny-mortgage-tax-calculator" },
+                { name: "VA Property Tax Car", href: "/calculators/va-property-tax-car-calculator" },
+                { name: "IL Property Tax", href: "/calculators/illinois-property-tax-calculator" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-background/60 hover:text-primary transition-colors text-sm">
@@ -108,10 +109,10 @@ export function Footer() {
             <h3 className="font-semibold text-background mb-3 text-sm">Capital Gains</h3>
             <ul className="space-y-2">
               {[
-                { name: "CA Capital Gains", href: "/calculators/ca-capital-gains" },
-                { name: "NC Capital Gains", href: "/calculators/nc-capital-gains" },
-                { name: "Real Estate Gains", href: "/calculators/real-estate-capital-gains" },
-                { name: "Rental Property", href: "/calculators/rental-property-capital-gains" },
+                { name: "CA Capital Gains", href: "/calculators/california-capital-gains-tax-calculator" },
+                { name: "NC Capital Gains", href: "/calculators/nc-capital-gains-calculator" },
+                { name: "Real Estate Gains", href: "/calculators/real-estate-capital-gains-calculator" },
+                { name: "Rental Property", href: "/calculators/rental-property-capital-gains-calculator" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-background/60 hover:text-primary transition-colors text-sm">
@@ -133,11 +134,11 @@ export function Footer() {
             <h3 className="font-semibold text-background mb-3 text-sm">Salary Calculators</h3>
             <ul className="space-y-2">
               {[
-                { name: "Hourly to Salary", href: "/calculators/hourly-to-salary" },
-                { name: "Salary to Hourly", href: "/calculators/salary-to-hourly" },
-                { name: "Monthly to Yearly", href: "/calculators/monthly-to-yearly" },
-                { name: "Bi-Weekly to Annual", href: "/calculators/biweekly-to-annual" },
-                { name: "Overtime Pay", href: "/calculators/overtime-pay" },
+                { name: "Hourly to Salary", href: "/calculators/hourly-to-salary-calculator" },
+                { name: "Salary to Hourly", href: "/calculators/salary-to-hourly-calculator" },
+                { name: "Monthly to Yearly", href: "/calculators/monthly-to-yearly-calculator" },
+                { name: "Bi-Weekly to Annual", href: "/calculators/biweekly-to-annual-calculator" },
+                { name: "Overtime Pay", href: "/calculators/overtime-pay-calculator" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-background/60 hover:text-primary transition-colors text-sm">
@@ -153,8 +154,8 @@ export function Footer() {
             <h3 className="font-semibold text-background mb-3 text-sm">Import and Customs</h3>
             <ul className="space-y-2">
               {[
-                { name: "Customs and Import Duty", href: "/calculators/customs-import-duty" },
-                { name: "US Import Tax", href: "/calculators/us-import-tax" },
+                { name: "Customs and Import Duty", href: "/calculators/customs-import-duty-calculator" },
+                { name: "US Import Tax", href: "/calculators/us-import-tax-calculator" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-background/60 hover:text-primary transition-colors text-sm">

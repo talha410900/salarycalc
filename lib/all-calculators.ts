@@ -31,7 +31,7 @@ export interface CalculatorItem {
 const taxCalculators: CalculatorItem[] = [
   {
     name: "Payroll Tax Calculator",
-    href: "/calculators/payroll-tax",
+    href: "/calculators/payroll-tax-calculator",
     category: "Tax Calculators",
     icon: Calculator,
     description: "Calculate net pay after all taxes",
@@ -39,7 +39,7 @@ const taxCalculators: CalculatorItem[] = [
   },
   {
     name: "Federal Tax Calculator",
-    href: "/calculators/federal-tax",
+    href: "/calculators/federal-tax-calculator",
     category: "Tax Calculators",
     icon: Landmark,
     description: "Federal income tax calculator",
@@ -47,7 +47,7 @@ const taxCalculators: CalculatorItem[] = [
   },
   {
     name: "Take-Home Pay Calculator",
-    href: "/calculators/take-home-pay",
+    href: "/calculators/take-home-pay-calculator",
     category: "Tax Calculators",
     icon: Wallet,
     description: "Net pay after deductions",
@@ -55,7 +55,7 @@ const taxCalculators: CalculatorItem[] = [
   },
   {
     name: "Self-Employed Tax Calculator",
-    href: "/calculators/self-employed-tax",
+    href: "/calculators/self-employed-tax-calculator",
     category: "Tax Calculators",
     icon: Briefcase,
     description: "SE tax calculator for freelancers",
@@ -63,7 +63,7 @@ const taxCalculators: CalculatorItem[] = [
   },
   {
     name: "AMT Calculator",
-    href: "/calculators/amt",
+    href: "/calculators/amt-calculator",
     category: "Tax Calculators",
     icon: Calculator,
     description: "Alternative Minimum Tax",
@@ -71,7 +71,7 @@ const taxCalculators: CalculatorItem[] = [
   },
   {
     name: "Tax Return and Refund Calculator",
-    href: "/calculators/tax-return",
+    href: "/calculators/tax-return-calculator",
     category: "Tax Calculators",
     icon: Receipt,
     description: "Estimate tax refund or amount owed",
@@ -79,7 +79,7 @@ const taxCalculators: CalculatorItem[] = [
   },
   {
     name: "Texas Paycheck Calculator",
-    href: "/calculators/texas-paycheck",
+    href: "/calculators/texas-paycheck-calculator",
     category: "Tax Calculators",
     icon: MapPin,
     description: "No state tax calculator for Texas",
@@ -91,7 +91,7 @@ const taxCalculators: CalculatorItem[] = [
 const salaryCalculators: CalculatorItem[] = [
   {
     name: "Hourly to Salary Calculator",
-    href: "/calculators/hourly-to-salary",
+    href: "/calculators/hourly-to-salary-calculator",
     category: "Salary Calculators",
     icon: Clock,
     description: "Convert hourly wage to annual salary",
@@ -99,7 +99,7 @@ const salaryCalculators: CalculatorItem[] = [
   },
   {
     name: "Salary to Hourly Calculator",
-    href: "/calculators/salary-to-hourly",
+    href: "/calculators/salary-to-hourly-calculator",
     category: "Salary Calculators",
     icon: DollarSign,
     description: "Find your equivalent hourly rate",
@@ -107,7 +107,7 @@ const salaryCalculators: CalculatorItem[] = [
   },
   {
     name: "Monthly to Yearly Calculator",
-    href: "/calculators/monthly-to-yearly",
+    href: "/calculators/monthly-to-yearly-calculator",
     category: "Salary Calculators",
     icon: CalendarDays,
     description: "Convert monthly to annual salary",
@@ -115,7 +115,7 @@ const salaryCalculators: CalculatorItem[] = [
   },
   {
     name: "Bi-Weekly to Annual Calculator",
-    href: "/calculators/biweekly-to-annual",
+    href: "/calculators/biweekly-to-annual-calculator",
     category: "Salary Calculators",
     icon: Calculator,
     description: "Convert bi-weekly paycheck",
@@ -123,7 +123,7 @@ const salaryCalculators: CalculatorItem[] = [
   },
   {
     name: "Overtime Pay Calculator",
-    href: "/calculators/overtime-pay",
+    href: "/calculators/overtime-pay-calculator",
     category: "Salary Calculators",
     icon: Timer,
     description: "Calculate overtime earnings",
@@ -135,7 +135,7 @@ const salaryCalculators: CalculatorItem[] = [
 const capitalGainsCalculators: CalculatorItem[] = [
   {
     name: "California Capital Gains Tax Calculator",
-    href: "/calculators/ca-capital-gains",
+    href: "/calculators/california-capital-gains-tax-calculator",
     category: "Capital Gains / Investment",
     icon: TrendingUp,
     description: "California capital gains tax calculator",
@@ -143,7 +143,7 @@ const capitalGainsCalculators: CalculatorItem[] = [
   },
   {
     name: "Capital Gains Tax Calculator on Rental Property",
-    href: "/calculators/rental-property-capital-gains",
+    href: "/calculators/rental-property-capital-gains-calculator",
     category: "Capital Gains / Investment",
     icon: Home,
     description: "Capital gains tax calculator on rental property",
@@ -151,7 +151,7 @@ const capitalGainsCalculators: CalculatorItem[] = [
   },
   {
     name: "Real Estate Capital Gains Tax Calculator",
-    href: "/calculators/real-estate-capital-gains",
+    href: "/calculators/real-estate-capital-gains-calculator",
     category: "Capital Gains / Investment",
     icon: Home,
     description: "Real estate capital gains tax calculator",
@@ -159,7 +159,7 @@ const capitalGainsCalculators: CalculatorItem[] = [
   },
   {
     name: "North Carolina Capital Gains Tax Calculator",
-    href: "/calculators/nc-capital-gains",
+    href: "/calculators/nc-capital-gains-calculator",
     category: "Capital Gains / Investment",
     icon: TrendingUp,
     description: "North Carolina capital gains tax calculator",
@@ -171,7 +171,7 @@ const capitalGainsCalculators: CalculatorItem[] = [
 const propertyMortgageCalculators: CalculatorItem[] = [
   {
     name: "Tax Mortgage Calculator",
-    href: "/calculators/mortgage-tax",
+    href: "/calculators/mortgage-tax-calculator",
     category: "Property / Mortgage",
     icon: Home,
     description: "Tax mortgage calculator",
@@ -179,7 +179,7 @@ const propertyMortgageCalculators: CalculatorItem[] = [
   },
   {
     name: "NY Mortgage Tax Calculator",
-    href: "/calculators/ny-mortgage-tax",
+    href: "/calculators/ny-mortgage-tax-calculator",
     category: "Property / Mortgage",
     icon: Home,
     description: "NY mortgage tax calculator",
@@ -187,7 +187,7 @@ const propertyMortgageCalculators: CalculatorItem[] = [
   },
   {
     name: "VA Property Tax Car Calculator",
-    href: "/calculators/va-property-tax-car",
+    href: "/calculators/va-property-tax-car-calculator",
     category: "Property / Mortgage",
     icon: Car,
     description: "VA property tax car calculator",
@@ -195,7 +195,7 @@ const propertyMortgageCalculators: CalculatorItem[] = [
   },
   {
     name: "Property Tax in Illinois Calculator",
-    href: "/calculators/illinois-property-tax",
+    href: "/calculators/illinois-property-tax-calculator",
     category: "Property / Mortgage",
     icon: Home,
     description: "Property tax in Illinois calculator",
@@ -204,10 +204,13 @@ const propertyMortgageCalculators: CalculatorItem[] = [
 ]
 
 // Sales and Vehicle Tax Calculators - EXACT keywords from priority list
-const salesVehicleCalculators: CalculatorItem[] = [
+function getSalesVehicleCalculators(): CalculatorItem[] {
+  const { getOptimizedStateCalculatorUrl, getMaineExciseTaxCalculatorSlug } = require("@/lib/seo-slugs")
+  
+  return [
   {
     name: "TN Car Sales Tax Calculator",
-    href: "/calculators/state/tennessee/sales-tax",
+    href: getOptimizedStateCalculatorUrl("tennessee", "sales-tax"),
     category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
     description: "TN car sales tax calculator",
@@ -215,7 +218,7 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
   {
     name: "TN Sales Tax Calculator Auto",
-    href: "/calculators/state/tennessee/sales-tax",
+    href: getOptimizedStateCalculatorUrl("tennessee", "sales-tax"),
     category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
     description: "TN sales tax calculator auto",
@@ -223,7 +226,7 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
   {
     name: "MD Sales Tax Calculator",
-    href: "/calculators/state/maryland/sales-tax",
+    href: getOptimizedStateCalculatorUrl("maryland", "sales-tax"),
     category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
     description: "MD sales tax calculator",
@@ -231,7 +234,7 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
   {
     name: "Nebraska Car Sales Tax Calculator",
-    href: "/calculators/state/nebraska/sales-tax",
+    href: getOptimizedStateCalculatorUrl("nebraska", "sales-tax"),
     category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
     description: "Nebraska car sales tax calculator",
@@ -239,7 +242,7 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
   {
     name: "TX Auto Sales Tax Calculator",
-    href: "/calculators/state/texas/sales-tax",
+    href: getOptimizedStateCalculatorUrl("texas", "sales-tax"),
     category: "Sales / Vehicle / Excise (Golden)",
     icon: ShoppingCart,
     description: "TX auto sales tax calculator",
@@ -247,7 +250,7 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
   {
     name: "Virginia Vehicle Tax Calculator",
-    href: "/calculators/state/virginia/vehicle-tax",
+    href: getOptimizedStateCalculatorUrl("virginia", "vehicle-tax"),
     category: "Sales / Vehicle / Excise (Golden)",
     icon: Car,
     description: "Virginia vehicle tax calculator",
@@ -255,7 +258,7 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
   {
     name: "WV Vehicle Tax Calculator",
-    href: "/calculators/state/west-virginia/vehicle-tax",
+    href: getOptimizedStateCalculatorUrl("west-virginia", "vehicle-tax"),
     category: "Sales / Vehicle / Excise (Golden)",
     icon: Car,
     description: "WV vehicle tax calculator",
@@ -263,19 +266,22 @@ const salesVehicleCalculators: CalculatorItem[] = [
   },
   {
     name: "State of Maine Excise Tax Calculator",
-    href: "/calculators/state/maine/excise-tax",
+    href: `/calculators/${getMaineExciseTaxCalculatorSlug()}`,
     category: "Sales / Vehicle / Excise (Golden)",
     icon: Receipt,
     description: "State of Maine excise tax calculator",
     keywords: ["state of maine excise tax calculator", "maine excise tax", "maine", "me", "excise tax", "vehicle excise"],
   },
-]
+  ]
+}
+
+const salesVehicleCalculators = getSalesVehicleCalculators()
 
 // Import and Customs Calculators
 const importCustomsCalculators: CalculatorItem[] = [
   {
     name: "Customs and Import Duty Calculator",
-    href: "/calculators/customs-import-duty",
+    href: "/calculators/customs-import-duty-calculator",
     category: "Import and Customs",
     icon: Package,
     description: "Estimate US import duties and fees",
@@ -283,7 +289,7 @@ const importCustomsCalculators: CalculatorItem[] = [
   },
   {
     name: "US Import Tax Calculator",
-    href: "/calculators/us-import-tax",
+    href: "/calculators/us-import-tax-calculator",
     category: "Import and Customs",
     icon: Package,
     description: "General US import duty calculator",
@@ -298,15 +304,18 @@ function getStateCalculators(): CalculatorItem[] {
   // Import keyword mappings
   const { STATE_WITHHOLDING_KEYWORDS } = require("@/lib/state-calculator-types")
   
+  // Import optimized URL generator
+  const { getOptimizedStateCalculatorUrl } = require("@/lib/seo-slugs")
+  
   ALL_STATES.forEach((state) => {
-    // State income tax (always available)
+    // State income tax (always available) - use optimized URL
     stateCalcs.push({
-      name: `${state.name} State Tax Calculator`,
-      href: `/calculators/state/${state.slug}`,
+      name: `${state.name} Tax Calculator`,
+      href: getOptimizedStateCalculatorUrl(state.slug, "income-tax"),
       category: "State Tax Calculators",
       icon: MapPin,
       description: `${state.name} state income tax`,
-      keywords: [state.name.toLowerCase(), state.code.toLowerCase(), "state tax", "income tax", state.slug],
+      keywords: [state.name.toLowerCase(), state.code.toLowerCase(), "state tax", "income tax", state.slug, `${state.name.toLowerCase()} tax calculator`],
     })
 
     // Other state calculators with EXACT keyword matching
@@ -314,7 +323,8 @@ function getStateCalculators(): CalculatorItem[] {
     if (config) {
       config.availableCalculators.forEach((calcType) => {
         if (calcType !== "income-tax") {
-          const url = getStateCalculatorUrl(state.slug, calcType)
+          // Use optimized URL
+          const url = getOptimizedStateCalculatorUrl(state.slug, calcType as any)
           
           // Use exact keywords from priority list
           if (calcType === "withholding") {

@@ -21,18 +21,19 @@ import { Input } from "@/components/ui/input"
 import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
 import { heroCalculators } from "@/lib/calculators"
 import { Logo } from "@/components/logo"
+import { getOptimizedStateCalculatorUrl } from "@/lib/seo-slugs"
 
 const salaryCalculators = [
-  { icon: Clock, name: "Hourly to Salary", href: "/calculators/hourly-to-salary" },
-  { icon: DollarSign, name: "Salary to Hourly", href: "/calculators/salary-to-hourly" },
-  { icon: CalendarDays, name: "Monthly to Yearly", href: "/calculators/monthly-to-yearly" },
-  { icon: Calculator, name: "Bi-Weekly to Annual", href: "/calculators/biweekly-to-annual" },
-  { icon: Timer, name: "Overtime Pay", href: "/calculators/overtime-pay" },
+  { icon: Clock, name: "Hourly to Salary", href: "/calculators/hourly-to-salary-calculator" },
+  { icon: DollarSign, name: "Salary to Hourly", href: "/calculators/salary-to-hourly-calculator" },
+  { icon: CalendarDays, name: "Monthly to Yearly", href: "/calculators/monthly-to-yearly-calculator" },
+  { icon: Calculator, name: "Bi-Weekly to Annual", href: "/calculators/biweekly-to-annual-calculator" },
+  { icon: Timer, name: "Overtime Pay", href: "/calculators/overtime-pay-calculator" },
 ]
 
 const taxCalculators = [
-  { icon: Landmark, name: "Federal Tax", href: "/calculators/federal-tax" },
-  { icon: Wallet, name: "Take-Home Pay", href: "/calculators/take-home-pay" },
+  { icon: Landmark, name: "Federal Tax", href: "/calculators/federal-tax-calculator" },
+  { icon: Wallet, name: "Take-Home Pay", href: "/calculators/take-home-pay-calculator" },
 ]
 
 const popularStates = ["california", "texas", "florida", "new-york", "illinois", "pennsylvania"]
@@ -206,7 +207,7 @@ export function Header() {
                     {filteredStates.map((state) => (
                       <Link
                         key={state.slug}
-                        href={`/calculators/state/${state.slug}`}
+                        href={getOptimizedStateCalculatorUrl(state.slug, "income-tax")}
                         className="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-secondary/50 transition-colors"
                       >
                         <div className="flex items-center gap-2">
