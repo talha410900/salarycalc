@@ -31,7 +31,7 @@ export default function AdminLoginPage() {
     setLoading(true)
 
     try {
-      const success = login(username, password)
+      const success = await login(username, password)
       if (success) {
         router.push('/admin')
       } else {

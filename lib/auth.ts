@@ -7,8 +7,8 @@
  * For production, consider using a more secure authentication system.
  */
 
-const ADMIN_USERNAME = process.env.NEXT_PUBLIC_ADMIN_USERNAME || 'admin'
-const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'admin123'
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
 
 export function verifyCredentials(username: string, password: string): boolean {
   return username === ADMIN_USERNAME && password === ADMIN_PASSWORD

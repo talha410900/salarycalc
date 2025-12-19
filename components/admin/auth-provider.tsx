@@ -6,7 +6,7 @@ import { isAuthenticated, setAuthenticated, logout as authLogout } from '@/lib/a
 
 interface AuthContextType {
   isAuthenticated: boolean
-  login: (username: string, password: string) => boolean
+  login: (username: string, password: string) => Promise<boolean>
   logout: () => void
   loading: boolean
 }
@@ -31,15 +31,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [pathname, router])
 
-  const login = (username: string, password: string): boolean => {
-    // Import here to avoid SSR issues
-    const { verifyCredentials, setAuthenticated: setAuth } = require('@/lib/auth')
-    if (verifyCredentials(username, password)) {
-      setAuth(true)
-      setAuthenticatedState(true)
-      return true
+  const login = async (username: string, password: string): Promise<boolean> => {
+    try {
+      const response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setAuthenticated(true)
+        setAuthenticatedState(true)
+        return true
+      }
+      return false
+    } catch (error) {
+      console.error('Login error:', error)
+      return false
     }
-    return false
   }
 
   const logout = () => {
