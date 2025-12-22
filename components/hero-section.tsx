@@ -55,12 +55,16 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] text-balance mb-4">
-            Calculate Your <span className="text-primary">Salary</span> and Taxes
-          </h1>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] text-balance mb-4">
+            Calculate Smarter, Not Harder — Salary and Tax Estimator USA Made Simple at TaxSal
+          </h2>
+
+          <h3 className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 text-pretty leading-relaxed">
+            Accurately calculate salary, income tax, and take-home pay for every U.S. state with our free online salary & tax estimator.
+          </h3>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 text-pretty leading-relaxed">
-            Free, accurate salary and tax calculators for all 50 states. 2025-2026 tax brackets included.
+            TaxSal is a free salary and tax estimator USA designed to help you calculate accurate take-home pay and income tax for all 50 states.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-8">
