@@ -54,9 +54,9 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] text-balance mb-4">
-            Calculate Smarter, Not Harder — Salary and Tax Estimator USA Made Simple at TaxSal
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl  font-bold text-foreground leading-[1.1] text-balance mb-4">
+            Calculate Smarter, Not Harder <br /> <span className="text-primary">Salary and Tax Estimator USA</span> Made Simple at TaxSal
           </h2>
 
           <h3 className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 text-pretty leading-relaxed">

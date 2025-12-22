@@ -1,17 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Geist_Mono } from "next/font/google"
+import { Nunito, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
 import { Toaster } from "@/components/ui/sonner"
 import { DevSEOWidget } from "@/components/dev-seo-widget"
 import "./globals.css"
 
-const inter = Inter({ 
+const nunito = Nunito({ 
   subsets: ["latin"],
   display: 'swap',
   preload: true,
-  variable: '--font-inter',
+  variable: '--font-nunito',
 })
 const geistMono = Geist_Mono({ 
   subsets: ["latin"],
@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
         <CookieConsent />

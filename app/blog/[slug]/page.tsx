@@ -124,12 +124,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
 
             {blog.featured_image && (
-              <div className="relative w-full h-96 overflow-hidden rounded-lg bg-muted mb-8">
+              <div className="relative w-full h-[300px] md:h-[560px] overflow-hidden rounded-lg bg-muted mb-8">
                 <Image
                   src={blog.featured_image}
                   alt={blog.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority
                   unoptimized
                 />
