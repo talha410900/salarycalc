@@ -5,6 +5,7 @@ export interface Blog {
   content: string
   excerpt: string | null
   featured_image: string | null
+  featured_image_alt: string | null
   status: 'draft' | 'published' | 'archived'
   
   // Tags and Categories (stored as arrays/strings in blogs table)

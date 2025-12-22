@@ -58,6 +58,7 @@ const blogSchema = z.object({
   content: z.string().min(1, 'Content is required'),
   excerpt: z.string().optional(),
   featured_image: z.string().optional().or(z.literal('')),
+  featured_image_alt: z.string().optional(),
   status: z.enum(['draft', 'published', 'archived']),
   
   // Tags and Categories
@@ -114,6 +115,7 @@ export function BlogForm({ blog }: BlogFormProps) {
       content: blog?.content || '',
       excerpt: blog?.excerpt || '',
       featured_image: blog?.featured_image || '',
+      featured_image_alt: blog?.featured_image_alt || '',
       status: blog?.status || 'draft',
       tags: blog?.tags || [],
       category: blog?.category || null,
@@ -424,8 +426,11 @@ export function BlogForm({ blog }: BlogFormProps) {
                         <ImageUpload
                           value={field.value || ''}
                           onChange={field.onChange}
+                          altValue={form.watch('featured_image_alt') || ''}
+                          onAltChange={(alt) => form.setValue('featured_image_alt', alt)}
                           folder="featured"
                           description="Main image displayed with the blog post"
+                          showAltText={true}
                         />
                       </FormControl>
                       <FormMessage />

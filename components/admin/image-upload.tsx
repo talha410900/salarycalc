@@ -12,19 +12,25 @@ import Image from 'next/image'
 interface ImageUploadProps {
   value?: string
   onChange: (url: string) => void
+  altValue?: string
+  onAltChange?: (alt: string) => void
   folder?: string
   label?: string
   description?: string
   className?: string
+  showAltText?: boolean
 }
 
 export function ImageUpload({
   value,
   onChange,
+  altValue,
+  onAltChange,
   folder = 'featured',
   label = 'Image',
   description,
   className,
+  showAltText = false,
 }: ImageUploadProps) {
   const [uploading, setUploading] = useState(false)
   const [preview, setPreview] = useState<string | null>(value || null)
@@ -125,28 +131,44 @@ export function ImageUpload({
               <X className="h-4 w-4" />
             </Button>
           </div>
-          <div className="mt-2 flex items-center gap-2">
-            <Input
-              type="text"
-              value={value || ''}
-              onChange={(e) => handlePasteUrl(e.target.value)}
-              placeholder="Or paste image URL"
-              className="flex-1"
-            />
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={() => fileInputRef.current?.click()}
-              disabled={uploading}
-            >
-              {uploading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <Upload className="h-4 w-4" />
-              )}
-              Replace
-            </Button>
+          <div className="mt-2 space-y-2">
+            <div className="flex items-center gap-2">
+              <Input
+                type="text"
+                value={value || ''}
+                onChange={(e) => handlePasteUrl(e.target.value)}
+                placeholder="Or paste image URL"
+                className="flex-1"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploading}
+              >
+                {uploading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Upload className="h-4 w-4" />
+                )}
+                Replace
+              </Button>
+            </div>
+            {showAltText && onAltChange && (
+              <div>
+                <label className="text-xs font-medium text-muted-foreground mb-1 block">
+                  Alt Text (for accessibility and SEO)
+                </label>
+                <Input
+                  type="text"
+                  value={altValue || ''}
+                  onChange={(e) => onAltChange(e.target.value)}
+                  placeholder="Describe the image for screen readers"
+                  className="w-full"
+                />
+              </div>
+            )}
           </div>
         </div>
       ) : (
@@ -190,6 +212,20 @@ export function ImageUpload({
             onChange={(e) => handlePasteUrl(e.target.value)}
             placeholder="Or paste image URL"
           />
+          {showAltText && onAltChange && (
+            <div>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">
+                Alt Text (for accessibility and SEO)
+              </label>
+              <Input
+                type="text"
+                value={altValue || ''}
+                onChange={(e) => onAltChange(e.target.value)}
+                placeholder="Describe the image for screen readers"
+                className="w-full"
+              />
+            </div>
+          )}
         </div>
       )}
     </div>
