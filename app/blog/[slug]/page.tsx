@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Calculate reading time (rough estimate: 200 words per minute)
   const wordCount = blog.content.split(/\s+/).length
   const readingTime = Math.ceil(wordCount / 200)
-
+console.log(blog)
   return (
     <>
       {/* Schema Markup */}

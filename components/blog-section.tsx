@@ -39,7 +39,8 @@ export function BlogSection({ blogs }: BlogSectionProps) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">2
+         
           {blogs.slice(0, 3).map((blog) => (
             <Link key={blog.id} href={`/blog/${blog.slug}`}>
               <Card className="group h-full overflow-hidden bg-card border border-border/50 hover:border-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group-hover:-translate-y-1">
