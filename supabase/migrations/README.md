@@ -9,6 +9,7 @@ This directory contains SQL migration files for the Supabase database.
 3. **create_tags_categories_tables.sql** - Creates tags and categories tables
 4. **add_tags_categories_to_blogs.sql** - Adds tags and category columns to blogs table
 5. **add_featured_image_alt_to_blogs.sql** - Adds featured_image_alt column for accessibility
+6. **add_faqs_to_blogs.sql** - Adds FAQs column (JSONB) for storing FAQ questions and answers
 
 ## How to Run Migrations
 
@@ -65,7 +66,8 @@ If setting up from scratch, run migrations in this order:
 2. `create_storage_bucket.sql`
 3. `create_tags_categories_tables.sql`
 4. `add_tags_categories_to_blogs.sql`
-5. `add_featured_image_alt_to_blogs.sql` (latest)
+5. `add_featured_image_alt_to_blogs.sql`
+6. `add_faqs_to_blogs.sql` (latest)
 
 ## Verifying Migration
 

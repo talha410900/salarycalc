@@ -1,4 +1,4 @@
-import { Calculator } from "lucide-react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 interface LogoProps {
@@ -8,35 +8,32 @@ interface LogoProps {
   variant?: "default" | "footer"
 }
 
-export function Logo({ className, showText = true, size = "md", variant = "default" }: LogoProps) {
+export function Logo({ className, showText = false, size = "md", variant = "default" }: LogoProps) {
   const sizeClasses = {
-    sm: "h-6 w-6",
-    md: "h-8 w-8",
-    lg: "h-10 w-10",
-  }
-
-  const iconSize = {
-    sm: "h-3 w-3",
-    md: "h-4 w-4",
-    lg: "h-5 w-5",
+    sm: "h-16",
+    md: "h-24 w-36",
+    lg: "h-32",
   }
 
   const textSize = {
-    sm: "text-sm",
-    md: "text-lg",
-    lg: "text-xl",
+    sm: "text-lg",
+    md: "text-2xl",
+    lg: "text-3xl",
   }
 
   const textColor = variant === "footer" ? "text-background" : "text-foreground"
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <div className={cn(
-        "flex items-center justify-center rounded-lg bg-primary shadow-md",
-        sizeClasses[size]
-      )}>
-        <Calculator className={cn("text-primary-foreground", iconSize[size])} />
-      </div>
+      <Image
+        src="/logo.jpg"
+        alt="TaxSal - Free Tool to Estimate Salary and Taxes in the USA"
+        width={size === "sm" ? 64 : size === "md" ? 96 : 128}
+        height={size === "sm" ? 64 : size === "md" ? 96 : 128}
+        className={cn("object-contain", sizeClasses[size])}
+        priority
+        unoptimized
+      />
       {showText && (
         <span className={cn("font-bold", textSize[size], textColor)}>
           TaxSal

@@ -33,6 +33,9 @@ export interface Blog {
   robots_meta: string | null
   schema_markup: string | null
   
+  // FAQs
+  faqs: Array<{ question: string; answer: string }> | null
+  
   // Author and dates
   author_id: string | null
   published_at: string | null

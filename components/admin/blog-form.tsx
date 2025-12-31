@@ -85,6 +85,12 @@ const blogSchema = z.object({
   canonical_url: z.string().url('Must be a valid URL').optional().or(z.literal('')),
   robots_meta: z.string().optional(),
   schema_markup: z.string().optional(),
+  
+  // FAQs
+  faqs: z.array(z.object({
+    question: z.string().min(1, 'Question is required'),
+    answer: z.string().min(1, 'Answer is required'),
+  })).optional().default([]),
 })
 
 type BlogFormValues = z.infer<typeof blogSchema>
@@ -132,6 +138,7 @@ export function BlogForm({ blog }: BlogFormProps) {
       canonical_url: blog?.canonical_url || '',
       robots_meta: blog?.robots_meta || '',
       schema_markup: blog?.schema_markup || '',
+      faqs: blog?.faqs || [],
     },
   })
 
@@ -287,6 +294,7 @@ export function BlogForm({ blog }: BlogFormProps) {
         content,
         tags: values.tags || [],
         category: values.category || null,
+        faqs: values.faqs || [],
         published_at: values.status === 'published' && !blog?.published_at
           ? new Date().toISOString()
           : blog?.published_at || null,
@@ -325,10 +333,11 @@ export function BlogForm({ blog }: BlogFormProps) {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <Tabs defaultValue="content" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="content">Content</TabsTrigger>
             <TabsTrigger value="seo">SEO</TabsTrigger>
             <TabsTrigger value="social">Social Media</TabsTrigger>
+            <TabsTrigger value="faqs">FAQs</TabsTrigger>
             <TabsTrigger value="advanced">Advanced</TabsTrigger>
           </TabsList>
 
@@ -975,6 +984,89 @@ export function BlogForm({ blog }: BlogFormProps) {
                     />
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="faqs" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Frequently Asked Questions</CardTitle>
+                <CardDescription>Add FAQs to your blog post. These will be displayed with schema markup for SEO.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <FormField
+                  control={form.control}
+                  name="faqs"
+                  render={({ field }) => (
+                    <FormItem>
+                      <div className="space-y-4">
+                        {field.value?.map((faq, index) => (
+                          <Card key={index} className="p-4">
+                            <div className="flex items-start justify-between mb-4">
+                              <h4 className="font-semibold">FAQ {index + 1}</h4>
+                              <Button
+                                type="button"
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => {
+                                  const newFaqs = field.value?.filter((_, i) => i !== index) || []
+                                  field.onChange(newFaqs)
+                                }}
+                              >
+                                <X className="h-4 w-4" />
+                              </Button>
+                            </div>
+                            <div className="space-y-4">
+                              <div>
+                                <label className="text-sm font-medium mb-2 block">Question *</label>
+                                <Input
+                                  value={faq.question}
+                                  onChange={(e) => {
+                                    const newFaqs = [...(field.value || [])]
+                                    newFaqs[index] = { ...faq, question: e.target.value }
+                                    field.onChange(newFaqs)
+                                  }}
+                                  placeholder="Enter question"
+                                />
+                              </div>
+                              <div>
+                                <label className="text-sm font-medium mb-2 block">Answer *</label>
+                                <Textarea
+                                  value={faq.answer}
+                                  onChange={(e) => {
+                                    const newFaqs = [...(field.value || [])]
+                                    newFaqs[index] = { ...faq, answer: e.target.value }
+                                    field.onChange(newFaqs)
+                                  }}
+                                  placeholder="Enter answer"
+                                  rows={4}
+                                />
+                              </div>
+                            </div>
+                          </Card>
+                        ))}
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => {
+                            field.onChange([...(field.value || []), { question: '', answer: '' }])
+                          }}
+                          className="w-full"
+                        >
+                          <Plus className="h-4 w-4 mr-2" />
+                          Add FAQ
+                        </Button>
+                        {(!field.value || field.value.length === 0) && (
+                          <p className="text-sm text-muted-foreground text-center py-4">
+                            No FAQs added yet. Click "Add FAQ" to get started.
+                          </p>
+                        )}
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </CardContent>
             </Card>
           </TabsContent>

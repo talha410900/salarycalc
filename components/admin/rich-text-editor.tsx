@@ -55,6 +55,7 @@ import {
   Highlighter,
   Type,
   Eraser,
+  FileCode,
 } from 'lucide-react'
 import { useCallback, useEffect, useState, useRef } from 'react'
 import { cn } from '@/lib/utils'
@@ -69,6 +70,7 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
 import { Loader2 } from 'lucide-react'
 import {
   Popover,
@@ -123,6 +125,8 @@ export function RichTextEditor({
   const [uploadingImage, setUploadingImage] = useState(false)
   const [colorPopoverOpen, setColorPopoverOpen] = useState(false)
   const [highlightPopoverOpen, setHighlightPopoverOpen] = useState(false)
+  const [htmlDialogOpen, setHtmlDialogOpen] = useState(false)
+  const [htmlContent, setHtmlContent] = useState('')
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -299,6 +303,14 @@ export function RichTextEditor({
     if (!editor) return
     editor.chain().focus().setHorizontalRule().run()
   }, [editor])
+
+  const insertHtml = useCallback(() => {
+    if (!editor || !htmlContent.trim()) return
+    editor.chain().focus().insertContent(htmlContent).run()
+    setHtmlDialogOpen(false)
+    setHtmlContent('')
+    toast.success('HTML inserted successfully')
+  }, [editor, htmlContent])
 
   if (!mounted || !editor) {
     return (
@@ -626,6 +638,15 @@ export function RichTextEditor({
           title="Code Block"
         >
           <Code2 className="h-4 w-4" />
+        </Button>
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          onClick={() => setHtmlDialogOpen(true)}
+          title="Insert HTML"
+        >
+          <FileCode className="h-4 w-4" />
         </Button>
         <div className="w-px h-6 bg-border mx-1" />
 
@@ -978,6 +999,53 @@ export function RichTextEditor({
               <p className="text-xs text-muted-foreground">
                 Alt text helps with accessibility and SEO. Describe what the image shows.
               </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* HTML Insert Dialog */}
+      <Dialog open={htmlDialogOpen} onOpenChange={setHtmlDialogOpen}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>Insert HTML</DialogTitle>
+            <DialogDescription>
+              Paste your HTML code below. It will be rendered as-is in the blog content.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="html-content">HTML Code</Label>
+              <Textarea
+                id="html-content"
+                value={htmlContent}
+                onChange={(e) => setHtmlContent(e.target.value)}
+                placeholder="<div class='my-custom-class'>Your HTML here...</div>"
+                rows={10}
+                className="font-mono text-sm"
+              />
+              <p className="text-xs text-muted-foreground">
+                Note: Some HTML elements may be sanitized for security. Common tags like div, span, table, img, a, p, h1-h6, ul, ol, li are supported.
+              </p>
+            </div>
+            <div className="flex justify-end gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  setHtmlDialogOpen(false)
+                  setHtmlContent('')
+                }}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="button"
+                onClick={insertHtml}
+                disabled={!htmlContent.trim()}
+              >
+                Insert HTML
+              </Button>
             </div>
           </div>
         </DialogContent>

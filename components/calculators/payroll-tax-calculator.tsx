@@ -58,7 +58,7 @@ const ADDITIONAL_MEDICARE_THRESHOLD = {
 function calculateFederalTax(annualIncome: number, filingStatus: string): number {
   const deduction = STANDARD_DEDUCTIONS_2025[filingStatus as keyof typeof STANDARD_DEDUCTIONS_2025] || 15750
   const taxableIncome = Math.max(0, annualIncome - deduction)
-  const brackets = FEDERAL_BRACKETS_20252026[filingStatus as keyof typeof FEDERAL_BRACKETS_2025] || FEDERAL_BRACKETS_20252026.single
+  const brackets = FEDERAL_BRACKETS_2025[filingStatus as keyof typeof FEDERAL_BRACKETS_2025] || FEDERAL_BRACKETS_2025.single
 
   let tax = 0
   let remainingIncome = taxableIncome
