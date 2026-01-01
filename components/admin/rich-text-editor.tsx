@@ -21,6 +21,7 @@ import { TaskItem } from '@tiptap/extension-task-item'
 import { Subscript } from '@tiptap/extension-subscript'
 import { Superscript } from '@tiptap/extension-superscript'
 import { Typography } from '@tiptap/extension-typography'
+import { Callout } from './callout-extension'
 import { Button } from '@/components/ui/button'
 import {
   Bold,
@@ -56,6 +57,7 @@ import {
   Type,
   Eraser,
   FileCode,
+  MessageSquare,
 } from 'lucide-react'
 import { useCallback, useEffect, useState, useRef } from 'react'
 import { cn } from '@/lib/utils'
@@ -203,6 +205,7 @@ export function RichTextEditor({
       Subscript,
       Superscript,
       Typography,
+      Callout,
     ],
     content,
     onUpdate: ({ editor }) => {
@@ -628,6 +631,39 @@ export function RichTextEditor({
           title="Quote"
         >
           <Quote className="h-4 w-4" />
+        </Button>
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          onClick={() => {
+            if (!editor) return
+            
+            const chain = editor.chain().focus()
+            
+            // Check if we're in a callout
+            if (editor.isActive('callout')) {
+              // Try to lift out of callout
+              try {
+                chain.lift('callout').run()
+              } catch (e) {
+                console.error('Error lifting callout:', e)
+                toast.error('Could not remove callout')
+              }
+            } else {
+              // Wrap in callout
+              try {
+                chain.wrapIn('callout').run()
+              } catch (e) {
+                console.error('Error wrapping in callout:', e)
+                toast.error('Could not create callout')
+              }
+            }
+          }}
+          className={cn(editor.isActive('callout') && 'bg-muted')}
+          title="Callout Box"
+        >
+          <MessageSquare className="h-4 w-4" />
         </Button>
         <Button
           type="button"

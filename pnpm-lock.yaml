@@ -98,6 +98,9 @@ importers:
       '@supabase/supabase-js':
         specifier: ^2.86.2
         version: 2.89.0
+      '@tiptap/core':
+        specifier: ^3.14.0
+        version: 3.14.0(@tiptap/pm@3.14.0)
       '@tiptap/extension-code-block':
         specifier: ^3.14.0
         version: 3.14.0(@tiptap/core@3.14.0(@tiptap/pm@3.14.0))(@tiptap/pm@3.14.0)

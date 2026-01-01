@@ -425,6 +425,28 @@
   color: hsl(var(--muted-foreground));
 }
 
+.prose div[data-type="callout"] {
+  background-color: hsl(var(--muted) / 0.5);
+  border-left: 4px solid hsl(var(--primary));
+  padding: 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 2em 0;
+}
+
+.prose div[data-type="callout"] p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .prose div[data-type="callout"] p {
+    font-size: 1.25rem;
+  }
+}
+
 .prose code {
   background-color: hsl(var(--muted));
   padding: 0.125em 0.375em;
