@@ -12,7 +12,7 @@ import { Footer } from "@/components/footer"
 import { getPublishedBlogs } from "@/lib/supabase/server"
 
 export default async function Home() {
-  const blogs = await getPublishedBlogs(3)
+  const blogs = await getPublishedBlogs()
 
   return (
     <div className="min-h-screen flex flex-col">

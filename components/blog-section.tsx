@@ -1,22 +1,35 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import { Blog } from '@/lib/supabase/types'
 
 interface BlogSectionProps {
   blogs: Blog[]
 }
 
+const INITIAL_COUNT = 6
+const LOAD_MORE_COUNT = 6
+
 export function BlogSection({ blogs }: BlogSectionProps) {
   const router = useRouter()
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT)
 
   if (blogs.length === 0) {
     return null
+  }
+
+  const visibleBlogs = blogs.slice(0, visibleCount)
+  const hasMore = visibleCount < blogs.length
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + LOAD_MORE_COUNT, blogs.length))
   }
 
   return (
@@ -39,19 +52,20 @@ export function BlogSection({ blogs }: BlogSectionProps) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">2
-         
-          {blogs.slice(0, 3).map((blog) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {visibleBlogs.map((blog) => (
             <Link key={blog.id} href={`/blog/${blog.slug}`}>
-              <Card className="group h-full overflow-hidden bg-card border border-border/50 hover:border-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group-hover:-translate-y-1">
+              <Card className="group h-full pt-0 overflow-hidden bg-card border border-border/50 hover:border-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group-hover:-translate-y-1">
                 {blog.featured_image && (
-                  <div className="relative w-full h-48 overflow-hidden bg-muted">
+                  <div className="relative w-full h-[230px] overflow-hidden bg-muted">
                     <Image
                       src={blog.featured_image}
                       alt={blog.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      priority
                       unoptimized
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 )}
@@ -115,6 +129,20 @@ export function BlogSection({ blogs }: BlogSectionProps) {
             </Link>
           ))}
         </div>
+
+        {hasMore && (
+          <div className="flex justify-center mt-8">
+            <Button
+              onClick={handleLoadMore}
+              variant="outline"
+              size="lg"
+              className="gap-2"
+            >
+              Load More
+              <ChevronDown className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   )
