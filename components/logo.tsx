@@ -26,7 +26,7 @@ export function Logo({ className, showText = false, size = "md", variant = "defa
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <Image
-        src="/logo.png"
+        src="/images/logo.png"
         alt="TaxSal - Free Tool to Estimate Salary and Taxes in the USA"
         width={size === "sm" ? 64 : size === "md" ? 96 : 128}
         height={size === "sm" ? 64 : size === "md" ? 96 : 128}

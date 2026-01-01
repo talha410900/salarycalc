@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/logo.png",
+        url: "/images/logo.png",
         width: 1200,
         height: 630,
         alt: "TaxSal - Free Tool to Estimate Salary and Taxes in the USA",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Salary and Tax Estimator USA | Free State-Wise Calculator – TaxSal",
     description: "Use TaxSal free salary and tax estimator USA to calculate income tax and take-home pay for every U.S. state. Fast, accurate & easy.",
-    images: ["/logo.png"],
+    images: ["/images/logo.png"],
   },
 }
 
@@ -86,7 +86,7 @@ export default function RootLayout({
     name: 'TaxSal',
     description: 'Free Tool to Estimate Salary and Taxes in the USA',
     url: 'https://taxsal.com',
-    logo: 'https://taxsal.com/logo.png',
+    logo: 'https://taxsal.com/images/logo.png',
     sameAs: [],
   }
 
