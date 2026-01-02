@@ -50,7 +50,7 @@ export function GuidesSection({ blogs }: GuidesSectionProps) {
                         src={blog.featured_image}
                         alt={blog.title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className=" group-hover:scale-105 transition-transform duration-500"
                         unoptimized
                   />
                     </div>

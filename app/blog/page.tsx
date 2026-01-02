@@ -84,14 +84,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedBlogs.map((blog) => (
                   <Link key={blog.id} href={`/blog/${blog.slug}`}>
-                    <Card className="group h-full overflow-hidden bg-card border border-border/50 hover:border-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group-hover:-translate-y-1">
+                    <Card className="group h-full pt-0 overflow-hidden bg-card border border-border/50 hover:border-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group-hover:-translate-y-1">
                       {blog.featured_image && (
                         <div className="relative w-full h-48 overflow-hidden bg-muted">
                           <Image
                             src={blog.featured_image}
                             alt={blog.title}
                             fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            className=" group-hover:scale-105 transition-transform duration-500"
                             unoptimized
                           />
                         </div>

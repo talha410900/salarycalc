@@ -31,7 +31,6 @@ export const Callout = Node.create({
       'div',
       mergeAttributes(HTMLAttributes, {
         'data-type': 'callout',
-        class: 'bg-muted/50 border-l-4 border-primary p-6 rounded-r-lg mb-8',
       }),
       0,
     ]
