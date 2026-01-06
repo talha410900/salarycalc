@@ -93,20 +93,25 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}>
-        {/* Google Analytics */}
-        <Script
+      <head>
+        {/* Google Analytics - External Script */}
+        <script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-7PK3P58RGV"
-          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-7PK3P58RGV');
-          `}
-        </Script>
+        {/* Google Analytics - Inline Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7PK3P58RGV');
+            `,
+          }}
+        />
+      </head>
+      <body className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
