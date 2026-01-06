@@ -7,8 +7,6 @@ import {
   getBlogBySlug,
   getRelatedBlogs,
   getRecentBlogs,
-  getAllCategories,
-  getAllTags,
 } from '@/lib/supabase/server'
 import { Blog } from '@/lib/supabase/types'
 import { Header } from '@/components/header'
@@ -85,11 +83,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const readingTime = Math.ceil(wordCount / 200)
 
   // Fetch related content
-  const [relatedBlogs, recentBlogs, categories, tags] = await Promise.all([
+  const [relatedBlogs, recentBlogs] = await Promise.all([
     getRelatedBlogs(blog.id, blog.category, blog.tags || [], 3),
     getRecentBlogs(5),
-    getAllCategories(),
-    getAllTags(),
   ])
 
   return (
@@ -283,10 +279,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <BlogSidebar
                       relatedBlogs={relatedBlogs}
                       recentBlogs={recentBlogs}
-                      categories={categories}
-                      tags={tags}
-                      currentCategory={blog.category}
-                      currentTags={blog.tags || []}
                     />
                   </div>
                 </aside>

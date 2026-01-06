@@ -110,9 +110,9 @@ export function HeroSection() {
 
                       {/* Calculator Results */}
                       <div className="py-1">
-                        {calculators.map((calc) => (
+                        {calculators.map((calc, index) => (
                           <Link
-                            key={calc.href}
+                            key={`${category}-${calc.href}-${index}`}
                             href={calc.href}
                             onClick={() => {
                               setSearchQuery("")

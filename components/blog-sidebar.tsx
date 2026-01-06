@@ -2,17 +2,15 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Clock, Tag, FolderOpen, TrendingUp } from 'lucide-react'
+import { Clock, TrendingUp } from 'lucide-react'
 import { Blog } from '@/lib/supabase/types'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
 
 interface BlogSidebarProps {
   relatedBlogs: Blog[]
   recentBlogs: Blog[]
-  categories: string[]
-  tags: string[]
+  categories?: string[]
+  tags?: string[]
   currentCategory?: string | null
   currentTags?: string[]
 }
@@ -20,10 +18,6 @@ interface BlogSidebarProps {
 export function BlogSidebar({
   relatedBlogs,
   recentBlogs,
-  categories,
-  tags,
-  currentCategory,
-  currentTags,
 }: BlogSidebarProps) {
 
   return (
@@ -89,66 +83,6 @@ export function BlogSidebar({
                 </h4>
               </Link>
             ))}
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Categories */}
-      {categories.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <FolderOpen className="h-5 w-5" />
-              Categories
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <Link
-                  key={category}
-                  href={`/blog?category=${encodeURIComponent(category)}`}
-                >
-                  <Badge
-                    variant={currentCategory === category ? 'default' : 'secondary'}
-                    className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    {category}
-                  </Badge>
-                </Link>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Tags Cloud */}
-      {tags.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <Tag className="h-5 w-5" />
-              Popular Tags
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {tags.slice(0, 20).map((tag) => (
-                <Link
-                  key={tag}
-                  href={`/blog?tag=${encodeURIComponent(tag)}`}
-                >
-                  <Badge
-                    variant={
-                      currentTags?.includes(tag) ? 'default' : 'outline'
-                    }
-                    className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs"
-                  >
-                    {tag}
-                  </Badge>
-                </Link>
-              ))}
-            </div>
           </CardContent>
         </Card>
       )}

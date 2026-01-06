@@ -14,6 +14,7 @@ export function BlogFilters({ blogs }: BlogFiltersProps) {
   const searchParams = useSearchParams()
   const selectedCategory = searchParams.get("category")
   const selectedTag = searchParams.get("tag")
+  const searchQuery = searchParams.get("search")
 
   // Extract unique categories and tags
   const categories = Array.from(new Set(blogs.map((b) => b.category).filter(Boolean))) as string[]
@@ -28,7 +29,12 @@ export function BlogFilters({ blogs }: BlogFiltersProps) {
           <span className="text-sm text-muted-foreground">Active filters:</span>
           {selectedCategory && (
             <Link
-              href={selectedTag ? `/blog?tag=${encodeURIComponent(selectedTag)}` : "/blog"}
+              href={(() => {
+                const params = new URLSearchParams()
+                if (selectedTag) params.set("tag", selectedTag)
+                if (searchQuery) params.set("search", searchQuery)
+                return params.toString() ? `/blog?${params.toString()}` : "/blog"
+              })()}
               className="inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors"
             >
               {selectedCategory}
@@ -37,7 +43,12 @@ export function BlogFilters({ blogs }: BlogFiltersProps) {
           )}
           {selectedTag && (
             <Link
-              href={selectedCategory ? `/blog?category=${encodeURIComponent(selectedCategory)}` : "/blog"}
+              href={(() => {
+                const params = new URLSearchParams()
+                if (selectedCategory) params.set("category", selectedCategory)
+                if (searchQuery) params.set("search", searchQuery)
+                return params.toString() ? `/blog?${params.toString()}` : "/blog"
+              })()}
               className="inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
             >
               {selectedTag}
@@ -46,7 +57,7 @@ export function BlogFilters({ blogs }: BlogFiltersProps) {
           )}
           {(selectedCategory || selectedTag) && (
             <Link
-              href="/blog"
+              href={searchQuery ? `/blog?search=${encodeURIComponent(searchQuery)}` : "/blog"}
               className="text-xs text-primary hover:underline"
             >
               Clear all
@@ -64,14 +75,16 @@ export function BlogFilters({ blogs }: BlogFiltersProps) {
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => {
               const isActive = selectedCategory === category
-              const href = selectedTag
-                ? `/blog?category=${encodeURIComponent(category)}&tag=${encodeURIComponent(selectedTag)}`
-                : `/blog?category=${encodeURIComponent(category)}`
+              const params = new URLSearchParams()
+              if (!isActive) params.set("category", category)
+              if (selectedTag) params.set("tag", selectedTag)
+              if (searchQuery) params.set("search", searchQuery)
+              const href = params.toString() ? `/blog?${params.toString()}` : "/blog"
               
               return (
                 <Link
                   key={category}
-                  href={isActive ? "/blog" : href}
+                  href={isActive ? (searchQuery ? `/blog?search=${encodeURIComponent(searchQuery)}` : "/blog") : href}
                   className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                     isActive
                       ? "bg-primary text-primary-foreground"
@@ -95,14 +108,21 @@ export function BlogFilters({ blogs }: BlogFiltersProps) {
           <div className="flex flex-wrap gap-2">
             {uniqueTags.slice(0, 15).map((tag) => {
               const isActive = selectedTag === tag
-              const href = selectedCategory
-                ? `/blog?category=${encodeURIComponent(selectedCategory)}&tag=${encodeURIComponent(tag)}`
-                : `/blog?tag=${encodeURIComponent(tag)}`
+              const params = new URLSearchParams()
+              if (selectedCategory) params.set("category", selectedCategory)
+              if (!isActive) params.set("tag", tag)
+              if (searchQuery) params.set("search", searchQuery)
+              const href = params.toString() ? `/blog?${params.toString()}` : "/blog"
+              
+              const clearParams = new URLSearchParams()
+              if (selectedCategory) clearParams.set("category", selectedCategory)
+              if (searchQuery) clearParams.set("search", searchQuery)
+              const clearHref = clearParams.toString() ? `/blog?${clearParams.toString()}` : "/blog"
               
               return (
                 <Link
                   key={tag}
-                  href={isActive ? (selectedCategory ? `/blog?category=${encodeURIComponent(selectedCategory)}` : "/blog") : href}
+                  href={isActive ? clearHref : href}
                   className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                     isActive
                       ? "bg-primary text-primary-foreground"

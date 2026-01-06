@@ -11,6 +11,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { BlogFilters } from '@/components/blog-filters'
 import { BlogPagination } from '@/components/blog-pagination'
+import { BlogSearch } from '@/components/blog-search'
 
 export const metadata: Metadata = {
   title: 'Blog - Tax & Salary Articles | TaxSal',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 }
 
 interface BlogPageProps {
-  searchParams: Promise<{ category?: string; tag?: string; page?: string }>
+  searchParams: Promise<{ category?: string; tag?: string; page?: string; search?: string }>
 }
 
 const BLOGS_PER_PAGE = 9
@@ -39,12 +40,28 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const params = await searchParams
   const selectedCategory = params.category
   const selectedTag = params.tag
+  const searchQuery = params.search?.toLowerCase().trim() || ''
   const currentPage = Math.max(1, parseInt(params.page || '1', 10))
 
   // Filter blogs based on search params
   const filteredBlogs = blogs.filter((blog) => {
     if (selectedCategory && blog.category !== selectedCategory) return false
     if (selectedTag && !blog.tags?.includes(selectedTag)) return false
+    
+    // Search filter
+    if (searchQuery) {
+      const searchLower = searchQuery.toLowerCase()
+      const matchesTitle = blog.title.toLowerCase().includes(searchLower)
+      const matchesExcerpt = blog.excerpt?.toLowerCase().includes(searchLower)
+      const matchesContent = blog.content.toLowerCase().includes(searchLower)
+      const matchesCategory = blog.category?.toLowerCase().includes(searchLower)
+      const matchesTags = blog.tags?.some(tag => tag.toLowerCase().includes(searchLower))
+      
+      if (!matchesTitle && !matchesExcerpt && !matchesContent && !matchesCategory && !matchesTags) {
+        return false
+      }
+    }
+    
     return true
   })
 
@@ -67,6 +84,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               Expert insights on salary calculations, tax planning, and financial advice
             </p>
           </div>
+
+          {/* Search Bar */}
+          <BlogSearch />
 
           {/* Filters */}
           <BlogFilters blogs={blogs} />

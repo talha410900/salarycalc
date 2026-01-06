@@ -22,6 +22,7 @@ import { ALL_STATES, getTopMarginalRate } from "@/lib/state-tax-data"
 import { heroCalculators } from "@/lib/calculators"
 import { Logo } from "@/components/logo"
 import { getOptimizedStateCalculatorUrl } from "@/lib/seo-slugs"
+import { HeaderCalculatorSearch } from "@/components/header-calculator-search"
 
 const salaryCalculators = [
   { icon: Clock, name: "Hourly to Salary", href: "/calculators/hourly-to-salary-calculator" },
@@ -79,9 +80,9 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {/* Salary Calculators Dropdown */}
-     
+          <nav className="hidden lg:flex items-center gap-2">
+            {/* Calculator Search */}
+            <HeaderCalculatorSearch />
 
             {/* Popular Calculators Dropdown */}
             <div
@@ -248,7 +249,7 @@ export function Header() {
               href="/blog"
               className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
             >
-              Blog
+              Our Latest Guides
             </Link>
             <Link
               href="/contact"
@@ -272,6 +273,11 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border/50 animate-in slide-in-from-top-2 duration-200">
             <nav className="flex flex-col gap-1">
+              {/* Mobile Calculator Search */}
+              <div className="px-4 mb-3">
+                <HeaderCalculatorSearch />
+              </div>
+
               <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider flex items-center gap-2">
                 <Star className="h-3 w-3" />
                 Popular Calculators
@@ -345,7 +351,7 @@ export function Header() {
                 className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Blog
+                Our Latest Guides
               </Link>
               <Link
                 href="/contact"
