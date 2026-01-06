@@ -271,8 +271,8 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border/50 animate-in slide-in-from-top-2 duration-200">
-            <nav className="flex flex-col gap-1">
+          <div className="lg:hidden border-t border-border/50 animate-in slide-in-from-top-2 duration-200 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
+            <nav className="flex flex-col gap-1 py-4">
               {/* Mobile Calculator Search */}
               <div className="px-4 mb-3">
                 <HeaderCalculatorSearch />
