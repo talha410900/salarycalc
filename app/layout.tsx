@@ -1,8 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import Script from "next/script"
 import { Nunito, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import { CookieConsent } from "@/components/cookie-consent"
 import { Toaster } from "@/components/ui/sonner"
 import { DevSEOWidget } from "@/components/dev-seo-widget"
@@ -93,24 +93,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
-        {/* Google Analytics - External Script */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-7PK3P58RGV"
-        />
-        {/* Google Analytics - Inline Script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-7PK3P58RGV');
-            `,
-          }}
-        />
-      </head>
       <body className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
@@ -118,6 +100,7 @@ export default function RootLayout({
         />
         {children}
         <Analytics />
+        <GoogleAnalytics gaId="G-7PK3P58RGV" />
         <CookieConsent />
         <Toaster />
         <DevSEOWidget />
