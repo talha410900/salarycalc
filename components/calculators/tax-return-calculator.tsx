@@ -57,7 +57,7 @@ const FEDERAL_BRACKETS_2025 = {
 }
 
 function calculateFederalTax(taxableIncome: number, filingStatus: string): number {
-  const brackets = FEDERAL_BRACKETS_20252026[filingStatus as keyof typeof FEDERAL_BRACKETS_2025] || FEDERAL_BRACKETS_20252026.single
+  const brackets = FEDERAL_BRACKETS_2025[filingStatus as keyof typeof FEDERAL_BRACKETS_2025] || FEDERAL_BRACKETS_2025.single
 
   let tax = 0
   let remainingIncome = taxableIncome
