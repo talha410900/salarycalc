@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation"
+import { redirect } from "next/navigation"
 import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
 import { StateCalculator } from "@/components/calculators/state-calculator"
 import { StateCalculatorNav } from "@/components/state-calculator-nav"
@@ -40,7 +40,7 @@ export default async function StateTaxPage({ params }: PageProps) {
   const stateData = STATE_TAX_DATA[stateSlug]
 
   if (!stateData) {
-    notFound()
+    redirect('/')
   }
 
   return (

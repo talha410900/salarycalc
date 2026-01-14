@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation"
+import { redirect } from "next/navigation"
 import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
 import { hasCalculatorType, STATE_SALES_TAX_KEYWORDS } from "@/lib/state-calculator-types"
 import { Header } from "@/components/header"
@@ -104,7 +104,7 @@ export default async function StateSalesTaxPage({ params }: PageProps) {
   const stateData = STATE_TAX_DATA[stateSlug]
 
   if (!stateData || !hasCalculatorType(stateSlug, "sales-tax")) {
-    notFound()
+    redirect('/')
   }
 
   const exactKeyword = STATE_SALES_TAX_KEYWORDS[stateSlug] || "sales tax calculator"

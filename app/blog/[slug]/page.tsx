@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Tag, ArrowLeft } from 'lucide-react'
@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const blog = await getBlogBySlug(slug)
 
   if (!blog) {
-    notFound()
+    redirect('/')
   }
 
   // Calculate reading time (rough estimate: 200 words per minute)

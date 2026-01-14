@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation"
+import { redirect } from "next/navigation"
 import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
 import { StateCalculator } from "@/components/calculators/state-calculator"
 import { StateCalculatorNav } from "@/components/state-calculator-nav"
@@ -154,12 +154,12 @@ export default async function OptimizedCalculatorPage({ params }: PageProps) {
   const { stateSlug, type } = parseOptimizedSlug(slug)
 
   if (!stateSlug || !type) {
-    notFound()
+    redirect('/')
   }
 
   const stateData = STATE_TAX_DATA[stateSlug]
   if (!stateData) {
-    notFound()
+    redirect('/')
   }
 
   // Render appropriate calculator based on type
@@ -634,6 +634,6 @@ export default async function OptimizedCalculatorPage({ params }: PageProps) {
     return <MaineExciseTaxPage />
   }
 
-  notFound()
+  redirect('/')
 }
 

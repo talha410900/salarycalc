@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation"
+import { redirect } from "next/navigation"
 import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
 import { hasCalculatorType, STATE_VEHICLE_TAX_KEYWORDS } from "@/lib/state-calculator-types"
 import { Header } from "@/components/header"
@@ -50,7 +50,7 @@ export default async function StateVehicleTaxPage({ params }: PageProps) {
   const stateData = STATE_TAX_DATA[stateSlug]
 
   if (!stateData || !hasCalculatorType(stateSlug, "vehicle-tax")) {
-    notFound()
+    redirect('/')
   }
 
   const exactKeyword = STATE_VEHICLE_TAX_KEYWORDS[stateSlug] || "vehicle tax calculator"
