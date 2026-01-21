@@ -1,0 +1,23 @@
+# robots.txt for TaxSal - Salary and Tax Estimator USA
+# https://taxsal.com
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+
+# Allow important pages
+Allow: /calculators/
+Allow: /blog/
+Allow: /tax-brackets
+Allow: /contact
+
+# Sitemap location
+Sitemap: https://taxsal.com/sitemap.xml
+
+# Crawl-delay (optional - be nice to servers)
+Crawl-delay: 1
