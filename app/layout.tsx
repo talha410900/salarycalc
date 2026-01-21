@@ -6,6 +6,7 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { CookieConsent } from "@/components/cookie-consent"
 import { Toaster } from "@/components/ui/sonner"
 import { DevSEOWidget } from "@/components/dev-seo-widget"
+import { OneSignalProvider } from "@/components/one-signal-provider"
 import "./globals.css"
 
 const nunito = Nunito({ 
@@ -109,6 +110,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <GoogleAnalytics gaId="G-7PK3P58RGV" />
+        <OneSignalProvider appId="d191fe31-bca3-4e5d-9021-040017f14e4c" />
         <CookieConsent />
         <Toaster />
         <DevSEOWidget />
