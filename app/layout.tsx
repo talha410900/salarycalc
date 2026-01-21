@@ -1,6 +1,5 @@
 import type React from "react"
 import type { Metadata } from "next"
-import Script from "next/script"
 import { Nunito, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { GoogleAnalytics } from "@next/third-parties/google"
@@ -94,6 +93,14 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* Google AdSense - Required in head for ownership verification */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279801914353696"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
@@ -102,13 +109,6 @@ export default function RootLayout({
         {children}
         <Analytics />
         <GoogleAnalytics gaId="G-7PK3P58RGV" />
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279801914353696"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <CookieConsent />
         <Toaster />
         <DevSEOWidget />
