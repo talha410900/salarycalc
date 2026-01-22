@@ -101,8 +101,6 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279801914353696"
           crossOrigin="anonymous"
         />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279801914353696"
-     crossOrigin="anonymous"></script>
       </head>
       <body className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}>
         <script
