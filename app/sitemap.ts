@@ -10,6 +10,7 @@ const baseUrl =
 
 const staticRoutes = [
   "/",
+  "/about",
   "/blog",
   "/contact",
   "/tax-brackets",

@@ -190,6 +190,7 @@ export function Footer() {
             <h3 className="font-semibold text-background mb-3 text-sm">Legal</h3>
             <ul className="space-y-2">
               {[
+                { name: "About Us", href: "/about" },
                 { name: "Privacy Policy", href: "/privacy" },
                 { name: "Terms of Service", href: "/terms" },
                 { name: "Disclaimer", href: "/disclaimer" },

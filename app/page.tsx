@@ -8,6 +8,7 @@ import { HowItWorksSection } from "@/components/how-it-works-section"
 import { StatsSection } from "@/components/stats-section"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import { getPublishedBlogs } from "@/lib/supabase/server"
 
@@ -26,6 +27,7 @@ export default async function Home() {
         <HowItWorksSection />
         <BlogSection blogs={blogs} />
         <FAQSection />
+        <NewsletterSignup />
         <CTASection />
       </main>
       <Footer />
