@@ -1,8 +1,26 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { DollarSign, Clock, Landmark, Wallet, Timer, CalendarDays, Calculator, Package, MapPin, TrendingUp, Home, Briefcase, ShoppingCart } from "lucide-react"
+import { DollarSign, Clock, Landmark, Wallet, Timer, CalendarDays, Calculator, Package, MapPin, TrendingUp, Home, Briefcase, ShoppingCart, ArrowLeftRight, Target } from "lucide-react"
 import Link from "next/link"
 
 const calculators = [
+  {
+    icon: ArrowLeftRight,
+    title: "State Tax Comparison",
+    description: "Compare taxes between two states",
+    href: "/calculators/state-tax-comparison",
+    iconColor: "text-rose-600",
+    iconBg: "bg-rose-500/10",
+    featured: true,
+  },
+  {
+    icon: Target,
+    title: "Reverse Salary Calculator",
+    description: "Calculate gross income from take-home",
+    href: "/calculators/reverse-salary-calculator",
+    iconColor: "text-violet-600",
+    iconBg: "bg-violet-500/10",
+    featured: true,
+  },
   {
     icon: Calculator,
     title: "Payroll Tax Calculator",
@@ -146,6 +164,7 @@ const calculators = [
     iconColor: "text-green-600",
     iconBg: "bg-green-500/10",
   },
+
 ]
 
 export function CalculatorGrid() {

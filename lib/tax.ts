@@ -134,3 +134,44 @@ export function calculateNorthCarolinaTax(grossIncome: number, standardDeduction
   const taxableIncome = Math.max(0, grossIncome - standardDeduction)
   return taxableIncome * NC_TAX_RATE
 }
+
+import { STATE_TAX_DATA } from './state-tax-data'
+
+export function calculateStateTax(stateCode: string, income: number, filingStatus: 'single' | 'married'): number {
+  const stateData = STATE_TAX_DATA[stateCode]
+  if (!stateData) return 0
+
+  if (stateData.type === 'None') return 0
+  if (stateData.type === 'Flat') return income * (stateData.rate || 0)
+
+  if (stateData.brackets) {
+    const brackets = filingStatus === 'single' ? stateData.brackets.single : stateData.brackets.married_joint
+    let tax = 0
+    let remainingIncome = income
+    
+    // Simple bracket calculation without specific state deduction logic (approximation)
+    // For a more accurate engine, we'd need deduction data for every state.
+    // This is sufficient for estimates and comparison.
+    
+    // We calculate "taxable income" by just using gross for now as we lack standard deduction data for all 50 states in the interface
+    // Ideally we would add 'standardDeduction' to the StateTaxData interface.
+    // For now, calculating on gross (conservative estimate).
+    
+    let previousThreshold = 0
+    for (let i = 0; i < brackets.length; i++) {
+        const bracket = brackets[i]
+        const nextBracket = brackets[i + 1]
+        const min = bracket.threshold
+        const max = nextBracket ? nextBracket.threshold : Infinity
+        const rate = bracket.rate
+        
+        if (income > min) {
+          const taxableAmount = Math.min(income, max) - min
+          tax += taxableAmount * rate
+        }
+    }
+    return tax
+  }
+  
+  return 0
+}

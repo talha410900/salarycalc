@@ -70,3 +70,41 @@ export interface Tag {
 
 export type TagInsert = Omit<Tag, 'id' | 'created_at' | 'updated_at'>
 export type TagUpdate = Partial<TagInsert>
+
+// Newsletter Subscriber
+export interface NewsletterSubscriber {
+  id: string
+  email: string
+  source: string
+  subscribed_at: string
+  is_active: boolean
+}
+
+export type NewsletterSubscriberInsert = Omit<NewsletterSubscriber, 'id' | 'subscribed_at'> & { source?: string }
+
+// Contact Message
+export interface ContactMessage {
+  id: string
+  name: string
+  email: string
+  subject: string
+  message: string
+  status: 'new' | 'read' | 'replied' | 'archived'
+  created_at: string
+  updated_at: string
+}
+
+export type ContactMessageInsert = Omit<ContactMessage, 'id' | 'created_at' | 'updated_at' | 'status'>
+
+// Calculator Usage
+export interface CalculatorUsage {
+  id: string
+  calculator_type: string
+  inputs: Record<string, any>
+  results: Record<string, any>
+  user_agent: string | null
+  referer: string | null
+  created_at: string
+}
+
+export type CalculatorUsageInsert = Omit<CalculatorUsage, 'id' | 'created_at'>

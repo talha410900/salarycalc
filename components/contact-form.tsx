@@ -27,18 +27,16 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission (in production, you'd send this to your backend/API)
     try {
-      // Here you would typically send the data to your backend
-      // For now, we'll just simulate a delay
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
 
-      // In production, replace this with actual API call:
-      // await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData),
-      // })
+      if (!res.ok) {
+        throw new Error('Failed to send message')
+      }
 
       toast.success('Message sent successfully! We\'ll get back to you soon.')
       setIsSubmitted(true)
@@ -151,4 +149,3 @@ export function ContactForm() {
     </form>
   )
 }
-

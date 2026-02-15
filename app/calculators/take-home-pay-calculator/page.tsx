@@ -37,20 +37,109 @@ export default function TakeHomePayPage() {
 
           <TakeHomePayCalculator />
 
-          {/* How Take-Home Pay Calculator Works */}
-          <Card className="mt-12">
-            <CardHeader>
-              <h2 className="text-2xl font-bold text-foreground">How the Take-Home Pay Calculator Works</h2>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none text-muted-foreground">
-              <p className="leading-relaxed">
-                The <strong>take-home pay calculator</strong> calculates your net pay by subtracting all applicable taxes and deductions from your gross salary. 
-                It includes federal income tax (based on 2025-2026 tax brackets), state income tax (if applicable), Social Security tax (6.2% on wages up to $176,100), 
-                and Medicare tax (1.45% on all wages, plus 0.9% for high earners). The calculator also accounts for optional deductions like 401(k) contributions, 
-                health insurance, and other pre-tax benefits to give you an accurate estimate of your <strong>take home pay</strong>.
-              </p>
-            </CardContent>
-          </Card>
+          {/* Comprehensive Guide Section */}
+          <div className="space-y-8 mt-12">
+            
+            {/* Understanding Paycheck Deductions */}
+            <Card>
+              <CardHeader>
+                <h2 className="text-2xl font-bold text-foreground">Where Does Your Paycheck Go? Understanding Deductions</h2>
+              </CardHeader>
+              <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+                <p className="leading-relaxed mb-4">
+                  It can be shocking to see the difference between your gross salary and the amount that actually hits your bank account. 
+                  Your "take-home pay" is what's left after a series of mandatory and voluntary deductions.
+                </p>
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Mandatory Deductions</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li><strong>Federal Income Tax:</strong> Based on 2025 brackets and your filing status.</li>
+                      <li><strong>State Income Tax:</strong> Varies by state (0% to 13%+).</li>
+                      <li><strong>Social Security (6.2%):</strong> Capped at $176,100 of income.</li>
+                      <li><strong>Medicare (1.45%):</strong> No income cap; additional 0.9% for high earners.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Voluntary Deductions</h3>
+                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                      <li><strong>Retirement (401k/403b):</strong> Pre-tax contributions that lower your taxable income.</li>
+                      <li><strong>Health Insurance:</strong> Medical, dental, and vision premiums.</li>
+                      <li><strong>HSA/FSA:</strong> Pre-tax savings for healthcare costs.</li>
+                      <li><strong>Life/Disability Insurance:</strong> Usually post-tax deductions.</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* States with No Income Tax */}
+            <Card>
+              <CardHeader>
+                <h2 className="text-2xl font-bold text-foreground">States with No Income Tax</h2>
+              </CardHeader>
+              <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+                <p className="leading-relaxed mb-4">
+                  Where you live significantly impacts your take-home pay. Nine states have no state income tax on regular income, 
+                  meaning you verify keep more of your paycheck in these locations:
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Alaska', 'Florida', 'Nevada', 'New Hampshire', 'South Dakota', 'Tennessee', 'Texas', 'Washington', 'Wyoming'].map(state => (
+                    <span key={state} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                      {state}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm italic">
+                  *Note: New Hampshire and Washington tax interest/dividends or capital gains in specific scenarios, but generally not wage income.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Pre-Tax vs Post-Tax Explained */}
+            <Card>
+              <CardHeader>
+                <h2 className="text-2xl font-bold text-foreground">Pre-Tax vs. Post-Tax Deductions</h2>
+              </CardHeader>
+              <CardContent className="prose prose-sm max-w-none text-muted-foreground">
+                <p className="leading-relaxed mb-4">
+                  Understanding the difference can help you save money. <strong>Pre-tax deductions</strong> (like Traditional 401k and HSA) 
+                  are taken out <em>before</em> federal and state taxes are calculated, lowering your tax bill immediately. 
+                  <strong>Post-tax deductions</strong> (like Roth 401k) are taken out <em>after</em> taxes, providing tax-free growth for the future but no immediate tax break.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Detailed FAQ Section */}
+            <Card>
+              <CardHeader>
+                <h2 className="text-2xl font-bold text-foreground">Frequently Asked Questions</h2>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Why is my take-home pay lower than expected?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    This is often due to "tax withholding" settings on your W-4 form. If you claim fewer deductions/dependents, 
+                    your employer withholds more tax per paycheck (leading to a larger refund later). 
+                    Other factors include high state taxes or benefits costs like health insurance.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">How do bonus payouts work?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Bonuses are often withheld at a flat 22% federal rate (plus state taxes), which might be higher or lower 
+                    than your regular tax bracket. This catch-up often happens when you file your annual tax return.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Does this calculator support 2026 projections?</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Yes, we verify updated projections for the 2026 tax year based on inflation adjustments to tax brackets and standard deductions.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Related Calculators */}
           <Card className="mt-6">

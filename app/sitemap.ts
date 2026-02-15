@@ -41,6 +41,8 @@ const staticRoutes = [
   "/calculators/overtime-pay-calculator",
   "/calculators/federal-tax-calculator",
   "/calculators/take-home-pay-calculator",
+  "/calculators/state-tax-comparison",
+  "/calculators/reverse-salary-calculator",
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
