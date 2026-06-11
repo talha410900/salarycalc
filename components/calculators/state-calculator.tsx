@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { formatCurrency, formatPercent } from "@/lib/format"
 import { calculateStateTax, getEffectiveTaxRate, type StateTaxData } from "@/lib/state-tax-data"
@@ -314,60 +313,6 @@ export function StateCalculator({ stateSlug, stateData }: StateCalculatorProps) 
               </CardContent>
             </Card>
 
-            {/* FAQ Section */}
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg">Frequently Asked Questions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger className="text-sm">
-                      What type of income tax does {stateData.name} have?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground">
-                      {stateData.type === "None"
-                        ? `${stateData.name} does not have a state income tax on wages. ${stateData.notes}`
-                        : stateData.type === "Flat"
-                          ? `${stateData.name} has a flat income tax rate of ${((stateData.rate || 0) * 100).toFixed(2)}%. ${stateData.notes}`
-                          : `${stateData.name} has a graduated income tax system with ${stateData.brackets?.single.length} tax brackets. ${stateData.notes}`}
-                    </AccordionContent>
-                  </AccordionItem>
-
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger className="text-sm">
-                      How is {stateData.name} state tax calculated?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground">
-                      {stateData.type === "None"
-                        ? `Since ${stateData.name} has no state income tax, you only pay federal taxes and FICA (Social Security and Medicare).`
-                        : stateData.type === "Flat"
-                          ? `${stateData.name} uses a flat tax rate of ${((stateData.rate || 0) * 100).toFixed(2)}%. Simply multiply your taxable income by this rate to calculate your state tax.`
-                          : `${stateData.name} uses progressive tax brackets. Your income is taxed at increasing rates as it passes through each bracket. Only the income within each bracket is taxed at that bracket's rate.`}
-                    </AccordionContent>
-                  </AccordionItem>
-
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger className="text-sm">
-                      Are there any local taxes in {stateData.name}?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground">
-                      This calculator shows state-level taxes only. Some cities and counties in {stateData.name} may
-                      levy additional local income taxes. Check with your local tax authority for complete information.
-                    </AccordionContent>
-                  </AccordionItem>
-
-                  <AccordionItem value="item-4">
-                    <AccordionTrigger className="text-sm">What deductions are included?</AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground">
-                      This calculator uses the federal standard deduction for 2025-2026 ($15,000 for single filers, $30,000
-                      for married filing jointly). State-specific deductions may vary. Consult a tax professional for
-                      personalized advice.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

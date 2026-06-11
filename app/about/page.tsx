@@ -67,12 +67,12 @@ export default function AboutPage() {
     name: 'About TaxSal',
     description:
       'TaxSal is a free salary and tax calculator platform helping Americans understand their take-home pay, federal and state taxes, and more.',
-    url: 'https://taxsal.com/about',
+    url: 'https://www.taxsal.com/about',
     mainEntity: {
       '@type': 'Organization',
       name: 'TaxSal',
-      url: 'https://taxsal.com',
-      logo: 'https://taxsal.com/images/logo.png',
+      url: 'https://www.taxsal.com',
+      logo: 'https://www.taxsal.com/images/logo.png',
       description:
         'Free salary and tax calculator for the United States. Calculate payroll taxes, state taxes, capital gains, property taxes and more.',
     },

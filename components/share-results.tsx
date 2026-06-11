@@ -26,7 +26,7 @@ export function ShareResults({ title, resultSummary, url }: ShareResultsProps) {
   const [copied, setCopied] = useState(false)
   const [open, setOpen] = useState(false)
 
-  const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://taxsal.com')
+  const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://www.taxsal.com')
   const fullText = `${title}\n${resultSummary}\n\nCalculate yours free → ${pageUrl}`
   const encodedText = encodeURIComponent(`${title} — ${resultSummary}`)
   const encodedUrl = encodeURIComponent(pageUrl)

@@ -23,11 +23,14 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.taxsal.com"),
   title: "Salary and Tax Estimator USA | Free State-Wise Calculator – TaxSal",
   description:
     "Use TaxSal free salary and tax estimator USA to calculate income tax and take-home pay for every U.S. state. Fast, accurate & easy.",
   keywords: "salary and tax estimator USA, tax calculator, salary calculator, tax withholding calculator, paycheck calculator, take home pay calculator, federal tax calculator, state tax calculator",
-  generator: 'v0.app',
+  alternates: {
+    canonical: "./",
+  },
   manifest: '/site.webmanifest',
   icons: {
     icon: [
@@ -87,28 +90,21 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'TaxSal',
     description: 'Free Tool to Estimate Salary and Taxes in the USA',
-    url: 'https://taxsal.com',
-    logo: 'https://taxsal.com/images/logo.png',
+    url: 'https://www.taxsal.com',
+    logo: 'https://www.taxsal.com/images/logo.png',
     sameAs: [],
   }
 
   return (
     <html lang="en">
       <head>
-        {/* Google AdSense - Required in head for ownership verification */}
+        {/* Google AdSense - Required in head for ownership verification.
+            Must be exactly one publisher ID, matching public/ads.txt. */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279801914353696"
           crossOrigin="anonymous"
         />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2447398964276200"
-     crossOrigin="anonymous"></script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9075508302481936"
-     crossOrigin="anonymous"></script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7927497286558052"
-crossOrigin="anonymous"></script>
       </head>
       <body className={`${nunito.variable} ${geistMono.variable} font-sans antialiased`}>
         <script

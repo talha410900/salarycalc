@@ -36,7 +36,7 @@ export function BreadcrumbsWithSchema({ items, className }: BreadcrumbsWithSchem
       '@type': 'ListItem',
       position: index + 1,
       name: item.label,
-      item: `https://taxsal.com${item.href}`,
+      item: `https://www.taxsal.com${item.href}`,
     })),
   }
 
