@@ -7,12 +7,15 @@ import { FAQSchema } from "@/components/faq-schema"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Tax Return Calculator and Refund Estimator 2025-2026 | Free Tax Refund Calculator",
-  description: "Estimate your tax refund or amount owed with our free tax return calculator. Calculate federal income tax, AGI, taxable income, and refund estimates for 2025-2026.",
-  keywords: "tax return calculator, tax refund calculator, refund estimator, tax owed calculator, income tax calculator, tax return estimator 2025-2026",
+  title: "Tax Refund Calculator 2025-2026 | Estimate Your IRS Refund",
+  description:
+    "Estimate your IRS tax refund or the amount you owe. Enter income, deductions, and withholding for a 2025-2026 federal refund estimate.",
+  keywords:
+    "tax refund calculator, tax return calculator, refund estimator, tax owed calculator, income tax calculator, IRS refund estimator 2025-2026",
   openGraph: {
-    title: "Tax Return Calculator and Refund Estimator 2025-2026 | Free Tax Refund Calculator",
-    description: "Estimate your tax refund or amount owed with our free tax return calculator. Calculate federal income tax, AGI, taxable income, and refund estimates.",
+    title: "Tax Refund Calculator 2025-2026 | Estimate Your IRS Refund",
+    description:
+      "Estimate your IRS tax refund or the amount you owe. Enter income, deductions, and withholding for a 2025-2026 federal refund estimate.",
   },
 }
 
@@ -23,16 +26,17 @@ export default function TaxReturnPage() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Tax Return Calculator and Refund Estimator 2025-2026</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Tax Refund Calculator 2025-2026</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Estimate your tax refund or amount owed by calculating your federal income tax based on your income, deductions, and withholdings.
+              Estimate your IRS tax refund or the amount you owe from income, deductions, and withholding.
             </p>
           </div>
 
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
-              Our free <strong>tax return calculator</strong> helps you estimate your tax refund or amount owed for 2025-2026. 
-              This <strong>tax refund estimator</strong> calculates your adjusted gross income (AGI), taxable income, federal income tax, and estimated refund based on your total income, adjustments, deductions, and tax withholdings.
+              This free <strong>tax refund calculator</strong> estimates whether you will get a refund or owe the IRS
+              for 2025-2026. Enter income, adjustments, deductions, and tax withheld to see adjusted gross income (AGI),
+              taxable income, federal tax, and your estimated refund.
             </p>
           </div>
 
@@ -76,6 +80,10 @@ export default function TaxReturnPage() {
             <CardContent>
               <FAQSchema faqs={[
                 {
+                  question: 'What is a tax refund calculator?',
+                  answer: 'A tax refund calculator estimates whether you will receive an IRS refund or owe more tax. It subtracts your calculated federal income tax from the tax already withheld from paychecks (and estimated payments). If withholding is higher than tax owed, the difference is your refund; if it is lower, you owe the difference.',
+                },
+                {
                   question: 'What is Adjusted Gross Income (AGI)?',
                   answer: 'Adjusted Gross Income (AGI) is your total income from all sources minus certain adjustments (also called "above-the-line" deductions). These adjustments include contributions to traditional IRAs, student loan interest, educator expenses, and health savings account contributions. AGI is used to determine your eligibility for various tax credits and deductions, and it serves as the starting point for calculating your taxable income.',
                 },
@@ -93,6 +101,12 @@ export default function TaxReturnPage() {
                 },
               ]} />
               <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="what-is-tax-refund-calculator">
+                  <AccordionTrigger className="text-left font-semibold">What is a tax refund calculator?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    A tax refund calculator estimates whether you will receive an IRS refund or owe more tax. It subtracts your calculated federal income tax from the tax already withheld from paychecks (and estimated payments). If withholding is higher than tax owed, the difference is your refund; if it is lower, you owe the difference.
+                  </AccordionContent>
+                </AccordionItem>
                 <AccordionItem value="what-is-agi">
                   <AccordionTrigger className="text-left font-semibold">What is Adjusted Gross Income (AGI)?</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">

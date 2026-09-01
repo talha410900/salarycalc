@@ -1,57 +1,115 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BiweeklyToAnnualCalculator } from "@/components/calculators/biweekly-to-annual-calculator"
-import { Card, CardContent, CardHeader} from "@/components/ui/card"
+import { BiweeklyConversionTable } from "@/components/calculators/biweekly-conversion-table"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSchema } from "@/components/faq-schema"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { BIWEEKLY_HUB_FAQS } from "@/lib/seo-amount-pages"
+
+const PAGE_PATH = "/calculators/biweekly-to-annual-calculator"
 
 export const metadata: Metadata = {
-  title: "Bi-Weekly to Annual Salary Calculator | Convert Biweekly Pay to Annual",
-  description: "Convert your bi-weekly paycheck to annual salary and monthly equivalent. Free biweekly to annual calculator for 2025-2026.",
-  keywords: "biweekly to annual calculator, bi-weekly to annual, convert biweekly to annual, biweekly salary calculator, biweekly pay calculator",
+  title: "Biweekly to Annual Salary Calculator | $2,000 Biweekly Is $52,000 a Year",
+  description:
+    "Multiply biweekly pay by 26. $2,000 biweekly is $52,000 a year ($4,333.33/month). Convert any biweekly paycheck to annual salary.",
+  keywords:
+    "biweekly to annual calculator, 2000 biweekly is how much a year, biweekly to annual salary, convert biweekly to annual, biweekly salary calculator",
+  alternates: {
+    canonical: PAGE_PATH,
+  },
   openGraph: {
-    title: "Bi-Weekly to Annual Salary Calculator | Convert Biweekly Pay to Annual",
-    description: "Convert your bi-weekly paycheck to annual salary and monthly equivalent."}}
+    title: "Biweekly to Annual Salary Calculator | $2,000 Biweekly Is $52,000 a Year",
+    description:
+      "Multiply biweekly pay by 26. $2,000 biweekly is $52,000 a year ($4,333.33/month). Convert any biweekly paycheck to annual salary.",
+    url: PAGE_PATH,
+  },
+}
+
+const webApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Biweekly to Annual Salary Calculator",
+  url: "https://www.taxsal.com/calculators/biweekly-to-annual-calculator",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Any",
+  description: "Convert biweekly pay to annual salary. $2,000 biweekly is $52,000 a year.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  featureList: "Biweekly to annual conversion, monthly equivalent, common paycheck table",
+}
 
 export default function BiweeklyToAnnualPage() {
   return (
     <div className="min-h-screen flex flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }} />
+      <FAQSchema faqs={BIWEEKLY_HUB_FAQS} />
       <Header />
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Bi-Weekly to Annual Calculator</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Biweekly to Annual Salary Calculator
+            </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Convert your bi-weekly paycheck to annual salary and monthly equivalent.
+              Multiply biweekly pay by 26. $2,000 biweekly is $52,000 a year.
             </p>
           </div>
 
-          {/* SEO-focused first paragraph */}
           <div className="prose prose-sm max-w-none mb-8 text-muted-foreground">
             <p className="text-base leading-relaxed">
-              Our free <strong>biweekly to annual calculator</strong> helps you convert your bi-weekly paycheck to annual salary. 
-              This <strong>bi-weekly to annual</strong> calculator calculates your yearly income by multiplying your bi-weekly pay by 26 (the number of pay periods in a year). 
-              Use this <strong>biweekly salary calculator</strong> to understand your total annual compensation and plan your budget accordingly.
+              To convert <strong>biweekly pay to annual salary</strong>, multiply by 26 (the number of two-week pay
+              periods in a year). <strong>$2,000 biweekly is $52,000 a year</strong> ($2,000 × 26), or about $4,333.33
+              per month. Use the calculator below for any paycheck amount, or pick a common amount from the conversion
+              table.
             </p>
           </div>
 
-          <BiweeklyToAnnualCalculator />
+          <BiweeklyToAnnualCalculator defaultAmount={2000} />
 
-          {/* How Bi-Weekly to Annual Calculator Works */}
           <Card className="mt-12">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-foreground">How the Bi-Weekly to Annual Calculator Works</h2>
+              <h2 className="text-2xl font-bold text-foreground">How the Biweekly to Annual Calculator Works</h2>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none text-muted-foreground">
               <p className="leading-relaxed">
-                The <strong>biweekly to annual calculator</strong> multiplies your bi-weekly paycheck by 26 to get your annual salary. 
-                For example, if you earn $2,000 per bi-weekly paycheck, your annual salary would be $2,000 × 26 = $52,000. 
-                The calculator also converts to monthly (annual ÷ 12) and weekly (bi-weekly ÷ 2) equivalents to give you a complete picture of your income breakdown.
+                Annual salary = biweekly paycheck × 26. For example, $2,000 × 26 = $52,000. Monthly equivalent is annual
+                ÷ 12 ($4,333.33). Weekly is biweekly ÷ 2. Semi-monthly pay (twice per month) uses 24 periods, not 26 —
+                that is a different schedule.
               </p>
             </CardContent>
           </Card>
 
-          {/* Related Calculators */}
+          <Card className="mt-6">
+            <CardHeader>
+              <h2 className="text-2xl font-bold text-foreground">Biweekly to annual conversion table</h2>
+            </CardHeader>
+            <CardContent>
+              <BiweeklyConversionTable />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-6">
+            <CardHeader>
+              <h2 className="text-2xl font-bold text-foreground">Frequently Asked Questions</h2>
+            </CardHeader>
+            <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                {BIWEEKLY_HUB_FAQS.map((faq, index) => (
+                  <AccordionItem key={faq.question} value={`faq-${index}`}>
+                    <AccordionTrigger className="text-left font-semibold">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </CardContent>
+          </Card>
+
           <Card className="mt-6">
             <CardHeader>
               <h2 className="text-2xl font-bold text-foreground">Related Calculators</h2>
@@ -67,8 +125,8 @@ export default function BiweeklyToAnnualPage() {
                 <Link href="/calculators/take-home-pay-calculator" className="text-primary hover:underline">
                   Take-Home Pay Calculator
                 </Link>
-                <Link href="/calculators/federal-tax-calculator" className="text-primary hover:underline">
-                  Federal Tax Calculator
+                <Link href="/calculators/medicare-tax-calculator" className="text-primary hover:underline">
+                  Medicare Tax Calculator
                 </Link>
               </div>
             </CardContent>

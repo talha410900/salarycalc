@@ -14,8 +14,12 @@ interface Results {
   monthly: number
 }
 
-export function BiweeklyToAnnualCalculator() {
-  const [biweeklyPay, setBiweeklyPay] = useState("")
+interface BiweeklyToAnnualCalculatorProps {
+  defaultAmount?: number
+}
+
+export function BiweeklyToAnnualCalculator({ defaultAmount }: BiweeklyToAnnualCalculatorProps) {
+  const [biweeklyPay, setBiweeklyPay] = useState(defaultAmount && defaultAmount > 0 ? String(defaultAmount) : "")
   const [result, setResult] = useState<Results | null>(null)
   const [error, setError] = useState<string | null>(null)
 

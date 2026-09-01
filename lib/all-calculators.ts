@@ -14,6 +14,7 @@ import {
   Timer,
   CalendarDays,
   Car,
+  HeartPulse,
 } from "lucide-react"
 import { ALL_STATES } from "@/lib/state-tax-data"
 import { STATE_CALCULATOR_CONFIG, STATE_WITHHOLDING_KEYWORDS, getStateCalculatorUrl, type StateCalculatorType } from "@/lib/state-calculator-types"
@@ -76,6 +77,14 @@ const taxCalculators: CalculatorItem[] = [
     icon: Receipt,
     description: "Estimate tax refund or amount owed",
     keywords: ["tax return", "refund", "tax refund", "owed", "tax owed"],
+  },
+  {
+    name: "Medicare Tax Calculator",
+    href: "/calculators/medicare-tax-calculator",
+    category: "Tax Calculators",
+    icon: HeartPulse,
+    description: "1.45% Medicare withholding on gross pay",
+    keywords: ["medicare", "medicare tax", "1.45%", "fica", "withholding"],
   },
   {
     name: "Texas Paycheck Calculator",

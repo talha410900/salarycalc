@@ -13,6 +13,7 @@ export const CALCULATOR_PERMALINK_MAP: Record<string, string> = {
   '/calculators/self-employed-tax': '/calculators/self-employed-tax-calculator',
   '/calculators/amt': '/calculators/amt-calculator',
   '/calculators/tax-return': '/calculators/tax-return-calculator',
+  '/calculators/medicare-tax': '/calculators/medicare-tax-calculator',
   '/calculators/texas-paycheck': '/calculators/texas-paycheck-calculator',
   
   // Salary Calculators

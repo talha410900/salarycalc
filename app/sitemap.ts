@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next"
 import { getPublishedBlogs } from "@/lib/supabase/server"
 import { STATE_TAX_DATA, ALL_STATES } from "@/lib/state-tax-data"
 import { hasCalculatorType } from "@/lib/state-calculator-types"
+import { BIWEEKLY_SEO_AMOUNTS, getBiweeklyAmountPath } from "@/lib/seo-amount-pages"
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "https://www.taxsal.com"
@@ -26,6 +27,7 @@ const staticRoutes = [
   "/calculators/la-sales-tax-calculator",
   "/calculators/us-import-tax-calculator",
   "/calculators/tax-return-calculator",
+  "/calculators/medicare-tax-calculator",
   "/calculators/mortgage-tax-calculator",
   "/calculators/ny-mortgage-tax-calculator",
   "/calculators/va-property-tax-car-calculator",
@@ -109,6 +111,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }]
 
+  const biweeklyAmountEntries: MetadataRoute.Sitemap = BIWEEKLY_SEO_AMOUNTS.map((amount) => ({
+    url: `${baseUrl}${getBiweeklyAmountPath(amount)}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }))
+
   return [
     ...staticEntries,
     ...stateEntries,
@@ -116,6 +125,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...stateSalesTaxEntries,
     ...stateVehicleTaxEntries,
     ...maineExciseTaxEntry,
+    ...biweeklyAmountEntries,
     ...blogEntries,
   ]
 }

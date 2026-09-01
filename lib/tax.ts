@@ -29,7 +29,10 @@ export const STANDARD_DEDUCTIONS_2025 = {
 // FICA rates
 export const SOCIAL_SECURITY_RATE = 0.062
 export const MEDICARE_RATE = 0.0145
+export const ADDITIONAL_MEDICARE_RATE = 0.009
 export const SOCIAL_SECURITY_WAGE_BASE_2025 = 176100
+export const ADDITIONAL_MEDICARE_THRESHOLD_SINGLE = 200000
+export const ADDITIONAL_MEDICARE_THRESHOLD_MARRIED = 250000
 
 // Calculate federal tax using progressive brackets
 export function calculateFederalTax(annualIncome: number, filingStatus: "single" | "married"): number {
@@ -59,6 +62,22 @@ export function calculateSocialSecurity(annualIncome: number): number {
 // Calculate Medicare tax
 export function calculateMedicare(annualIncome: number): number {
   return annualIncome * MEDICARE_RATE
+}
+
+export function calculateMedicareOnGross(
+  gross: number,
+  options?: { additionalThreshold?: number }
+): { base: number; additional: number; total: number } {
+  if (!Number.isFinite(gross) || gross <= 0) {
+    return { base: 0, additional: 0, total: 0 }
+  }
+
+  const base = gross * MEDICARE_RATE
+  const threshold = options?.additionalThreshold
+  const additional =
+    threshold === undefined ? 0 : Math.max(0, gross - threshold) * ADDITIONAL_MEDICARE_RATE
+
+  return { base, additional, total: base + additional }
 }
 
 // Convert annual tax to pay period
